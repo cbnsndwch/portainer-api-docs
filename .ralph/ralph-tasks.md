@@ -23,7 +23,7 @@ Key files:
 
 - [x] **Make the server URL configurable by the user** — the API playground UI currently has the server URL hardcoded. Investigate where the URL comes from (likely `src/components/api-page.tsx` or `src/lib/openapi.ts`) and add a user-editable "Server URL" field that persists in `localStorage` so developers can point the playground at their own Portainer instance. The default value should come from the spec's `servers[0].url`.
 
-- [/] **Fix the 19 pre-existing lint errors in 3.1.0.yml** — errors are:
+- [x] **Fix the 19 pre-existing lint errors in 3.1.0.yml** — errors are:
     - 1× `no-identical-paths` — `/endpoints/{id}/kubernetes/helm/{name}` and `/{release}` are identical after parameter substitution; deduplicate or rename the path parameter in the spec
     - 3× `path-parameters-defined` — param name mismatch between the path template and the operation's `parameters` list; align them
     - 15× `security-defined` — operations that reference an undefined security scheme; add `security: []` (public) or `security: [{jwt: []}]` as appropriate
