@@ -108,27 +108,37 @@ function endpointFileName(routePath: string, method: string): string {
 
 async function discoverSpecs() {
     const entries = await fs.readdir(OAS_DIR, { withFileTypes: true });
-    const specs = entries
-        .filter(entry => entry.isFile())
-        .filter(entry => /\.ya?ml$/i.test(entry.name))
-        .map(entry => {
-            const ext = path.extname(entry.name);
-            const rawVersion = path.basename(entry.name, ext);
-            const versionFolder = toVersionFolder(rawVersion);
+    const specs = await Promise.all(
+        entries
+            .filter(entry => entry.isFile())
+            .filter(entry => /\.ya?ml$/i.test(entry.name))
+            .map(async entry => {
+                const filePath = path.join(OAS_DIR, entry.name);
+                const raw = await fs.readFile(filePath, 'utf-8');
+                const doc = yaml.load(raw) as Record<string, unknown>;
+                const info = (doc['info'] ?? {}) as Record<string, unknown>;
+                const version = String(
+                    info['version'] ??
+                        path.basename(entry.name, path.extname(entry.name))
+                );
 
-            return {
-                rawVersion,
-                versionFolder,
-                schemaId: `ce/${rawVersion}`,
-                filePath: path.join(OAS_DIR, entry.name)
-            };
-        })
-        .sort((a, b) =>
-            a.rawVersion.localeCompare(b.rawVersion, undefined, {
-                numeric: true,
-                sensitivity: 'base'
+                const versionFolder = toVersionFolder(version);
+
+                return {
+                    rawVersion: version,
+                    versionFolder,
+                    schemaId: `ce/${version}`,
+                    filePath
+                };
             })
-        );
+    );
+
+    specs.sort((a, b) =>
+        a.rawVersion.localeCompare(b.rawVersion, undefined, {
+            numeric: true,
+            sensitivity: 'base'
+        })
+    );
 
     if (specs.length === 0) {
         throw new Error(`No OpenAPI files found in ${OAS_DIR}`);

@@ -2,7 +2,7 @@
     "root": true,
     "title": "CE v2.33.7",
     "pages": [
-        "endpoints",
-        "entities"
+        "entities",
+        "endpoints"
     ]
 }
