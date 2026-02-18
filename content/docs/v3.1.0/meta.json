@@ -1,8 +1,0 @@
-{
-    "root": true,
-    "title": "CE v3.1.0",
-    "pages": [
-        "entities",
-        "endpoints"
-    ]
-}

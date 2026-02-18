@@ -1,8 +1,0 @@
-{
-    "title": "Docker",
-    "pages": [
-        "get-docker-environmentid-containers-containerid-gpus",
-        "get-docker-environmentid-dashboard",
-        "get-docker-environmentid-images"
-    ]
-}
