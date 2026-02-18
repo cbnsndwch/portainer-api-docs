@@ -1,0 +1,28 @@
+---
+title: "portainer.LDAPSearchSettings"
+---
+
+
+
+```json
+{
+  "properties": {
+    "BaseDN": {
+      "description": "The distinguished name of the element from which the LDAP server will search for users",
+      "example": "dc=ldap,dc=domain,dc=tld",
+      "type": "string"
+    },
+    "Filter": {
+      "description": "Optional LDAP search filter used to select user elements",
+      "example": "(objectClass=account)",
+      "type": "string"
+    },
+    "UserNameAttribute": {
+      "description": "LDAP attribute which denotes the username",
+      "example": "uid",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

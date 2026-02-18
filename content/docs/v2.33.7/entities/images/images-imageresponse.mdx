@@ -1,0 +1,35 @@
+---
+title: "images.ImageResponse"
+---
+
+
+
+```json
+{
+  "properties": {
+    "created": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "string"
+    },
+    "nodeName": {
+      "type": "string"
+    },
+    "size": {
+      "type": "integer"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "used": {
+      "description": "Used is true if the image is used by at least one container\nsupplied only when withUsage is true",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

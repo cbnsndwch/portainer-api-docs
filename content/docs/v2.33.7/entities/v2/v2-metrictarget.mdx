@@ -1,0 +1,41 @@
+---
+title: "v2.MetricTarget"
+---
+
+
+
+```json
+{
+  "properties": {
+    "averageUtilization": {
+      "description": "averageUtilization is the target value of the average of the\nresource metric across all relevant pods, represented as a percentage of\nthe requested value of the resource for the pods.\nCurrently only valid for Resource metric source type\n+optional",
+      "type": "integer"
+    },
+    "averageValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/resource.Quantity"
+        }
+      ],
+      "description": "averageValue is the target value of the average of the\nmetric across all relevant pods (as a quantity)\n+optional"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.MetricTargetType"
+        }
+      ],
+      "description": "type represents whether the metric type is Utilization, Value, or AverageValue"
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/resource.Quantity"
+        }
+      ],
+      "description": "value is the target value of the metric (as a quantity).\n+optional"
+    }
+  },
+  "type": "object"
+}
+```

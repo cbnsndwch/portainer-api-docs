@@ -1,0 +1,44 @@
+---
+title: "v1.HTTPGetAction"
+---
+
+
+
+```json
+{
+  "properties": {
+    "host": {
+      "description": "Host name to connect to, defaults to the pod IP. You probably want to set\n\"Host\" in httpHeaders instead.\n+optional",
+      "type": "string"
+    },
+    "httpHeaders": {
+      "description": "Custom headers to set in the request. HTTP allows repeated headers.\n+optional\n+listType=atomic",
+      "items": {
+        "$ref": "#/components/schemas/v1.HTTPHeader"
+      },
+      "type": "array"
+    },
+    "path": {
+      "description": "Path to access on the HTTP server.\n+optional",
+      "type": "string"
+    },
+    "port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/intstr.IntOrString"
+        }
+      ],
+      "description": "Name or number of the port to access on the container.\nNumber must be in the range 1 to 65535.\nName must be an IANA_SVC_NAME."
+    },
+    "scheme": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.URIScheme"
+        }
+      ],
+      "description": "Scheme to use for connecting to the host.\nDefaults to HTTP.\n+optional"
+    }
+  },
+  "type": "object"
+}
+```

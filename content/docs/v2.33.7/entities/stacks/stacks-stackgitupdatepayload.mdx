@@ -1,0 +1,43 @@
+---
+title: "stacks.stackGitUpdatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "autoUpdate": {
+      "$ref": "#/components/schemas/portainer.AutoUpdateSettings"
+    },
+    "env": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "prune": {
+      "type": "boolean"
+    },
+    "repositoryAuthentication": {
+      "type": "boolean"
+    },
+    "repositoryAuthorizationType": {
+      "$ref": "#/components/schemas/gittypes.GitCredentialAuthType"
+    },
+    "repositoryPassword": {
+      "type": "string"
+    },
+    "repositoryReferenceName": {
+      "type": "string"
+    },
+    "repositoryUsername": {
+      "type": "string"
+    },
+    "tlsskipVerify": {
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

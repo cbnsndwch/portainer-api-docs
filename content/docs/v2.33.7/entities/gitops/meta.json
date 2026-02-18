@@ -1,6 +1,8 @@
 {
     "title": "Gitops",
     "pages": [
-        "overview"
+        "overview",
+        "gitops-fileresponse",
+        "gitops-repositoryfilepreviewpayload"
     ]
 }

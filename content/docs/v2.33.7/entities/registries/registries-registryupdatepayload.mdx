@@ -1,0 +1,72 @@
+---
+title: "registries.registryUpdatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "authentication": {
+      "description": "Is authentication against this registry enabled",
+      "example": false,
+      "type": "boolean"
+    },
+    "baseURL": {
+      "description": "BaseURL is used for quay registry",
+      "example": "registry.mydomain.tld:2375",
+      "type": "string"
+    },
+    "ecr": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EcrData"
+        }
+      ],
+      "description": "ECR data"
+    },
+    "name": {
+      "description": "Name that will be used to identify this registry",
+      "example": "my-registry",
+      "type": "string"
+    },
+    "password": {
+      "description": "Password used to authenticate against this registry. required when Authentication is true",
+      "example": "registry_password",
+      "type": "string"
+    },
+    "quay": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.QuayRegistryData"
+        }
+      ],
+      "description": "Quay data"
+    },
+    "registryAccesses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.RegistryAccesses"
+        }
+      ],
+      "description": "Registry access control"
+    },
+    "url": {
+      "description": "URL or IP address of the Docker registry",
+      "example": "registry.mydomain.tld:2375",
+      "type": "string"
+    },
+    "username": {
+      "description": "Username used to authenticate against this registry. Required when Authentication is true",
+      "example": "registry_user",
+      "type": "string"
+    }
+  },
+  "required": [
+    "authentication",
+    "name",
+    "url"
+  ],
+  "type": "object"
+}
+```

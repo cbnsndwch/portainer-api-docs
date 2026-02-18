@@ -1,0 +1,54 @@
+---
+title: "stacks.kubernetesGitDeploymentPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "additionalFiles": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "autoUpdate": {
+      "$ref": "#/components/schemas/portainer.AutoUpdateSettings"
+    },
+    "composeFormat": {
+      "type": "boolean"
+    },
+    "manifestFile": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "repositoryAuthentication": {
+      "type": "boolean"
+    },
+    "repositoryPassword": {
+      "type": "string"
+    },
+    "repositoryReferenceName": {
+      "type": "string"
+    },
+    "repositoryURL": {
+      "type": "string"
+    },
+    "repositoryUsername": {
+      "type": "string"
+    },
+    "stackName": {
+      "type": "string"
+    },
+    "tlsskipVerify": {
+      "description": "TLSSkipVerify skips SSL verification when cloning the Git repository",
+      "example": false,
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

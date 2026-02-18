@@ -1,0 +1,46 @@
+---
+title: "gittypes.RepoConfig"
+---
+
+
+
+```json
+{
+  "properties": {
+    "authentication": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/gittypes.GitAuthentication"
+        }
+      ],
+      "description": "Git credentials"
+    },
+    "configFilePath": {
+      "description": "Path to where the config file is in this url/refName",
+      "example": "docker-compose.yml",
+      "type": "string"
+    },
+    "configHash": {
+      "description": "Repository hash",
+      "example": "bc4c183d756879ea4d173315338110b31004b8e0",
+      "type": "string"
+    },
+    "referenceName": {
+      "description": "The reference name",
+      "example": "refs/heads/branch_name",
+      "type": "string"
+    },
+    "tlsskipVerify": {
+      "description": "TLSSkipVerify skips SSL verification when cloning the Git repository",
+      "example": false,
+      "type": "boolean"
+    },
+    "url": {
+      "description": "The repo url",
+      "example": "https://github.com/portainer/portainer.git",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

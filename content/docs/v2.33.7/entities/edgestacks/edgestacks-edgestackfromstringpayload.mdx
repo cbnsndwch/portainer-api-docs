@@ -1,0 +1,62 @@
+---
+title: "edgestacks.edgeStackFromStringPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "deploymentType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EdgeStackDeploymentType"
+        }
+      ],
+      "description": "Deployment type to deploy this stack\nValid values are: 0 - 'compose', 1 - 'kubernetes'\ncompose is enabled only for docker environments\nkubernetes is enabled only for kubernetes environments",
+      "enum": [
+        0,
+        1,
+        2
+      ],
+      "example": 0
+    },
+    "edgeGroups": {
+      "description": "List of identifiers of EdgeGroups",
+      "example": [
+        1
+      ],
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "name": {
+      "description": "Name of the stack\nMax length: 255\nName must only contains lowercase characters, numbers, hyphens, or underscores\nName must start with a lowercase character or number\nExample: stack-name or stack_123 or stackName",
+      "example": "stack-name",
+      "type": "string"
+    },
+    "registries": {
+      "description": "List of Registries to use for this stack",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "stackFileContent": {
+      "description": "Content of the Stack file",
+      "example": "version: 3\n services:\n web:\n image:nginx",
+      "type": "string"
+    },
+    "useManifestNamespaces": {
+      "description": "Uses the manifest's namespaces instead of the default one",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "name",
+    "stackFileContent"
+  ],
+  "type": "object"
+}
+```

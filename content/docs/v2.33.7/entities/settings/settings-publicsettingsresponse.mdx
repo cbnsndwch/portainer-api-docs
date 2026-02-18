@@ -1,0 +1,111 @@
+---
+title: "settings.publicSettingsResponse"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AuthenticationMethod": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.AuthenticationMethod"
+        }
+      ],
+      "description": "Active authentication method for the Portainer instance. Valid values are: 1 for internal, 2 for LDAP, or 3 for oauth",
+      "example": 1
+    },
+    "EnableEdgeComputeFeatures": {
+      "description": "Whether edge compute features are enabled",
+      "example": true,
+      "type": "boolean"
+    },
+    "EnableTelemetry": {
+      "description": "Whether telemetry is enabled",
+      "example": true,
+      "type": "boolean"
+    },
+    "Features": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "description": "Supported feature flags",
+      "type": "object"
+    },
+    "GlobalDeploymentOptions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.GlobalDeploymentOptions"
+        }
+      ],
+      "description": "Deployment options for encouraging deployment as code"
+    },
+    "IsDockerDesktopExtension": {
+      "example": false,
+      "type": "boolean"
+    },
+    "LogoURL": {
+      "description": "URL to a logo that will be displayed on the login page as well as on top of the sidebar. Will use default Portainer logo when value is empty string",
+      "example": "https://mycompany.mydomain.tld/logo.png",
+      "type": "string"
+    },
+    "OAuthLoginURI": {
+      "description": "The URL used for oauth login",
+      "example": "https://gitlab.com/oauth",
+      "type": "string"
+    },
+    "OAuthLogoutURI": {
+      "description": "The URL used for oauth logout",
+      "example": "https://gitlab.com/oauth/logout",
+      "type": "string"
+    },
+    "RequiredPasswordLength": {
+      "description": "The minimum required length for a password of any user when using internal auth mode",
+      "example": 1,
+      "type": "integer"
+    },
+    "TeamSync": {
+      "description": "Whether team sync is enabled",
+      "example": true,
+      "type": "boolean"
+    },
+    "edge": {
+      "properties": {
+        "CommandInterval": {
+          "description": "The command list interval for edge agent - used in edge async mode [seconds]",
+          "example": 60,
+          "type": "integer"
+        },
+        "PingInterval": {
+          "description": "The ping interval for edge agent - used in edge async mode [seconds]",
+          "example": 60,
+          "type": "integer"
+        },
+        "SnapshotInterval": {
+          "description": "The snapshot interval for edge agent - used in edge async mode [seconds]",
+          "example": 60,
+          "type": "integer"
+        },
+        "checkinInterval": {
+          "description": "The check in interval for edge agent (in seconds) - used in non async mode [seconds]",
+          "example": 60,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "isAMTEnabled": {
+      "description": "Whether AMT is enabled",
+      "type": "boolean"
+    },
+    "kubeconfigExpiry": {
+      "default": "0",
+      "description": "The expiry of a Kubeconfig",
+      "example": "24h",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

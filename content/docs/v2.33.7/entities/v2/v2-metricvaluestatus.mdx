@@ -1,0 +1,33 @@
+---
+title: "v2.MetricValueStatus"
+---
+
+
+
+```json
+{
+  "properties": {
+    "averageUtilization": {
+      "description": "currentAverageUtilization is the current value of the average of the\nresource metric across all relevant pods, represented as a percentage of\nthe requested value of the resource for the pods.\n+optional",
+      "type": "integer"
+    },
+    "averageValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/resource.Quantity"
+        }
+      ],
+      "description": "averageValue is the current value of the average of the\nmetric across all relevant pods (as a quantity)\n+optional"
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/resource.Quantity"
+        }
+      ],
+      "description": "value is the current value of the metric (as a quantity).\n+optional"
+    }
+  },
+  "type": "object"
+}
+```

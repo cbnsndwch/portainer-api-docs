@@ -1,0 +1,77 @@
+---
+title: "github_com_portainer_portainer_pkg_libhelm_release.Release"
+---
+
+
+
+```json
+{
+  "properties": {
+    "appVersion": {
+      "description": "AppVersion is the app version of the release.",
+      "type": "string"
+    },
+    "chart": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/release.Chart"
+        }
+      ],
+      "description": "Chart is the chart that was released."
+    },
+    "chartReference": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/release.ChartReference"
+        }
+      ],
+      "description": "ChartReference are the labels that are used to identify the chart source."
+    },
+    "config": {
+      "additionalProperties": {},
+      "description": "Config is the set of extra Values added to the chart.\nThese values override the default values inside of the chart.",
+      "type": "object"
+    },
+    "hooks": {
+      "description": "Hooks are all of the hooks declared for this release.",
+      "items": {
+        "$ref": "#/components/schemas/github_com_portainer_portainer_pkg_libhelm_release.Hook"
+      },
+      "type": "array"
+    },
+    "info": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/github_com_portainer_portainer_pkg_libhelm_release.Info"
+        }
+      ],
+      "description": "Info provides information about a release"
+    },
+    "manifest": {
+      "description": "Manifest is the string representation of the rendered template.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name is the name of the release",
+      "type": "string"
+    },
+    "namespace": {
+      "description": "Namespace is the kubernetes namespace of the release.",
+      "type": "string"
+    },
+    "values": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/release.Values"
+        }
+      ],
+      "description": "Values are the values used to deploy the chart."
+    },
+    "version": {
+      "description": "Version is an int which represents the revision of the release.",
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

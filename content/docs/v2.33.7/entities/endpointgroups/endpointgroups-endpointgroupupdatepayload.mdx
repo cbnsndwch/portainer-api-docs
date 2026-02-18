@@ -1,0 +1,40 @@
+---
+title: "endpointgroups.endpointGroupUpdatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "description": {
+      "description": "Environment(Endpoint) group description",
+      "example": "description",
+      "type": "string"
+    },
+    "name": {
+      "description": "Environment(Endpoint) group name",
+      "example": "my-environment-group",
+      "type": "string"
+    },
+    "tagIDs": {
+      "description": "List of tag identifiers associated to the endpoint group",
+      "example": [
+        3,
+        4
+      ],
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "teamAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.TeamAccessPolicies"
+    },
+    "userAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.UserAccessPolicies"
+    }
+  },
+  "type": "object"
+}
+```

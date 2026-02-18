@@ -1,0 +1,31 @@
+---
+title: "stacks.stackMigratePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "endpointID": {
+      "description": "Environment(Endpoint) identifier of the target endpoint where the stack will be relocated",
+      "example": 2,
+      "type": "integer"
+    },
+    "name": {
+      "description": "If provided will rename the migrated stack",
+      "example": "new-stack",
+      "type": "string"
+    },
+    "swarmID": {
+      "description": "Swarm cluster identifier, must match the identifier of the cluster where the stack will be relocated",
+      "example": "jpofkc0i9uo9wtx1zesuk649w",
+      "type": "string"
+    }
+  },
+  "required": [
+    "endpointID"
+  ],
+  "type": "object"
+}
+```

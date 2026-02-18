@@ -1,0 +1,49 @@
+---
+title: "kubernetes.K8sEvent"
+---
+
+
+
+```json
+{
+  "properties": {
+    "count": {
+      "type": "integer"
+    },
+    "eventTime": {
+      "type": "string"
+    },
+    "firstTimestamp": {
+      "type": "string"
+    },
+    "involvedObject": {
+      "$ref": "#/components/schemas/kubernetes.K8sEventInvolvedObject"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "lastTimestamp": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

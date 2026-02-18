@@ -1,0 +1,83 @@
+---
+title: "kubernetes.K8sServiceInfo"
+---
+
+
+
+```json
+{
+  "properties": {
+    "allocateLoadBalancerNodePorts": {
+      "type": "boolean"
+    },
+    "annotations": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "applications": {
+      "description": "serviceList screen",
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.K8sApplication"
+      },
+      "type": "array"
+    },
+    "clusterIPs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "creationDate": {
+      "type": "string"
+    },
+    "externalIPs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "externalName": {
+      "type": "string"
+    },
+    "ingressStatus": {
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.K8sServiceIngress"
+      },
+      "type": "array"
+    },
+    "labels": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "name": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "ports": {
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.K8sServicePort"
+      },
+      "type": "array"
+    },
+    "selector": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "type": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

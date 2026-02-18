@@ -1,0 +1,25 @@
+---
+title: "endpoints.registryAccessPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "namespaces": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "teamAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.TeamAccessPolicies"
+    },
+    "userAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.UserAccessPolicies"
+    }
+  },
+  "type": "object"
+}
+```

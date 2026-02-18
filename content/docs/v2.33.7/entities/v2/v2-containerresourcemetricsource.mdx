@@ -1,0 +1,33 @@
+---
+title: "v2.ContainerResourceMetricSource"
+---
+
+
+
+```json
+{
+  "properties": {
+    "container": {
+      "description": "container is the name of the container in the pods of the scaling target",
+      "type": "string"
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ResourceName"
+        }
+      ],
+      "description": "name is the name of the resource in question."
+    },
+    "target": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.MetricTarget"
+        }
+      ],
+      "description": "target specifies the target value for the given metric"
+    }
+  },
+  "type": "object"
+}
+```

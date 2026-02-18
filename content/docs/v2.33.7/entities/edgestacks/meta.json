@@ -1,0 +1,11 @@
+{
+    "title": "Edgestacks",
+    "pages": [
+        "overview",
+        "edgestacks-edgestackfromgitrepositorypayload",
+        "edgestacks-edgestackfromstringpayload",
+        "edgestacks-stackfileresponse",
+        "edgestacks-updateedgestackpayload",
+        "edgestacks-updatestatuspayload"
+    ]
+}

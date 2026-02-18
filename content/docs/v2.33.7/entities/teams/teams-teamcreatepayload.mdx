@@ -1,0 +1,32 @@
+---
+title: "teams.teamCreatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "name": {
+      "description": "Name",
+      "example": "developers",
+      "type": "string"
+    },
+    "teamLeaders": {
+      "description": "TeamLeaders",
+      "example": [
+        3,
+        5
+      ],
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "type": "object"
+}
+```

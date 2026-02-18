@@ -1,6 +1,8 @@
 {
     "title": "Settings",
     "pages": [
-        "overview"
+        "overview",
+        "settings-publicsettingsresponse",
+        "settings-settingsupdatepayload"
     ]
 }

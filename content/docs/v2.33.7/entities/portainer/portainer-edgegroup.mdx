@@ -1,0 +1,43 @@
+---
+title: "portainer.EdgeGroup"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Dynamic": {
+      "type": "boolean"
+    },
+    "EndpointIds": {
+      "$ref": "#/components/schemas/roar.Roar-portainer_EndpointID"
+    },
+    "Endpoints": {
+      "description": "Deprecated: only used for API responses",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "Id": {
+      "description": "EdgeGroup Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "PartialMatch": {
+      "type": "boolean"
+    },
+    "TagIds": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
+```

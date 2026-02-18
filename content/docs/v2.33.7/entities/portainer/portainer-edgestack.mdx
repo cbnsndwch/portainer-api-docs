@@ -1,0 +1,59 @@
+---
+title: "portainer.EdgeStack"
+---
+
+
+
+```json
+{
+  "properties": {
+    "CreationDate": {
+      "description": "StatusArray    map[EndpointID][]EdgeStackStatus `json:\"StatusArray\"`",
+      "type": "integer"
+    },
+    "DeploymentType": {
+      "$ref": "#/components/schemas/portainer.EdgeStackDeploymentType"
+    },
+    "EdgeGroups": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "EntryPoint": {
+      "type": "string"
+    },
+    "Id": {
+      "description": "EdgeStack Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "ManifestPath": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "NumDeployments": {
+      "type": "integer"
+    },
+    "ProjectPath": {
+      "type": "string"
+    },
+    "Status": {
+      "additionalProperties": {
+        "$ref": "#/components/schemas/portainer.EdgeStackStatus"
+      },
+      "type": "object"
+    },
+    "Version": {
+      "type": "integer"
+    },
+    "useManifestNamespaces": {
+      "description": "Uses the manifest's namespaces instead of the default one",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

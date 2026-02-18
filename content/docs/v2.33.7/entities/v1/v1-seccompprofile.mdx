@@ -1,0 +1,25 @@
+---
+title: "v1.SeccompProfile"
+---
+
+
+
+```json
+{
+  "properties": {
+    "localhostProfile": {
+      "description": "localhostProfile indicates a profile defined in a file on the node should be used.\nThe profile must be preconfigured on the node to work.\nMust be a descending path, relative to the kubelet's configured seccomp profile location.\nMust be set if type is \"Localhost\". Must NOT be set for any other type.\n+optional",
+      "type": "string"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.SeccompProfileType"
+        }
+      ],
+      "description": "type indicates which kind of seccomp profile will be applied.\nValid options are:\n\nLocalhost - a profile defined in a file on the node should be used.\nRuntimeDefault - the container runtime default profile should be used.\nUnconfined - no profile should be applied.\n+unionDiscriminator"
+    }
+  },
+  "type": "object"
+}
+```

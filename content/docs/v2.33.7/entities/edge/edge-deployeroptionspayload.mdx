@@ -1,0 +1,21 @@
+---
+title: "edge.DeployerOptionsPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "prune": {
+      "description": "Prune is a flag indicating if the agent must prune the containers or not when creating/updating an edge stack\nThis flag drives `docker compose up --remove-orphans` and `docker stack up --prune` options\nUsed only for EE",
+      "type": "boolean"
+    },
+    "removeVolumes": {
+      "description": "RemoveVolumes is a flag indicating if the agent must remove the named volumes declared\nin the compose file and anonymouse volumes attached to containers\nThis flag drives `docker compose down --volumes` option\nUsed only for EE",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,103 @@
+---
+title: "edgestacks.edgeStackFromGitRepositoryPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "deploymentType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EdgeStackDeploymentType"
+        }
+      ],
+      "description": "Deployment type to deploy this stack\nValid values are: 0 - 'compose', 1 - 'kubernetes'\ncompose is enabled only for docker environments\nkubernetes is enabled only for kubernetes environments",
+      "enum": [
+        0,
+        1,
+        2
+      ],
+      "example": 0
+    },
+    "edgeGroups": {
+      "description": "List of identifiers of EdgeGroups",
+      "example": [
+        1
+      ],
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "filePathInRepository": {
+      "default": "docker-compose.yml",
+      "description": "Path to the Stack file inside the Git repository",
+      "example": "docker-compose.yml",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the stack\nMax length: 255\nName must only contains lowercase characters, numbers, hyphens, or underscores\nName must start with a lowercase character or number\nExample: stack-name or stack_123 or stackName",
+      "example": "stack-name",
+      "type": "string"
+    },
+    "registries": {
+      "description": "List of Registries to use for this stack",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "repositoryAuthentication": {
+      "description": "Use basic authentication to clone the Git repository",
+      "example": true,
+      "type": "boolean"
+    },
+    "repositoryAuthorizationType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/gittypes.GitCredentialAuthType"
+        }
+      ],
+      "description": "RepositoryAuthorizationType is the authorization type to use",
+      "example": 0
+    },
+    "repositoryPassword": {
+      "description": "Password used in basic authentication. Required when RepositoryAuthentication is true.",
+      "example": "myGitPassword",
+      "type": "string"
+    },
+    "repositoryReferenceName": {
+      "description": "Reference name of a Git repository hosting the Stack file",
+      "example": "refs/heads/master",
+      "type": "string"
+    },
+    "repositoryURL": {
+      "description": "URL of a Git repository hosting the Stack file",
+      "example": "https://github.com/openfaas/faas",
+      "type": "string"
+    },
+    "repositoryUsername": {
+      "description": "Username used in basic authentication. Required when RepositoryAuthentication is true.",
+      "example": "myGitUsername",
+      "type": "string"
+    },
+    "tlsskipVerify": {
+      "description": "TLSSkipVerify skips SSL verification when cloning the Git repository",
+      "example": false,
+      "type": "boolean"
+    },
+    "useManifestNamespaces": {
+      "description": "Uses the manifest's namespaces instead of the default one",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "edgeGroups",
+    "name",
+    "repositoryURL"
+  ],
+  "type": "object"
+}
+```

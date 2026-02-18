@@ -1,0 +1,48 @@
+---
+title: "users.userUpdatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "newPassword": {
+      "example": "asfj2emv",
+      "type": "string"
+    },
+    "password": {
+      "example": "cg9Wgky3",
+      "type": "string"
+    },
+    "role": {
+      "description": "User role (1 for administrator account and 2 for regular account)",
+      "enum": [
+        1,
+        2
+      ],
+      "example": 2,
+      "type": "integer"
+    },
+    "theme": {
+      "$ref": "#/components/schemas/users.themePayload"
+    },
+    "useCache": {
+      "example": true,
+      "type": "boolean"
+    },
+    "username": {
+      "example": "bob",
+      "type": "string"
+    }
+  },
+  "required": [
+    "newPassword",
+    "password",
+    "role",
+    "useCache",
+    "username"
+  ],
+  "type": "object"
+}
+```

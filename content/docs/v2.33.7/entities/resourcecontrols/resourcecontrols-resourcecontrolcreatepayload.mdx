@@ -1,0 +1,83 @@
+---
+title: "resourcecontrols.resourceControlCreatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "administratorsOnly": {
+      "description": "Permit access to resource only to admins",
+      "example": true,
+      "type": "boolean"
+    },
+    "public": {
+      "description": "Permit access to the associated resource to any user",
+      "example": true,
+      "type": "boolean"
+    },
+    "resourceID": {
+      "example": "617c5f22bb9b023d6daab7cba43a57576f83492867bc767d1c59416b065e5f08",
+      "type": "string"
+    },
+    "subResourceIDs": {
+      "description": "List of Docker resources that will inherit this access control",
+      "example": [
+        "617c5f22bb9b023d6daab7cba43a57576f83492867bc767d1c59416b065e5f08"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "teams": {
+      "description": "List of team identifiers with access to the associated resource",
+      "example": [
+        56,
+        7
+      ],
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.ResourceControlType"
+        }
+      ],
+      "description": "Type of Resource. Valid values are: 1 - container, 2 - service\n3 - volume, 4 - network, 5 - secret, 6 - stack, 7 - config, 8 - custom template, 9 - azure-container-group",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "example": 1
+    },
+    "users": {
+      "description": "List of user identifiers with access to the associated resource",
+      "example": [
+        1,
+        4
+      ],
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "resourceID",
+    "type"
+  ],
+  "type": "object"
+}
+```

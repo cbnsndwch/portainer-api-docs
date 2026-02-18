@@ -1,0 +1,61 @@
+---
+title: "kubernetes.K8sPersistentVolumeClaim"
+---
+
+
+
+```json
+{
+  "properties": {
+    "accessModes": {
+      "items": {
+        "$ref": "#/components/schemas/v1.PersistentVolumeAccessMode"
+      },
+      "type": "array"
+    },
+    "creationDate": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "labels": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "name": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "owningApplications": {
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.K8sApplication"
+      },
+      "type": "array"
+    },
+    "phase": {
+      "$ref": "#/components/schemas/v1.PersistentVolumeClaimPhase"
+    },
+    "resourcesRequests": {
+      "$ref": "#/components/schemas/v1.ResourceList"
+    },
+    "storage": {
+      "type": "integer"
+    },
+    "storageClass": {
+      "type": "string"
+    },
+    "volumeMode": {
+      "$ref": "#/components/schemas/v1.PersistentVolumeMode"
+    },
+    "volumeName": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

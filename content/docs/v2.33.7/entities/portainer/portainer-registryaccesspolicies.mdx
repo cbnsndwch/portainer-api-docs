@@ -1,0 +1,25 @@
+---
+title: "portainer.RegistryAccessPolicies"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Namespaces": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "TeamAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.TeamAccessPolicies"
+    },
+    "UserAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.UserAccessPolicies"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,37 @@
+---
+title: "portainer.RegistryManagementConfiguration"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AccessToken": {
+      "type": "string"
+    },
+    "AccessTokenExpiry": {
+      "type": "integer"
+    },
+    "Authentication": {
+      "type": "boolean"
+    },
+    "Ecr": {
+      "$ref": "#/components/schemas/portainer.EcrData"
+    },
+    "Password": {
+      "type": "string"
+    },
+    "TLSConfig": {
+      "$ref": "#/components/schemas/portainer.TLSConfiguration"
+    },
+    "Type": {
+      "$ref": "#/components/schemas/portainer.RegistryType"
+    },
+    "Username": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,43 @@
+---
+title: "resourcecontrols.resourceControlUpdatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "administratorsOnly": {
+      "description": "Permit access to resource only to admins",
+      "example": true,
+      "type": "boolean"
+    },
+    "public": {
+      "description": "Permit access to the associated resource to any user",
+      "example": true,
+      "type": "boolean"
+    },
+    "teams": {
+      "description": "List of team identifiers with access to the associated resource",
+      "example": [
+        7
+      ],
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "users": {
+      "description": "List of user identifiers with access to the associated resource",
+      "example": [
+        4
+      ],
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,30 @@
+---
+title: "webhooks.webhookCreatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "endpointID": {
+      "type": "integer"
+    },
+    "registryID": {
+      "type": "integer"
+    },
+    "resourceID": {
+      "type": "string"
+    },
+    "webhookType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.WebhookType"
+        }
+      ],
+      "description": "Type of webhook (1 - service)"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,29 @@
+---
+title: "v2.HorizontalPodAutoscalerBehavior"
+---
+
+
+
+```json
+{
+  "properties": {
+    "scaleDown": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.HPAScalingRules"
+        }
+      ],
+      "description": "scaleDown is scaling policy for scaling Down.\nIf not set, the default value is to allow to scale down to minReplicas pods, with a\n300 second stabilization window (i.e., the highest recommendation for\nthe last 300sec is used).\n+optional"
+    },
+    "scaleUp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.HPAScalingRules"
+        }
+      ],
+      "description": "scaleUp is scaling policy for scaling Up.\nIf not set, the default value is the higher of:\n  * increase no more than 4 pods per 60 seconds\n  * double the number of pods per 60 seconds\nNo stabilization is used.\n+optional"
+    }
+  },
+  "type": "object"
+}
+```

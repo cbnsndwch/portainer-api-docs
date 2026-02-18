@@ -1,0 +1,55 @@
+---
+title: "portainer.EdgeJob"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Created": {
+      "type": "integer"
+    },
+    "CronExpression": {
+      "type": "string"
+    },
+    "EdgeGroups": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "Endpoints": {
+      "additionalProperties": {
+        "$ref": "#/components/schemas/portainer.EdgeJobEndpointMeta"
+      },
+      "type": "object"
+    },
+    "Id": {
+      "description": "EdgeJob Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Recurring": {
+      "type": "boolean"
+    },
+    "ScriptPath": {
+      "type": "string"
+    },
+    "Version": {
+      "type": "integer"
+    },
+    "groupLogsCollection": {
+      "additionalProperties": {
+        "$ref": "#/components/schemas/portainer.EdgeJobEndpointMeta"
+      },
+      "description": "Field used for log collection of Endpoints belonging to EdgeGroups",
+      "type": "object"
+    }
+  },
+  "type": "object"
+}
+```

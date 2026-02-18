@@ -1,0 +1,63 @@
+---
+title: "portainer.User"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Id": {
+      "description": "User Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "Role": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.UserRole"
+        }
+      ],
+      "description": "User role (1 for administrator account and 2 for regular account)",
+      "example": 1
+    },
+    "ThemeSettings": {
+      "$ref": "#/components/schemas/portainer.UserThemeSettings"
+    },
+    "TokenIssueAt": {
+      "example": 1,
+      "type": "integer"
+    },
+    "UseCache": {
+      "example": true,
+      "type": "boolean"
+    },
+    "UserTheme": {
+      "description": "Deprecated",
+      "example": "dark",
+      "type": "string"
+    },
+    "Username": {
+      "example": "bob",
+      "type": "string"
+    },
+    "endpointAuthorizations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EndpointAuthorizations"
+        }
+      ],
+      "description": "Deprecated in DBVersion == 25"
+    },
+    "portainerAuthorizations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.Authorizations"
+        }
+      ],
+      "description": "Deprecated in DBVersion == 25"
+    }
+  },
+  "type": "object"
+}
+```

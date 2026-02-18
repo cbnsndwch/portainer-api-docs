@@ -1,0 +1,37 @@
+---
+title: "portainer.Tag"
+---
+
+
+
+```json
+{
+  "properties": {
+    "EndpointGroups": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "description": "A set of endpoint group ids that have this tag",
+      "type": "object"
+    },
+    "Endpoints": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "description": "A set of endpoint ids that have this tag",
+      "type": "object"
+    },
+    "Name": {
+      "description": "Tag name",
+      "example": "org/acme",
+      "type": "string"
+    },
+    "id": {
+      "description": "Tag identifier",
+      "example": 1,
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

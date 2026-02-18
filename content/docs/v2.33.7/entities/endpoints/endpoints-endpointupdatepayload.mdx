@@ -1,0 +1,105 @@
+---
+title: "endpoints.endpointUpdatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "azureApplicationID": {
+      "description": "Azure application ID",
+      "example": "eag7cdo9-o09l-9i83-9dO9-f0b23oe78db4",
+      "type": "string"
+    },
+    "azureAuthenticationKey": {
+      "description": "Azure authentication key",
+      "example": "cOrXoK/1D35w8YQ8nH1/8ZGwzz45JIYD5jxHKXEQknk=",
+      "type": "string"
+    },
+    "azureTenantID": {
+      "description": "Azure tenant ID",
+      "example": "34ddc78d-4fel-2358-8cc1-df84c8o839f5",
+      "type": "string"
+    },
+    "edgeCheckinInterval": {
+      "description": "The check in interval for edge agent (in seconds)",
+      "example": 5,
+      "type": "integer"
+    },
+    "gpus": {
+      "description": "GPUs information",
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "groupID": {
+      "description": "Group identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "kubernetes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.KubernetesData"
+        }
+      ],
+      "description": "Associated Kubernetes data"
+    },
+    "name": {
+      "description": "Name that will be used to identify this endpoint",
+      "example": "my-environment",
+      "type": "string"
+    },
+    "publicURL": {
+      "description": "URL or IP address where exposed containers will be reachable.\\\nDefaults to URL if not specified",
+      "example": "docker.mydomain.tld:2375",
+      "type": "string"
+    },
+    "status": {
+      "description": "The status of the endpoint (1 - up, 2 - down)",
+      "example": 1,
+      "type": "integer"
+    },
+    "tagIDs": {
+      "description": "List of tag identifiers to which this endpoint is associated",
+      "example": [
+        1,
+        2
+      ],
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "teamAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.TeamAccessPolicies"
+    },
+    "tls": {
+      "description": "Require TLS to connect against this endpoint",
+      "example": true,
+      "type": "boolean"
+    },
+    "tlsskipClientVerify": {
+      "description": "Skip client verification when using TLS",
+      "example": false,
+      "type": "boolean"
+    },
+    "tlsskipVerify": {
+      "description": "Skip server verification when using TLS",
+      "example": false,
+      "type": "boolean"
+    },
+    "url": {
+      "description": "URL or IP address of a Docker host",
+      "example": "docker.mydomain.tld:2375",
+      "type": "string"
+    },
+    "userAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.UserAccessPolicies"
+    }
+  },
+  "type": "object"
+}
+```

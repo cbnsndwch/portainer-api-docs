@@ -1,0 +1,8 @@
+{
+    "title": "Resourcecontrols",
+    "pages": [
+        "overview",
+        "resourcecontrols-resourcecontrolcreatepayload",
+        "resourcecontrols-resourcecontrolupdatepayload"
+    ]
+}

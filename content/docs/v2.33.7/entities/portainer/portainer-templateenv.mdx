@@ -1,0 +1,45 @@
+---
+title: "portainer.TemplateEnv"
+---
+
+
+
+```json
+{
+  "properties": {
+    "default": {
+      "description": "Default value that will be set for the variable",
+      "example": "default_value",
+      "type": "string"
+    },
+    "description": {
+      "description": "Content of the tooltip that will be generated in the UI",
+      "example": "MySQL root account password",
+      "type": "string"
+    },
+    "label": {
+      "description": "Text for the label that will be generated in the UI",
+      "example": "Root password",
+      "type": "string"
+    },
+    "name": {
+      "description": "name of the endpoint variable",
+      "example": "MYSQL_ROOT_PASSWORD",
+      "type": "string"
+    },
+    "preset": {
+      "description": "If set to true, will not generate any input for this variable in the UI",
+      "example": false,
+      "type": "boolean"
+    },
+    "select": {
+      "description": "A list of name/value that will be used to generate a dropdown in the UI",
+      "items": {
+        "$ref": "#/components/schemas/portainer.TemplateEnvSelect"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
+```

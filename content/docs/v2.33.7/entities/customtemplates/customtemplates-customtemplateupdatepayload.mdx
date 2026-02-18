@@ -1,0 +1,138 @@
+---
+title: "customtemplates.customTemplateUpdatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "composeFilePathInRepository": {
+      "default": "docker-compose.yml",
+      "description": "Path to the Stack file inside the Git repository",
+      "example": "docker-compose.yml",
+      "type": "string"
+    },
+    "description": {
+      "description": "Description of the template",
+      "example": "High performance web server",
+      "type": "string"
+    },
+    "edgeTemplate": {
+      "description": "EdgeTemplate indicates if this template purpose for Edge Stack",
+      "example": false,
+      "type": "boolean"
+    },
+    "fileContent": {
+      "description": "Content of stack file",
+      "type": "string"
+    },
+    "isComposeFormat": {
+      "description": "IsComposeFormat indicates if the Kubernetes template is created from a Docker Compose file",
+      "example": false,
+      "type": "boolean"
+    },
+    "logo": {
+      "description": "URL of the template's logo",
+      "example": "https://portainer.io/img/logo.svg",
+      "type": "string"
+    },
+    "note": {
+      "description": "A note that will be displayed in the UI. Supports HTML content",
+      "example": "This is my <b>custom</b> template",
+      "type": "string"
+    },
+    "platform": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.CustomTemplatePlatform"
+        }
+      ],
+      "description": "Platform associated to the template.\nValid values are: 1 - 'linux', 2 - 'windows'\nRequired for Docker stacks",
+      "enum": [
+        1,
+        2
+      ],
+      "example": 1
+    },
+    "repositoryAuthentication": {
+      "description": "Use authentication to clone the Git repository",
+      "example": true,
+      "type": "boolean"
+    },
+    "repositoryAuthorizationType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/gittypes.GitCredentialAuthType"
+        }
+      ],
+      "description": "RepositoryAuthorizationType is the authorization type to use",
+      "example": 0
+    },
+    "repositoryGitCredentialID": {
+      "description": "GitCredentialID used to identify the bound git credential. Required when RepositoryAuthentication\nis true and RepositoryUsername/RepositoryPassword are not provided",
+      "example": 0,
+      "type": "integer"
+    },
+    "repositoryPassword": {
+      "description": "Password used in basic authentication or token used in token authentication.\nRequired when RepositoryAuthentication is true and RepositoryGitCredentialID is 0",
+      "example": "myGitPassword",
+      "type": "string"
+    },
+    "repositoryReferenceName": {
+      "description": "Reference name of a Git repository hosting the Stack file",
+      "example": "refs/heads/master",
+      "type": "string"
+    },
+    "repositoryURL": {
+      "description": "URL of a Git repository hosting the Stack file",
+      "example": "https://github.com/openfaas/faas",
+      "type": "string"
+    },
+    "repositoryUsername": {
+      "description": "Username used in basic authentication. Required when RepositoryAuthentication is true\nand RepositoryGitCredentialID is 0. Ignored if RepositoryAuthType is token",
+      "example": "myGitUsername",
+      "type": "string"
+    },
+    "title": {
+      "description": "Title of the template",
+      "example": "Nginx",
+      "type": "string"
+    },
+    "tlsskipVerify": {
+      "description": "TLSSkipVerify skips SSL verification when cloning the Git repository",
+      "example": false,
+      "type": "boolean"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.StackType"
+        }
+      ],
+      "description": "Type of created stack (1 - swarm, 2 - compose, 3 - kubernetes)",
+      "enum": [
+        1,
+        2,
+        3
+      ],
+      "example": 1
+    },
+    "variables": {
+      "description": "Definitions of variables in the stack file",
+      "items": {
+        "$ref": "#/components/schemas/portainer.CustomTemplateVariableDefinition"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "description",
+    "fileContent",
+    "repositoryURL",
+    "title",
+    "type"
+  ],
+  "type": "object"
+}
+```

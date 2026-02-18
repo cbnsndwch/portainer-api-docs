@@ -1,6 +1,10 @@
 {
     "title": "System",
     "pages": [
-        "overview"
+        "overview",
+        "system-nodescountresponse",
+        "system-status",
+        "system-systeminforesponse",
+        "system-versionresponse"
     ]
 }

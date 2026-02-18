@@ -1,0 +1,28 @@
+---
+title: "release.Lock"
+---
+
+
+
+```json
+{
+  "properties": {
+    "dependencies": {
+      "description": "Dependencies is the list of dependencies that this lock file has locked.",
+      "items": {
+        "$ref": "#/components/schemas/release.Dependency"
+      },
+      "type": "array"
+    },
+    "digest": {
+      "description": "Digest is a hash of the dependencies in Chart.yaml.",
+      "type": "string"
+    },
+    "generated": {
+      "description": "Generated is the date the lock file was last generated.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

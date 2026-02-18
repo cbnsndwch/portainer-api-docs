@@ -1,0 +1,27 @@
+---
+title: "gittypes.GitAuthentication"
+---
+
+
+
+```json
+{
+  "properties": {
+    "authorizationType": {
+      "$ref": "#/components/schemas/gittypes.GitCredentialAuthType"
+    },
+    "gitCredentialID": {
+      "description": "Git credentials identifier when the value is not 0\nWhen the value is 0, Username, Password, and Authtype are set without using saved credential\nThis is introduced since 2.15.0",
+      "example": 0,
+      "type": "integer"
+    },
+    "password": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

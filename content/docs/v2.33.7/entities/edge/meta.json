@@ -1,6 +1,9 @@
 {
     "title": "Edge",
     "pages": [
-        "overview"
+        "overview",
+        "edge-deployeroptionspayload",
+        "edge-registrycredentials",
+        "edge-stackpayload"
     ]
 }

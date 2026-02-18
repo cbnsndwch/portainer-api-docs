@@ -1,0 +1,29 @@
+---
+title: "v2.HPAScalingPolicy"
+---
+
+
+
+```json
+{
+  "properties": {
+    "periodSeconds": {
+      "description": "periodSeconds specifies the window of time for which the policy should hold true.\nPeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).",
+      "type": "integer"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.HPAScalingPolicyType"
+        }
+      ],
+      "description": "type is used to specify the scaling policy."
+    },
+    "value": {
+      "description": "value contains the amount of change which is permitted by the policy.\nIt must be greater than zero",
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

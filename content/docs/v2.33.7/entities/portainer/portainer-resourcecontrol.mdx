@@ -1,0 +1,74 @@
+---
+title: "portainer.ResourceControl"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AccessLevel": {
+      "$ref": "#/components/schemas/portainer.ResourceAccessLevel"
+    },
+    "AdministratorsOnly": {
+      "description": "Permit access to resource only to admins",
+      "example": true,
+      "type": "boolean"
+    },
+    "Id": {
+      "description": "ResourceControl Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "OwnerId": {
+      "description": "Deprecated fields\nDeprecated in DBVersion == 2",
+      "type": "integer"
+    },
+    "Public": {
+      "description": "Permit access to the associated resource to any user",
+      "example": true,
+      "type": "boolean"
+    },
+    "ResourceId": {
+      "description": "Docker resource identifier on which access control will be applied.\\\nIn the case of a resource control applied to a stack, use the stack name as identifier",
+      "example": "617c5f22bb9b023d6daab7cba43a57576f83492867bc767d1c59416b065e5f08",
+      "type": "string"
+    },
+    "SubResourceIds": {
+      "description": "List of Docker resources that will inherit this access control",
+      "example": [
+        "617c5f22bb9b023d6daab7cba43a57576f83492867bc767d1c59416b065e5f08"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "System": {
+      "type": "boolean"
+    },
+    "TeamAccesses": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.TeamResourceAccess"
+      },
+      "type": "array"
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.ResourceControlType"
+        }
+      ],
+      "description": "Type of Docker resource. Valid values are: 1- container, 2 -service\n3 - volume, 4 - secret, 5 - stack, 6 - config or 7 - custom template",
+      "example": 1
+    },
+    "UserAccesses": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.UserResourceAccess"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
+```

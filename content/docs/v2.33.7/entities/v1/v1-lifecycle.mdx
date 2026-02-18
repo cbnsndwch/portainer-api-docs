@@ -1,0 +1,37 @@
+---
+title: "v1.Lifecycle"
+---
+
+
+
+```json
+{
+  "properties": {
+    "postStart": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.LifecycleHandler"
+        }
+      ],
+      "description": "PostStart is called immediately after a container is created. If the handler fails,\nthe container is terminated and restarted according to its restart policy.\nOther management of the container blocks until the hook completes.\nMore info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks\n+optional"
+    },
+    "preStop": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.LifecycleHandler"
+        }
+      ],
+      "description": "PreStop is called immediately before a container is terminated due to an\nAPI request or management event such as liveness/startup probe failure,\npreemption, resource contention, etc. The handler is not called if the\ncontainer crashes or exits. The Pod's termination grace period countdown begins before the\nPreStop hook is executed. Regardless of the outcome of the handler, the\ncontainer will eventually terminate within the Pod's termination grace\nperiod (unless delayed by finalizers). Other management of the container blocks until the hook completes\nor until the termination grace period is reached.\nMore info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks\n+optional"
+    },
+    "stopSignal": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.Signal"
+        }
+      ],
+      "description": "StopSignal defines which signal will be sent to a container when it is being stopped.\nIf not specified, the default is defined by the container runtime in use.\nStopSignal can only be set for Pods with a non-empty .spec.os.name\n+optional"
+    }
+  },
+  "type": "object"
+}
+```

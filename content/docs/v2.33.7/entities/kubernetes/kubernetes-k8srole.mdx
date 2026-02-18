@@ -1,0 +1,29 @@
+---
+title: "kubernetes.K8sRole"
+---
+
+
+
+```json
+{
+  "properties": {
+    "creationDate": {
+      "type": "string"
+    },
+    "isSystem": {
+      "description": "isSystem is true if prefixed with \"system:\" or exists in the kube-system namespace\nor is one of the portainer roles",
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

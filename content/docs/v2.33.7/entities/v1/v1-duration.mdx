@@ -1,0 +1,36 @@
+---
+title: "v1.Duration"
+---
+
+
+
+```json
+{
+  "properties": {
+    "time.Duration": {
+      "enum": [
+        -9223372036854776000,
+        9223372036854776000,
+        1,
+        1000,
+        1000000,
+        1000000000,
+        60000000000,
+        3600000000000
+      ],
+      "type": "integer",
+      "x-enum-varnames": [
+        "minDuration",
+        "maxDuration",
+        "Nanosecond",
+        "Microsecond",
+        "Millisecond",
+        "Second",
+        "Minute",
+        "Hour"
+      ]
+    }
+  },
+  "type": "object"
+}
+```

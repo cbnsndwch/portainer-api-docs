@@ -1,0 +1,61 @@
+---
+title: "v2.MetricSpec"
+---
+
+
+
+```json
+{
+  "properties": {
+    "containerResource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.ContainerResourceMetricSource"
+        }
+      ],
+      "description": "containerResource refers to a resource metric (such as those specified in\nrequests and limits) known to Kubernetes describing a single container in\neach pod of the current scale target (e.g. CPU or memory). Such metrics are\nbuilt in to Kubernetes, and have special scaling options on top of those\navailable to normal per-pod metrics using the \"pods\" source.\n+optional"
+    },
+    "external": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.ExternalMetricSource"
+        }
+      ],
+      "description": "external refers to a global metric that is not associated\nwith any Kubernetes object. It allows autoscaling based on information\ncoming from components running outside of cluster\n(for example length of queue in cloud messaging service, or\nQPS from loadbalancer running outside of cluster).\n+optional"
+    },
+    "object": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.ObjectMetricSource"
+        }
+      ],
+      "description": "object refers to a metric describing a single kubernetes object\n(for example, hits-per-second on an Ingress object).\n+optional"
+    },
+    "pods": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.PodsMetricSource"
+        }
+      ],
+      "description": "pods refers to a metric describing each pod in the current scale target\n(for example, transactions-processed-per-second).  The values will be\naveraged together before being compared to the target value.\n+optional"
+    },
+    "resource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.ResourceMetricSource"
+        }
+      ],
+      "description": "resource refers to a resource metric (such as those specified in\nrequests and limits) known to Kubernetes describing each pod in the\ncurrent scale target (e.g. CPU or memory). Such metrics are built in to\nKubernetes, and have special scaling options on top of those available\nto normal per-pod metrics using the \"pods\" source.\n+optional"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.MetricSourceType"
+        }
+      ],
+      "description": "type is the type of metric source.  It should be one of \"ContainerResource\", \"External\",\n\"Object\", \"Pods\" or \"Resource\", each mapping to a matching field in the object."
+    }
+  },
+  "type": "object"
+}
+```

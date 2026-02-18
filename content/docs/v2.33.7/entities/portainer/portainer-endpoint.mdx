@@ -1,0 +1,219 @@
+---
+title: "portainer.Endpoint"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AMTDeviceGUID": {
+      "description": "The identifier of the AMT Device associated with this endpoint",
+      "example": "4c4c4544-004b-3910-8037-b6c04f504633",
+      "type": "string"
+    },
+    "AuthorizedTeams": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "AuthorizedUsers": {
+      "description": "Deprecated in DBVersion == 18",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "AzureCredentials": {
+      "$ref": "#/components/schemas/portainer.AzureCredentials"
+    },
+    "ComposeSyntaxMaxVersion": {
+      "description": "Maximum version of docker-compose",
+      "example": "3.8",
+      "type": "string"
+    },
+    "ContainerEngine": {
+      "description": "ContainerEngine represents the container engine type. This can be 'docker' or 'podman' when interacting directly with these environmentes, otherwise '' for kubernetes environments.",
+      "example": "docker",
+      "type": "string"
+    },
+    "EdgeCheckinInterval": {
+      "description": "The check in interval for edge agent (in seconds)",
+      "example": 5,
+      "type": "integer"
+    },
+    "EdgeID": {
+      "description": "The identifier of the edge agent associated with this endpoint",
+      "type": "string"
+    },
+    "EdgeKey": {
+      "description": "The key which is used to map the agent to Portainer",
+      "type": "string"
+    },
+    "EnableGPUManagement": {
+      "type": "boolean"
+    },
+    "Gpus": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "GroupId": {
+      "description": "Environment(Endpoint) group identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "Heartbeat": {
+      "description": "Heartbeat indicates the heartbeat status of an edge environment",
+      "example": true,
+      "type": "boolean"
+    },
+    "Id": {
+      "description": "Environment(Endpoint) Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "IsEdgeDevice": {
+      "description": "Deprecated v2.18",
+      "type": "boolean"
+    },
+    "Kubernetes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.KubernetesData"
+        }
+      ],
+      "description": "Associated Kubernetes data"
+    },
+    "Name": {
+      "description": "Environment(Endpoint) name",
+      "example": "my-environment",
+      "type": "string"
+    },
+    "PostInitMigrations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EndpointPostInitMigrations"
+        }
+      ],
+      "description": "Whether we need to run any \"post init migrations\"."
+    },
+    "PublicURL": {
+      "description": "URL or IP address where exposed containers will be reachable",
+      "example": "docker.mydomain.tld:2375",
+      "type": "string"
+    },
+    "Snapshots": {
+      "description": "List of snapshots",
+      "items": {
+        "$ref": "#/components/schemas/portainer.DockerSnapshot"
+      },
+      "type": "array"
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EndpointStatus"
+        }
+      ],
+      "description": "The status of the endpoint (1 - up, 2 - down)",
+      "example": 1
+    },
+    "TLS": {
+      "description": "Deprecated fields\nDeprecated in DBVersion == 4",
+      "type": "boolean"
+    },
+    "TLSCACert": {
+      "type": "string"
+    },
+    "TLSCert": {
+      "type": "string"
+    },
+    "TLSConfig": {
+      "$ref": "#/components/schemas/portainer.TLSConfiguration"
+    },
+    "TLSKey": {
+      "type": "string"
+    },
+    "TagIds": {
+      "description": "List of tag identifiers to which this endpoint is associated",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "Tags": {
+      "description": "Deprecated in DBVersion == 22",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "TeamAccessPolicies": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.TeamAccessPolicies"
+        }
+      ],
+      "description": "List of team identifiers authorized to connect to this endpoint"
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EndpointType"
+        }
+      ],
+      "description": "Environment(Endpoint) endpoint type. 1 for a Docker endpoint, 2 for an agent on Docker endpoint or 3 for an Azure endpoint.",
+      "example": 1
+    },
+    "URL": {
+      "description": "URL or IP address of the Docker host associated to this endpoint",
+      "example": "docker.mydomain.tld:2375",
+      "type": "string"
+    },
+    "UserAccessPolicies": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.UserAccessPolicies"
+        }
+      ],
+      "description": "List of user identifiers authorized to connect to this endpoint"
+    },
+    "UserTrusted": {
+      "description": "Whether the device has been trusted or not by the user",
+      "type": "boolean"
+    },
+    "agent": {
+      "properties": {
+        "version": {
+          "example": "1.0.0",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "edge": {
+      "$ref": "#/components/schemas/portainer.EnvironmentEdgeSettings"
+    },
+    "lastCheckInDate": {
+      "description": "LastCheckInDate mark last check-in date on checkin",
+      "type": "integer"
+    },
+    "queryDate": {
+      "description": "QueryDate of each query with the endpoints list",
+      "type": "integer"
+    },
+    "securitySettings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EndpointSecuritySettings"
+        }
+      ],
+      "description": "Environment(Endpoint) specific security settings"
+    }
+  },
+  "type": "object"
+}
+```

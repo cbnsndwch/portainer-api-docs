@@ -1,0 +1,22 @@
+---
+title: "kubernetes.K8sVolumeInfo"
+---
+
+
+
+```json
+{
+  "properties": {
+    "persistentVolume": {
+      "$ref": "#/components/schemas/kubernetes.K8sPersistentVolume"
+    },
+    "persistentVolumeClaim": {
+      "$ref": "#/components/schemas/kubernetes.K8sPersistentVolumeClaim"
+    },
+    "storageClass": {
+      "$ref": "#/components/schemas/kubernetes.K8sStorageClass"
+    }
+  },
+  "type": "object"
+}
+```

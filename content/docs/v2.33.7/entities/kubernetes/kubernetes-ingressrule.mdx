@@ -1,0 +1,28 @@
+---
+title: "kubernetes.IngressRule"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Host": {
+      "type": "string"
+    },
+    "IP": {
+      "type": "string"
+    },
+    "Path": {
+      "type": "string"
+    },
+    "TLS": {
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.TLSInfo"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
+```

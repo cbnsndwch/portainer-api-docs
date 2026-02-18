@@ -1,6 +1,8 @@
 {
     "title": "Backup",
     "pages": [
-        "overview"
+        "overview",
+        "backup-backuppayload",
+        "backup-restorepayload"
     ]
 }

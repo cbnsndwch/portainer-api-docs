@@ -1,0 +1,38 @@
+---
+title: "portainer.AutoUpdateSettings"
+---
+
+
+
+```json
+{
+  "properties": {
+    "forcePullImage": {
+      "description": "Pull latest image",
+      "example": false,
+      "type": "boolean"
+    },
+    "forceUpdate": {
+      "description": "Force update ignores repo changes",
+      "example": false,
+      "type": "boolean"
+    },
+    "interval": {
+      "description": "Auto update interval",
+      "example": "1m30s",
+      "type": "string"
+    },
+    "jobID": {
+      "description": "Autoupdate job id",
+      "example": "15",
+      "type": "string"
+    },
+    "webhook": {
+      "description": "A UUID generated from client",
+      "example": "05de31a2-79fa-4644-9c12-faa67e5c49f0",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

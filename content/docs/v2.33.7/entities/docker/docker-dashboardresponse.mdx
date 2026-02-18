@@ -1,0 +1,31 @@
+---
+title: "docker.dashboardResponse"
+---
+
+
+
+```json
+{
+  "properties": {
+    "containers": {
+      "$ref": "#/components/schemas/docker.ContainerStats"
+    },
+    "images": {
+      "$ref": "#/components/schemas/docker.imagesCounters"
+    },
+    "networks": {
+      "type": "integer"
+    },
+    "services": {
+      "type": "integer"
+    },
+    "stacks": {
+      "type": "integer"
+    },
+    "volumes": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

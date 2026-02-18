@@ -1,0 +1,32 @@
+---
+title: "portainer.EnvironmentEdgeSettings"
+---
+
+
+
+```json
+{
+  "properties": {
+    "CommandInterval": {
+      "description": "The command list interval for edge agent - used in edge async mode [seconds]",
+      "example": 60,
+      "type": "integer"
+    },
+    "PingInterval": {
+      "description": "The ping interval for edge agent - used in edge async mode [seconds]",
+      "example": 60,
+      "type": "integer"
+    },
+    "SnapshotInterval": {
+      "description": "The snapshot interval for edge agent - used in edge async mode [seconds]",
+      "example": 60,
+      "type": "integer"
+    },
+    "asyncMode": {
+      "description": "Whether the device has been started in edge async mode",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

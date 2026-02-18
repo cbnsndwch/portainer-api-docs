@@ -1,0 +1,41 @@
+---
+title: "portainer.APIKey"
+---
+
+
+
+```json
+{
+  "properties": {
+    "dateCreated": {
+      "description": "Unix timestamp (UTC) when the API key was created",
+      "type": "integer"
+    },
+    "description": {
+      "example": "portainer-api-key",
+      "type": "string"
+    },
+    "digest": {
+      "description": "Digest represents SHA256 hash of the raw API key",
+      "type": "string"
+    },
+    "id": {
+      "example": 1,
+      "type": "integer"
+    },
+    "lastUsed": {
+      "description": "Unix timestamp (UTC) when the API key was last used",
+      "type": "integer"
+    },
+    "prefix": {
+      "description": "API key identifier (7 char prefix)",
+      "type": "string"
+    },
+    "userId": {
+      "example": 1,
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

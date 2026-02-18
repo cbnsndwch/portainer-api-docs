@@ -1,0 +1,20 @@
+---
+title: "v1.LoadBalancerStatus"
+---
+
+
+
+```json
+{
+  "properties": {
+    "ingress": {
+      "description": "Ingress is a list containing ingress points for the load-balancer.\nTraffic intended for the service should be sent to these ingress points.\n+optional\n+listType=atomic",
+      "items": {
+        "$ref": "#/components/schemas/v1.LoadBalancerIngress"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
+```

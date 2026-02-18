@@ -1,0 +1,41 @@
+---
+title: "v2.HorizontalPodAutoscalerCondition"
+---
+
+
+
+```json
+{
+  "properties": {
+    "lastTransitionTime": {
+      "description": "lastTransitionTime is the last time the condition transitioned from\none status to another\n+optional",
+      "type": "string"
+    },
+    "message": {
+      "description": "message is a human-readable explanation containing details about\nthe transition\n+optional",
+      "type": "string"
+    },
+    "reason": {
+      "description": "reason is the reason for the condition's last transition.\n+optional",
+      "type": "string"
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/k8s_io_api_core_v1.ConditionStatus"
+        }
+      ],
+      "description": "status is the status of the condition (True, False, Unknown)"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.HorizontalPodAutoscalerConditionType"
+        }
+      ],
+      "description": "type describes the current condition"
+    }
+  },
+  "type": "object"
+}
+```

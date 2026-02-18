@@ -1,0 +1,35 @@
+---
+title: "users.userCreatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "password": {
+      "example": "cg9Wgky3",
+      "type": "string"
+    },
+    "role": {
+      "description": "User role (1 for administrator account and 2 for regular account)",
+      "enum": [
+        1,
+        2
+      ],
+      "example": 2,
+      "type": "integer"
+    },
+    "username": {
+      "example": "bob",
+      "type": "string"
+    }
+  },
+  "required": [
+    "password",
+    "role",
+    "username"
+  ],
+  "type": "object"
+}
+```

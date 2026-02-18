@@ -1,0 +1,37 @@
+---
+title: "kubernetes.K8sRoleBinding"
+---
+
+
+
+```json
+{
+  "properties": {
+    "creationDate": {
+      "type": "string"
+    },
+    "isSystem": {
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "roleRef": {
+      "$ref": "#/components/schemas/v1.RoleRef"
+    },
+    "subjects": {
+      "items": {
+        "$ref": "#/components/schemas/k8s_io_api_rbac_v1.Subject"
+      },
+      "type": "array"
+    },
+    "uid": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,28 @@
+---
+title: "v1.ServiceStatus"
+---
+
+
+
+```json
+{
+  "properties": {
+    "conditions": {
+      "description": "Current service state\n+optional\n+patchMergeKey=type\n+patchStrategy=merge\n+listType=map\n+listMapKey=type",
+      "items": {
+        "$ref": "#/components/schemas/v1.Condition"
+      },
+      "type": "array"
+    },
+    "loadBalancer": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.LoadBalancerStatus"
+        }
+      ],
+      "description": "LoadBalancer contains the current status of the load-balancer,\nif one is present.\n+optional"
+    }
+  },
+  "type": "object"
+}
+```

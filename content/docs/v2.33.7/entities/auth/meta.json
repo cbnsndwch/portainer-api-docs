@@ -1,6 +1,9 @@
 {
     "title": "Auth",
     "pages": [
-        "overview"
+        "overview",
+        "auth-authenticatepayload",
+        "auth-authenticateresponse",
+        "auth-oauthpayload"
     ]
 }

@@ -1,0 +1,38 @@
+---
+title: "portainer.TLSConfiguration"
+---
+
+
+
+```json
+{
+  "properties": {
+    "TLS": {
+      "description": "Use TLS",
+      "example": true,
+      "type": "boolean"
+    },
+    "TLSCACert": {
+      "description": "Path to the TLS CA certificate file",
+      "example": "/data/tls/ca.pem",
+      "type": "string"
+    },
+    "TLSCert": {
+      "description": "Path to the TLS client certificate file",
+      "example": "/data/tls/cert.pem",
+      "type": "string"
+    },
+    "TLSKey": {
+      "description": "Path to the TLS client key file",
+      "example": "/data/tls/key.pem",
+      "type": "string"
+    },
+    "TLSSkipVerify": {
+      "description": "Skip the verification of the server TLS certificate",
+      "example": false,
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

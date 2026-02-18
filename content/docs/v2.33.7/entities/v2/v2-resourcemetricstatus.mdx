@@ -1,0 +1,29 @@
+---
+title: "v2.ResourceMetricStatus"
+---
+
+
+
+```json
+{
+  "properties": {
+    "current": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.MetricValueStatus"
+        }
+      ],
+      "description": "current contains the current value for the given metric"
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ResourceName"
+        }
+      ],
+      "description": "name is the name of the resource in question."
+    }
+  },
+  "type": "object"
+}
+```

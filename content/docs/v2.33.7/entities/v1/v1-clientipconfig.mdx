@@ -1,0 +1,17 @@
+---
+title: "v1.ClientIPConfig"
+---
+
+
+
+```json
+{
+  "properties": {
+    "timeoutSeconds": {
+      "description": "timeoutSeconds specifies the seconds of ClientIP type session sticky time.\nThe value must be >0 && <=86400(for 1 day) if ServiceAffinity == \"ClientIP\".\nDefault value is 10800(for 3 hours).\n+optional",
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

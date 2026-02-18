@@ -1,0 +1,54 @@
+---
+title: "github_com_portainer_portainer_pkg_libhelm_release.Hook"
+---
+
+
+
+```json
+{
+  "properties": {
+    "delete_policies": {
+      "description": "DeletePolicies are the policies that indicate when to delete the hook",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "events": {
+      "description": "Events are the events that this hook fires on.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "kind": {
+      "description": "Kind is the Kubernetes kind.",
+      "type": "string"
+    },
+    "last_run": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/github_com_portainer_portainer_pkg_libhelm_release.HookExecution"
+        }
+      ],
+      "description": "LastRun indicates the date/time this was last run."
+    },
+    "manifest": {
+      "description": "Manifest is the manifest contents.",
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "path": {
+      "description": "Path is the chart-relative path to the template.",
+      "type": "string"
+    },
+    "weight": {
+      "description": "Weight indicates the sort order for execution among similar Hook type",
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

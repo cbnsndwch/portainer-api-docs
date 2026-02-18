@@ -1,0 +1,9 @@
+{
+    "title": "Edgegroups",
+    "pages": [
+        "overview",
+        "edgegroups-decoratededgegroup",
+        "edgegroups-edgegroupcreatepayload",
+        "edgegroups-edgegroupupdatepayload"
+    ]
+}

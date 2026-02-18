@@ -1,0 +1,39 @@
+---
+title: "stacks.composeStackFromFileContentPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "env": {
+      "description": "A list of environment variables used during stack deployment",
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "fromAppTemplate": {
+      "description": "Whether the stack is from a app template",
+      "example": false,
+      "type": "boolean"
+    },
+    "name": {
+      "description": "Name of the stack",
+      "example": "myStack",
+      "type": "string"
+    },
+    "stackFileContent": {
+      "description": "Content of the Stack file",
+      "example": "version: 3\n services:\n web:\n image:nginx",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "stackFileContent"
+  ],
+  "type": "object"
+}
+```

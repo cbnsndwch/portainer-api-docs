@@ -1,0 +1,131 @@
+---
+title: "kubernetes.K8sApplication"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Annotations": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "ApplicationOwner": {
+      "type": "string"
+    },
+    "ApplicationType": {
+      "type": "string"
+    },
+    "Configurations": {
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.Configuration"
+      },
+      "type": "array"
+    },
+    "Containers": {
+      "items": {},
+      "type": "array"
+    },
+    "CreationDate": {
+      "type": "string"
+    },
+    "CustomResourceMetadata": {
+      "$ref": "#/components/schemas/kubernetes.CustomResourceMetadata"
+    },
+    "DeploymentType": {
+      "type": "string"
+    },
+    "HorizontalPodAutoscaler": {
+      "$ref": "#/components/schemas/v2.HorizontalPodAutoscaler"
+    },
+    "Id": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "string"
+    },
+    "Kind": {
+      "type": "string"
+    },
+    "Labels": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "LoadBalancerIPAddress": {
+      "type": "string"
+    },
+    "MatchLabels": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "Metadata": {
+      "$ref": "#/components/schemas/kubernetes.Metadata"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Namespace": {
+      "type": "string"
+    },
+    "Pods": {
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.Pod"
+      },
+      "type": "array"
+    },
+    "PublishedPorts": {
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.PublishedPort"
+      },
+      "type": "array"
+    },
+    "Resource": {
+      "$ref": "#/components/schemas/kubernetes.K8sApplicationResource"
+    },
+    "ResourcePool": {
+      "type": "string"
+    },
+    "RunningPodsCount": {
+      "type": "integer"
+    },
+    "ServiceId": {
+      "type": "string"
+    },
+    "ServiceName": {
+      "type": "string"
+    },
+    "ServiceType": {
+      "type": "string"
+    },
+    "Services": {
+      "items": {
+        "$ref": "#/components/schemas/v1.Service"
+      },
+      "type": "array"
+    },
+    "StackId": {
+      "type": "string"
+    },
+    "StackName": {
+      "type": "string"
+    },
+    "Status": {
+      "type": "string"
+    },
+    "TotalPodsCount": {
+      "type": "integer"
+    },
+    "Uid": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

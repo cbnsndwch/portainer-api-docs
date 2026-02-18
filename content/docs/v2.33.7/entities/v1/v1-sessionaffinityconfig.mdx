@@ -1,0 +1,21 @@
+---
+title: "v1.SessionAffinityConfig"
+---
+
+
+
+```json
+{
+  "properties": {
+    "clientIP": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ClientIPConfig"
+        }
+      ],
+      "description": "clientIP contains the configurations of Client IP based session affinity.\n+optional"
+    }
+  },
+  "type": "object"
+}
+```

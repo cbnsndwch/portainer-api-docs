@@ -1,6 +1,8 @@
 {
     "title": "Templates",
     "pages": [
-        "overview"
+        "overview",
+        "templates-fileresponse",
+        "templates-listresponse"
     ]
 }

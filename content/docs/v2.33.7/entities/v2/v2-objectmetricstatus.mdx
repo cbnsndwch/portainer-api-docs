@@ -1,0 +1,37 @@
+---
+title: "v2.ObjectMetricStatus"
+---
+
+
+
+```json
+{
+  "properties": {
+    "current": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.MetricValueStatus"
+        }
+      ],
+      "description": "current contains the current value for the given metric"
+    },
+    "describedObject": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.CrossVersionObjectReference"
+        }
+      ],
+      "description": "DescribedObject specifies the descriptions of a object,such as kind,name apiVersion"
+    },
+    "metric": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.MetricIdentifier"
+        }
+      ],
+      "description": "metric identifies the target metric by name and selector"
+    }
+  },
+  "type": "object"
+}
+```

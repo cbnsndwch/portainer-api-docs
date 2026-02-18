@@ -1,0 +1,10 @@
+{
+    "title": "Customtemplates",
+    "pages": [
+        "overview",
+        "customtemplates-customtemplatefromfilecontentpayload",
+        "customtemplates-customtemplatefromgitrepositorypayload",
+        "customtemplates-customtemplateupdatepayload",
+        "customtemplates-fileresponse"
+    ]
+}

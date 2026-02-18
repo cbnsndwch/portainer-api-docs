@@ -1,6 +1,16 @@
 {
     "title": "Endpoints",
     "pages": [
-        "overview"
+        "overview",
+        "endpoints-dockerhubstatusresponse",
+        "endpoints-endpointcreateglobalkeyresponse",
+        "endpoints-endpointdeletebatchpartialresponse",
+        "endpoints-endpointdeletebatchpayload",
+        "endpoints-endpointdeleterequest",
+        "endpoints-endpointsettingsupdatepayload",
+        "endpoints-endpointupdatepayload",
+        "endpoints-endpointupdaterelationspayload",
+        "endpoints-forceupdateservicepayload",
+        "endpoints-registryaccesspayload"
     ]
 }

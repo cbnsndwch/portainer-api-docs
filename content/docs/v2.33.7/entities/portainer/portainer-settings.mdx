@@ -1,0 +1,160 @@
+---
+title: "portainer.Settings"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AgentSecret": {
+      "description": "Container environment parameter AGENT_SECRET",
+      "type": "string"
+    },
+    "AllowBindMountsForRegularUsers": {
+      "type": "boolean"
+    },
+    "AllowContainerCapabilitiesForRegularUsers": {
+      "type": "boolean"
+    },
+    "AllowDeviceMappingForRegularUsers": {
+      "type": "boolean"
+    },
+    "AllowHostNamespaceForRegularUsers": {
+      "type": "boolean"
+    },
+    "AllowPrivilegedModeForRegularUsers": {
+      "type": "boolean"
+    },
+    "AllowStackManagementForRegularUsers": {
+      "type": "boolean"
+    },
+    "AllowVolumeBrowserForRegularUsers": {
+      "type": "boolean"
+    },
+    "AuthenticationMethod": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.AuthenticationMethod"
+        }
+      ],
+      "description": "Active authentication method for the Portainer instance. Valid values are: 1 for internal, 2 for LDAP, or 3 for oauth",
+      "example": 1
+    },
+    "BlackListedLabels": {
+      "description": "A list of label name & value that will be used to hide containers when querying containers",
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "DisplayDonationHeader": {
+      "description": "Deprecated fields",
+      "type": "boolean"
+    },
+    "DisplayExternalContributors": {
+      "type": "boolean"
+    },
+    "Edge": {
+      "$ref": "#/components/schemas/portainer.Edge"
+    },
+    "EdgeAgentCheckinInterval": {
+      "description": "The default check in interval for edge agent (in seconds)",
+      "example": 5,
+      "type": "integer"
+    },
+    "EdgePortainerUrl": {
+      "description": "EdgePortainerURL is the URL that is exposed to edge agents",
+      "type": "string"
+    },
+    "EnableEdgeComputeFeatures": {
+      "description": "Whether edge compute features are enabled",
+      "type": "boolean"
+    },
+    "EnableHostManagementFeatures": {
+      "description": "Deprecated fields v26",
+      "type": "boolean"
+    },
+    "EnableTelemetry": {
+      "description": "Whether telemetry is enabled",
+      "example": false,
+      "type": "boolean"
+    },
+    "EnforceEdgeID": {
+      "description": "EnforceEdgeID makes Portainer store the Edge ID instead of accepting anyone",
+      "example": false,
+      "type": "boolean"
+    },
+    "FeatureFlagSettings": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "type": "object"
+    },
+    "GlobalDeploymentOptions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.GlobalDeploymentOptions"
+        }
+      ],
+      "description": "Deployment options for encouraging git ops workflows"
+    },
+    "HelmRepositoryURL": {
+      "description": "Helm repository URL, defaults to \"https://charts.bitnami.com/bitnami\"",
+      "example": "https://charts.bitnami.com/bitnami",
+      "type": "string"
+    },
+    "InternalAuthSettings": {
+      "$ref": "#/components/schemas/portainer.InternalAuthSettings"
+    },
+    "IsDockerDesktopExtension": {
+      "type": "boolean"
+    },
+    "KubeconfigExpiry": {
+      "description": "The expiry of a Kubeconfig",
+      "example": "24h",
+      "type": "string"
+    },
+    "KubectlShellImage": {
+      "description": "KubectlImage, defaults to portainer/kubectl-shell",
+      "example": "portainer/kubectl-shell",
+      "type": "string"
+    },
+    "LDAPSettings": {
+      "$ref": "#/components/schemas/portainer.LDAPSettings"
+    },
+    "LogoURL": {
+      "description": "URL to a logo that will be displayed on the login page as well as on top of the sidebar. Will use default Portainer logo when value is empty string",
+      "example": "https://mycompany.mydomain.tld/logo.png",
+      "type": "string"
+    },
+    "OAuthSettings": {
+      "$ref": "#/components/schemas/portainer.OAuthSettings"
+    },
+    "SnapshotInterval": {
+      "description": "The interval in which endpoint snapshots are created",
+      "example": "5m",
+      "type": "string"
+    },
+    "TemplatesURL": {
+      "description": "URL to the templates that will be displayed in the UI when navigating to App Templates",
+      "example": "https://raw.githubusercontent.com/portainer/templates/master/templates.json",
+      "type": "string"
+    },
+    "TrustOnFirstConnect": {
+      "description": "TrustOnFirstConnect makes Portainer accepting edge agent connection by default",
+      "example": false,
+      "type": "boolean"
+    },
+    "UserSessionTimeout": {
+      "description": "The duration of a user session",
+      "example": "5m",
+      "type": "string"
+    },
+    "openAMTConfiguration": {
+      "$ref": "#/components/schemas/portainer.OpenAMTConfiguration"
+    }
+  },
+  "type": "object"
+}
+```

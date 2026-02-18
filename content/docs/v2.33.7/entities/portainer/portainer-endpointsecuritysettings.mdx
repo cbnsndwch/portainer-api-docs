@@ -1,0 +1,58 @@
+---
+title: "portainer.EndpointSecuritySettings"
+---
+
+
+
+```json
+{
+  "properties": {
+    "allowBindMountsForRegularUsers": {
+      "description": "Whether non-administrator should be able to use bind mounts when creating containers",
+      "example": false,
+      "type": "boolean"
+    },
+    "allowContainerCapabilitiesForRegularUsers": {
+      "description": "Whether non-administrator should be able to use container capabilities",
+      "example": true,
+      "type": "boolean"
+    },
+    "allowDeviceMappingForRegularUsers": {
+      "description": "Whether non-administrator should be able to use device mapping",
+      "example": true,
+      "type": "boolean"
+    },
+    "allowHostNamespaceForRegularUsers": {
+      "description": "Whether non-administrator should be able to use the host pid",
+      "example": true,
+      "type": "boolean"
+    },
+    "allowPrivilegedModeForRegularUsers": {
+      "description": "Whether non-administrator should be able to use privileged mode when creating containers",
+      "example": false,
+      "type": "boolean"
+    },
+    "allowStackManagementForRegularUsers": {
+      "description": "Whether non-administrator should be able to manage stacks",
+      "example": true,
+      "type": "boolean"
+    },
+    "allowSysctlSettingForRegularUsers": {
+      "description": "Whether non-administrator should be able to use sysctl settings",
+      "example": true,
+      "type": "boolean"
+    },
+    "allowVolumeBrowserForRegularUsers": {
+      "description": "Whether non-administrator should be able to browse volumes",
+      "example": true,
+      "type": "boolean"
+    },
+    "enableHostManagementFeatures": {
+      "description": "Whether host management features are enabled",
+      "example": true,
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

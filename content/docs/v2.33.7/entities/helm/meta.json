@@ -1,6 +1,7 @@
 {
     "title": "Helm",
     "pages": [
-        "overview"
+        "overview",
+        "helm-installchartpayload"
     ]
 }

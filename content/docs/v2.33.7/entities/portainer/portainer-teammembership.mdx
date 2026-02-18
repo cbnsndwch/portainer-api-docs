@@ -1,0 +1,37 @@
+---
+title: "portainer.TeamMembership"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Id": {
+      "description": "Membership Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "Role": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.MembershipRole"
+        }
+      ],
+      "description": "Team role (1 for team leader and 2 for team member)",
+      "example": 1
+    },
+    "TeamID": {
+      "description": "Team identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "UserID": {
+      "description": "User identifier",
+      "example": 1,
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

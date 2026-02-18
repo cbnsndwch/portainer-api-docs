@@ -1,0 +1,120 @@
+---
+title: "portainer.Registry"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AccessToken": {
+      "description": "Stores temporary access token",
+      "type": "string"
+    },
+    "AccessTokenExpiry": {
+      "type": "integer"
+    },
+    "Authentication": {
+      "description": "Is authentication against this registry enabled",
+      "example": true,
+      "type": "boolean"
+    },
+    "AuthorizedTeams": {
+      "description": "Deprecated in DBVersion == 18",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "AuthorizedUsers": {
+      "description": "Deprecated in DBVersion == 18",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "BaseURL": {
+      "description": "Base URL, introduced for ProGet registry",
+      "example": "registry.mydomain.tld:2375",
+      "type": "string"
+    },
+    "Ecr": {
+      "$ref": "#/components/schemas/portainer.EcrData"
+    },
+    "Github": {
+      "$ref": "#/components/schemas/portainer.GithubRegistryData"
+    },
+    "Gitlab": {
+      "$ref": "#/components/schemas/portainer.GitlabRegistryData"
+    },
+    "Id": {
+      "description": "Registry Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "ManagementConfiguration": {
+      "$ref": "#/components/schemas/portainer.RegistryManagementConfiguration"
+    },
+    "Name": {
+      "description": "Registry Name",
+      "example": "my-registry",
+      "type": "string"
+    },
+    "Password": {
+      "description": "Password or SecretAccessKey used to authenticate against this registry",
+      "example": "registry_password",
+      "type": "string"
+    },
+    "Quay": {
+      "$ref": "#/components/schemas/portainer.QuayRegistryData"
+    },
+    "RegistryAccesses": {
+      "$ref": "#/components/schemas/portainer.RegistryAccesses"
+    },
+    "TeamAccessPolicies": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.TeamAccessPolicies"
+        }
+      ],
+      "description": "Deprecated in DBVersion == 31"
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.RegistryType"
+        }
+      ],
+      "description": "Registry Type (1 - Quay, 2 - Azure, 3 - Custom, 4 - Gitlab, 5 - ProGet, 6 - DockerHub, 7 - ECR)",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "URL": {
+      "description": "URL or IP address of the Docker registry",
+      "example": "registry.mydomain.tld:2375",
+      "type": "string"
+    },
+    "UserAccessPolicies": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.UserAccessPolicies"
+        }
+      ],
+      "description": "Deprecated fields\nDeprecated in DBVersion == 31"
+    },
+    "Username": {
+      "description": "Username or AccessKeyID used to authenticate against this registry",
+      "example": "registry user",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

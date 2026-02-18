@@ -1,0 +1,46 @@
+---
+title: "portainer.K8sNamespaceInfo"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Annotations": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "CreationDate": {
+      "type": "string"
+    },
+    "Id": {
+      "type": "string"
+    },
+    "IsDefault": {
+      "type": "boolean"
+    },
+    "IsSystem": {
+      "type": "boolean"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "NamespaceOwner": {
+      "type": "string"
+    },
+    "ResourceQuota": {
+      "$ref": "#/components/schemas/v1.ResourceQuota"
+    },
+    "Status": {
+      "$ref": "#/components/schemas/v1.NamespaceStatus"
+    },
+    "UnhealthyEventCount": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

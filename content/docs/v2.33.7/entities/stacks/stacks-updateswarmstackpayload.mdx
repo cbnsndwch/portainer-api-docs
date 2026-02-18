@@ -1,0 +1,35 @@
+---
+title: "stacks.updateSwarmStackPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "env": {
+      "description": "A list of endpoint variables used during stack deployment",
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "prune": {
+      "description": "Prune services that are no longer referenced (only available for Swarm stacks)",
+      "example": true,
+      "type": "boolean"
+    },
+    "pullImage": {
+      "description": "Force a pulling to current image with the original tag though the image is already the latest",
+      "example": false,
+      "type": "boolean"
+    },
+    "stackFileContent": {
+      "description": "New content of the Stack file",
+      "example": "version: 3\n services:\n web:\n image:nginx",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,45 @@
+---
+title: "stacks.stackGitRedployPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "env": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "prune": {
+      "type": "boolean"
+    },
+    "pullImage": {
+      "description": "Force a pulling to current image with the original tag though the image is already the latest",
+      "example": false,
+      "type": "boolean"
+    },
+    "repositoryAuthentication": {
+      "type": "boolean"
+    },
+    "repositoryAuthorizationType": {
+      "$ref": "#/components/schemas/gittypes.GitCredentialAuthType"
+    },
+    "repositoryPassword": {
+      "type": "string"
+    },
+    "repositoryReferenceName": {
+      "type": "string"
+    },
+    "repositoryUsername": {
+      "type": "string"
+    },
+    "stackName": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

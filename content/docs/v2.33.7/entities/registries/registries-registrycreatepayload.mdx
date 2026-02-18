@@ -1,0 +1,91 @@
+---
+title: "registries.registryCreatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "authentication": {
+      "description": "Is authentication against this registry enabled",
+      "example": false,
+      "type": "boolean"
+    },
+    "baseURL": {
+      "description": "BaseURL required for ProGet registry",
+      "example": "registry.mydomain.tld:2375",
+      "type": "string"
+    },
+    "ecr": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EcrData"
+        }
+      ],
+      "description": "ECR specific details, required when type = 7"
+    },
+    "gitlab": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.GitlabRegistryData"
+        }
+      ],
+      "description": "Gitlab specific details, required when type = 4"
+    },
+    "name": {
+      "description": "Name that will be used to identify this registry",
+      "example": "my-registry",
+      "type": "string"
+    },
+    "password": {
+      "description": "Password used to authenticate against this registry. required when Authentication is true",
+      "example": "registry_password",
+      "type": "string"
+    },
+    "quay": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.QuayRegistryData"
+        }
+      ],
+      "description": "Quay specific details, required when type = 1"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.RegistryType"
+        }
+      ],
+      "description": "Registry Type. Valid values are:\n\t1 (Quay.io),\n\t2 (Azure container registry),\n\t3 (custom registry),\n\t4 (Gitlab registry),\n\t5 (ProGet registry),\n\t6 (DockerHub)\n\t7 (ECR)",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "example": 1
+    },
+    "url": {
+      "description": "URL or IP address of the Docker registry",
+      "example": "registry.mydomain.tld:2375/feed",
+      "type": "string"
+    },
+    "username": {
+      "description": "Username used to authenticate against this registry. Required when Authentication is true",
+      "example": "registry_user",
+      "type": "string"
+    }
+  },
+  "required": [
+    "authentication",
+    "name",
+    "type",
+    "url"
+  ],
+  "type": "object"
+}
+```

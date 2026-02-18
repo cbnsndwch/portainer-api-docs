@@ -1,0 +1,45 @@
+---
+title: "gitops.repositoryFilePreviewPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "authorizationType": {
+      "$ref": "#/components/schemas/gittypes.GitCredentialAuthType"
+    },
+    "password": {
+      "example": "myGitPassword",
+      "type": "string"
+    },
+    "reference": {
+      "example": "refs/heads/master",
+      "type": "string"
+    },
+    "repository": {
+      "example": "https://github.com/openfaas/faas",
+      "type": "string"
+    },
+    "targetFile": {
+      "description": "Path to file whose content will be read",
+      "example": "docker-compose.yml",
+      "type": "string"
+    },
+    "tlsskipVerify": {
+      "description": "TLSSkipVerify skips SSL verification when cloning the Git repository",
+      "example": false,
+      "type": "boolean"
+    },
+    "username": {
+      "example": "myGitUsername",
+      "type": "string"
+    }
+  },
+  "required": [
+    "repository"
+  ],
+  "type": "object"
+}
+```

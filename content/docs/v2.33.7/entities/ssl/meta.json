@@ -1,6 +1,7 @@
 {
     "title": "Ssl",
     "pages": [
-        "overview"
+        "overview",
+        "ssl-sslupdatepayload"
     ]
 }

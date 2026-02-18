@@ -1,6 +1,18 @@
 {
     "title": "Stacks",
     "pages": [
-        "overview"
+        "overview",
+        "stacks-composestackfromfilecontentpayload",
+        "stacks-composestackfromgitrepositorypayload",
+        "stacks-kubernetesgitdeploymentpayload",
+        "stacks-kubernetesmanifesturldeploymentpayload",
+        "stacks-kubernetesstringdeploymentpayload",
+        "stacks-stackfileresponse",
+        "stacks-stackgitredploypayload",
+        "stacks-stackgitupdatepayload",
+        "stacks-stackmigratepayload",
+        "stacks-swarmstackfromfilecontentpayload",
+        "stacks-swarmstackfromgitrepositorypayload",
+        "stacks-updateswarmstackpayload"
     ]
 }

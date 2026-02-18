@@ -1,6 +1,9 @@
 {
     "title": "Docker",
     "pages": [
-        "overview"
+        "overview",
+        "docker-containerstats",
+        "docker-dashboardresponse",
+        "docker-imagescounters"
     ]
 }

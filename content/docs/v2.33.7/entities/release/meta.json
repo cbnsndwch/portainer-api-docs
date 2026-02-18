@@ -1,0 +1,15 @@
+{
+    "title": "Release",
+    "pages": [
+        "overview",
+        "release-chart",
+        "release-chartreference",
+        "release-dependency",
+        "release-file",
+        "release-lock",
+        "release-maintainer",
+        "release-metadata",
+        "release-releaseelement",
+        "release-values"
+    ]
+}

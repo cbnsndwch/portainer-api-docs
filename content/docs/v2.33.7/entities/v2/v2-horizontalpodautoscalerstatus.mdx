@@ -1,0 +1,43 @@
+---
+title: "v2.HorizontalPodAutoscalerStatus"
+---
+
+
+
+```json
+{
+  "properties": {
+    "conditions": {
+      "description": "conditions is the set of conditions required for this autoscaler to scale its target,\nand indicates whether or not those conditions are met.\n+patchMergeKey=type\n+patchStrategy=merge\n+listType=map\n+listMapKey=type\n+optional",
+      "items": {
+        "$ref": "#/components/schemas/v2.HorizontalPodAutoscalerCondition"
+      },
+      "type": "array"
+    },
+    "currentMetrics": {
+      "description": "currentMetrics is the last read state of the metrics used by this autoscaler.\n+listType=atomic\n+optional",
+      "items": {
+        "$ref": "#/components/schemas/v2.MetricStatus"
+      },
+      "type": "array"
+    },
+    "currentReplicas": {
+      "description": "currentReplicas is current number of replicas of pods managed by this autoscaler,\nas last seen by the autoscaler.\n+optional",
+      "type": "integer"
+    },
+    "desiredReplicas": {
+      "description": "desiredReplicas is the desired number of replicas of pods managed by this autoscaler,\nas last calculated by the autoscaler.",
+      "type": "integer"
+    },
+    "lastScaleTime": {
+      "description": "lastScaleTime is the last time the HorizontalPodAutoscaler scaled the number of pods,\nused by the autoscaler to control how often the number of pods is changed.\n+optional",
+      "type": "string"
+    },
+    "observedGeneration": {
+      "description": "observedGeneration is the most recent generation observed by this autoscaler.\n+optional",
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

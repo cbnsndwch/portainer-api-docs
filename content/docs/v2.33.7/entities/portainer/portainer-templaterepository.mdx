@@ -1,0 +1,23 @@
+---
+title: "portainer.TemplateRepository"
+---
+
+
+
+```json
+{
+  "properties": {
+    "stackfile": {
+      "description": "Path to the stack file inside the git repository",
+      "example": "./subfolder/docker-compose.yml",
+      "type": "string"
+    },
+    "url": {
+      "description": "URL of a git repository used to deploy a stack template. Mandatory for a Swarm/Compose stack template",
+      "example": "https://github.com/portainer/portainer-compose",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

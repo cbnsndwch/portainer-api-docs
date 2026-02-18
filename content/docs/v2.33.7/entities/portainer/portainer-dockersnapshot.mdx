@@ -1,0 +1,79 @@
+---
+title: "portainer.DockerSnapshot"
+---
+
+
+
+```json
+{
+  "properties": {
+    "ContainerCount": {
+      "type": "integer"
+    },
+    "DiagnosticsData": {
+      "$ref": "#/components/schemas/portainer.DiagnosticsData"
+    },
+    "DockerSnapshotRaw": {
+      "$ref": "#/components/schemas/portainer.DockerSnapshotRaw"
+    },
+    "DockerVersion": {
+      "type": "string"
+    },
+    "GpuUseAll": {
+      "type": "boolean"
+    },
+    "GpuUseList": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "HealthyContainerCount": {
+      "type": "integer"
+    },
+    "ImageCount": {
+      "type": "integer"
+    },
+    "IsPodman": {
+      "type": "boolean"
+    },
+    "NodeCount": {
+      "type": "integer"
+    },
+    "PerformanceMetrics": {
+      "$ref": "#/components/schemas/portainer.PerformanceMetrics"
+    },
+    "RunningContainerCount": {
+      "type": "integer"
+    },
+    "ServiceCount": {
+      "type": "integer"
+    },
+    "StackCount": {
+      "type": "integer"
+    },
+    "StoppedContainerCount": {
+      "type": "integer"
+    },
+    "Swarm": {
+      "type": "boolean"
+    },
+    "Time": {
+      "type": "integer"
+    },
+    "TotalCPU": {
+      "type": "integer"
+    },
+    "TotalMemory": {
+      "type": "integer"
+    },
+    "UnhealthyContainerCount": {
+      "type": "integer"
+    },
+    "VolumeCount": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

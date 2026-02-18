@@ -1,0 +1,29 @@
+---
+title: "v2.PodsMetricStatus"
+---
+
+
+
+```json
+{
+  "properties": {
+    "current": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.MetricValueStatus"
+        }
+      ],
+      "description": "current contains the current value for the given metric"
+    },
+    "metric": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.MetricIdentifier"
+        }
+      ],
+      "description": "metric identifies the target metric by name and selector"
+    }
+  },
+  "type": "object"
+}
+```

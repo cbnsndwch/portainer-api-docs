@@ -1,0 +1,62 @@
+---
+title: "edgegroups.decoratedEdgeGroup"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Dynamic": {
+      "type": "boolean"
+    },
+    "EndpointIds": {
+      "description": "Shadow to avoid exposing in the API",
+      "type": "integer"
+    },
+    "Endpoints": {
+      "description": "Deprecated: only used for API responses",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "HasEdgeJob": {
+      "type": "boolean"
+    },
+    "HasEdgeStack": {
+      "type": "boolean"
+    },
+    "Id": {
+      "description": "EdgeGroup Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "PartialMatch": {
+      "type": "boolean"
+    },
+    "TagIds": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "TrustedEndpoints": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "endpointTypes": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.EndpointType"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
+```

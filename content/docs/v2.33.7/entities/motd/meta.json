@@ -1,6 +1,7 @@
 {
     "title": "Motd",
     "pages": [
-        "overview"
+        "overview",
+        "motd-motdresponse"
     ]
 }

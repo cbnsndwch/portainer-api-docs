@@ -1,0 +1,89 @@
+---
+title: "stacks.composeStackFromGitRepositoryPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "additionalFiles": {
+      "description": "Applicable when deploying with multiple stack files",
+      "example": [
+        "[nz.compose.yml",
+        " uat.compose.yml]"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "autoUpdate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.AutoUpdateSettings"
+        }
+      ],
+      "description": "Optional GitOps update configuration"
+    },
+    "composeFile": {
+      "default": "docker-compose.yml",
+      "description": "Path to the Stack file inside the Git repository",
+      "example": "docker-compose.yml",
+      "type": "string"
+    },
+    "env": {
+      "description": "A list of environment variables used during stack deployment",
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "fromAppTemplate": {
+      "description": "Whether the stack is from a app template",
+      "example": false,
+      "type": "boolean"
+    },
+    "name": {
+      "description": "Name of the stack",
+      "example": "myStack",
+      "type": "string"
+    },
+    "repositoryAuthentication": {
+      "description": "Use basic authentication to clone the Git repository",
+      "example": true,
+      "type": "boolean"
+    },
+    "repositoryPassword": {
+      "description": "Password used in basic authentication. Required when RepositoryAuthentication is true.",
+      "example": "myGitPassword",
+      "type": "string"
+    },
+    "repositoryReferenceName": {
+      "description": "Reference name of a Git repository hosting the Stack file",
+      "example": "refs/heads/master",
+      "type": "string"
+    },
+    "repositoryURL": {
+      "description": "URL of a Git repository hosting the Stack file",
+      "example": "https://github.com/openfaas/faas",
+      "type": "string"
+    },
+    "repositoryUsername": {
+      "description": "Username used in basic authentication. Required when RepositoryAuthentication is true.",
+      "example": "myGitUsername",
+      "type": "string"
+    },
+    "tlsskipVerify": {
+      "description": "TLSSkipVerify skips SSL verification when cloning the Git repository",
+      "example": false,
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "name",
+    "repositoryURL"
+  ],
+  "type": "object"
+}
+```

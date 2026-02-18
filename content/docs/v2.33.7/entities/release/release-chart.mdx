@@ -1,0 +1,55 @@
+---
+title: "release.Chart"
+---
+
+
+
+```json
+{
+  "properties": {
+    "files": {
+      "description": "Files are miscellaneous files in a chart archive,\ne.g. README, LICENSE, etc.",
+      "items": {
+        "$ref": "#/components/schemas/release.File"
+      },
+      "type": "array"
+    },
+    "lock": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/release.Lock"
+        }
+      ],
+      "description": "Lock is the contents of Chart.lock."
+    },
+    "metadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/release.Metadata"
+        }
+      ],
+      "description": "Metadata is the contents of the Chartfile."
+    },
+    "schema": {
+      "description": "Schema is an optional JSON schema for imposing structure on Values",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "templates": {
+      "description": "Templates for this chart.",
+      "items": {
+        "$ref": "#/components/schemas/release.File"
+      },
+      "type": "array"
+    },
+    "values": {
+      "additionalProperties": {},
+      "description": "Values are default config for this chart.",
+      "type": "object"
+    }
+  },
+  "type": "object"
+}
+```

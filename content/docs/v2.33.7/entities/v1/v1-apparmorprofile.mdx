@@ -1,0 +1,25 @@
+---
+title: "v1.AppArmorProfile"
+---
+
+
+
+```json
+{
+  "properties": {
+    "localhostProfile": {
+      "description": "localhostProfile indicates a profile loaded on the node that should be used.\nThe profile must be preconfigured on the node to work.\nMust match the loaded name of the profile.\nMust be set if and only if type is \"Localhost\".\n+optional",
+      "type": "string"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.AppArmorProfileType"
+        }
+      ],
+      "description": "type indicates which kind of AppArmor profile will be applied.\nValid options are:\n  Localhost - a profile pre-loaded on the node.\n  RuntimeDefault - the container runtime's default profile.\n  Unconfined - no AppArmor enforcement.\n+unionDiscriminator"
+    }
+  },
+  "type": "object"
+}
+```

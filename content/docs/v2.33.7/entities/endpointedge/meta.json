@@ -1,0 +1,9 @@
+{
+    "title": "Endpointedge",
+    "pages": [
+        "overview",
+        "endpointedge-edgejobresponse",
+        "endpointedge-endpointedgestatusinspectresponse",
+        "endpointedge-stackstatusresponse"
+    ]
+}

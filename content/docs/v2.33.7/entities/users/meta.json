@@ -1,6 +1,15 @@
 {
     "title": "Users",
     "pages": [
-        "overview"
+        "overview",
+        "users-accesstokenresponse",
+        "users-addhelmrepourlpayload",
+        "users-admininitpayload",
+        "users-helmuserrepositoryresponse",
+        "users-themepayload",
+        "users-useraccesstokencreatepayload",
+        "users-usercreatepayload",
+        "users-userupdatepasswordpayload",
+        "users-userupdatepayload"
     ]
 }

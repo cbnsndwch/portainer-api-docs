@@ -1,0 +1,58 @@
+---
+title: "portainer.OAuthSettings"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AccessTokenURI": {
+      "type": "string"
+    },
+    "AuthStyle": {
+      "$ref": "#/components/schemas/oauth2.AuthStyle"
+    },
+    "AuthorizationURI": {
+      "type": "string"
+    },
+    "ClientID": {
+      "type": "string"
+    },
+    "ClientSecret": {
+      "type": "string"
+    },
+    "DefaultTeamID": {
+      "type": "integer"
+    },
+    "KubeSecretKey": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "LogoutURI": {
+      "type": "string"
+    },
+    "OAuthAutoCreateUsers": {
+      "type": "boolean"
+    },
+    "RedirectURI": {
+      "type": "string"
+    },
+    "ResourceURI": {
+      "type": "string"
+    },
+    "SSO": {
+      "type": "boolean"
+    },
+    "Scopes": {
+      "type": "string"
+    },
+    "UserIdentifier": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,44 @@
+---
+title: "github_com_portainer_portainer_pkg_libhelm_release.Info"
+---
+
+
+
+```json
+{
+  "properties": {
+    "deleted": {
+      "description": "Deleted tracks when this object was deleted.",
+      "type": "string"
+    },
+    "description": {
+      "description": "Description is human-friendly \"log entry\" about this release.",
+      "type": "string"
+    },
+    "first_deployed": {
+      "description": "FirstDeployed is when the release was first deployed.",
+      "type": "string"
+    },
+    "last_deployed": {
+      "description": "LastDeployed is when the release was last deployed.",
+      "type": "string"
+    },
+    "notes": {
+      "description": "Contains the rendered templates/NOTES.txt if available",
+      "type": "string"
+    },
+    "resources": {
+      "description": "Resources is the list of resources that are part of the release",
+      "items": {
+        "$ref": "#/components/schemas/unstructured.Unstructured"
+      },
+      "type": "array"
+    },
+    "status": {
+      "description": "Status is the current state of the release",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

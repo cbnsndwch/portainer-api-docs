@@ -1,0 +1,68 @@
+---
+title: "portainer.EndpointGroup"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AuthorizedTeams": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "AuthorizedUsers": {
+      "description": "Deprecated in DBVersion == 18",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "Description": {
+      "description": "Description associated to the endpoint group",
+      "example": "Environment(Endpoint) group description",
+      "type": "string"
+    },
+    "Id": {
+      "description": "Environment(Endpoint) group Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "Labels": {
+      "description": "Deprecated fields",
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "Name": {
+      "description": "Environment(Endpoint) group name",
+      "example": "my-environment-group",
+      "type": "string"
+    },
+    "TagIds": {
+      "description": "List of tags associated to this endpoint group",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "Tags": {
+      "description": "Deprecated in DBVersion == 22",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "TeamAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.TeamAccessPolicies"
+    },
+    "UserAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.UserAccessPolicies"
+    }
+  },
+  "type": "object"
+}
+```

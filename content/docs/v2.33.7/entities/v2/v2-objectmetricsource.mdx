@@ -1,0 +1,37 @@
+---
+title: "v2.ObjectMetricSource"
+---
+
+
+
+```json
+{
+  "properties": {
+    "describedObject": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.CrossVersionObjectReference"
+        }
+      ],
+      "description": "describedObject specifies the descriptions of a object,such as kind,name apiVersion"
+    },
+    "metric": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.MetricIdentifier"
+        }
+      ],
+      "description": "metric identifies the target metric by name and selector"
+    },
+    "target": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v2.MetricTarget"
+        }
+      ],
+      "description": "target specifies the target value for the given metric"
+    }
+  },
+  "type": "object"
+}
+```

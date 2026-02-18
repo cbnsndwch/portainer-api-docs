@@ -1,0 +1,11 @@
+{
+    "title": "V1beta1",
+    "pages": [
+        "overview",
+        "v1beta1-containermetrics",
+        "v1beta1-nodemetrics",
+        "v1beta1-nodemetricslist",
+        "v1beta1-podmetrics",
+        "v1beta1-podmetricslist"
+    ]
+}

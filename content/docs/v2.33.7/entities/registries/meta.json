@@ -1,6 +1,9 @@
 {
     "title": "Registries",
     "pages": [
-        "overview"
+        "overview",
+        "registries-registryconfigurepayload",
+        "registries-registrycreatepayload",
+        "registries-registryupdatepayload"
     ]
 }

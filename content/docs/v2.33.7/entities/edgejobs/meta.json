@@ -1,0 +1,11 @@
+{
+    "title": "Edgejobs",
+    "pages": [
+        "overview",
+        "edgejobs-edgejobcreatefromfilecontentpayload",
+        "edgejobs-edgejobfileresponse",
+        "edgejobs-edgejobupdatepayload",
+        "edgejobs-fileresponse",
+        "edgejobs-taskcontainer"
+    ]
+}

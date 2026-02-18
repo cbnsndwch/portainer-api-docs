@@ -1,0 +1,132 @@
+---
+title: "portainer.Stack"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AdditionalFiles": {
+      "description": "Only applies when deploying stack with multiple files",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "AutoUpdate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.AutoUpdateSettings"
+        }
+      ],
+      "description": "The GitOps update settings of a git stack"
+    },
+    "EndpointId": {
+      "description": "Environment(Endpoint) identifier. Reference the endpoint that will be used for deployment",
+      "example": 1,
+      "type": "integer"
+    },
+    "EntryPoint": {
+      "description": "Path to the Stack file",
+      "example": "docker-compose.yml",
+      "type": "string"
+    },
+    "Env": {
+      "description": "A list of endpoint variables used during stack deployment",
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "Id": {
+      "description": "Stack Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "Name": {
+      "description": "Stack name",
+      "example": "myStack",
+      "type": "string"
+    },
+    "Option": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.StackOption"
+        }
+      ],
+      "description": "The stack deployment option"
+    },
+    "ResourceControl": {
+      "$ref": "#/components/schemas/portainer.ResourceControl"
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.StackStatus"
+        }
+      ],
+      "description": "Stack status (1 - active, 2 - inactive)",
+      "example": 1
+    },
+    "SwarmId": {
+      "description": "Cluster identifier of the Swarm cluster where the stack is deployed",
+      "example": "jpofkc0i9uo9wtx1zesuk649w",
+      "type": "string"
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.StackType"
+        }
+      ],
+      "description": "Stack type. 1 for a Swarm stack, 2 for a Compose stack",
+      "example": 2
+    },
+    "createdBy": {
+      "description": "The username which created this stack",
+      "example": "admin",
+      "type": "string"
+    },
+    "creationDate": {
+      "description": "The date in unix time when stack was created",
+      "example": 1587399600,
+      "type": "integer"
+    },
+    "fromAppTemplate": {
+      "description": "Whether the stack is from a app template",
+      "example": false,
+      "type": "boolean"
+    },
+    "gitConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/gittypes.RepoConfig"
+        }
+      ],
+      "description": "The git config of this stack"
+    },
+    "namespace": {
+      "description": "Kubernetes namespace if stack is a kube application",
+      "example": "default",
+      "type": "string"
+    },
+    "projectPath": {
+      "description": "Path on disk to the repository hosting the Stack file",
+      "example": "/data/compose/myStack_jpofkc0i9uo9wtx1zesuk649w",
+      "type": "string"
+    },
+    "updateDate": {
+      "description": "The date in unix time when stack was last updated",
+      "example": 1587399600,
+      "type": "integer"
+    },
+    "updatedBy": {
+      "description": "The username which last updated this stack",
+      "example": "bob",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

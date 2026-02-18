@@ -1,6 +1,8 @@
 {
     "title": "Webhooks",
     "pages": [
-        "overview"
+        "overview",
+        "webhooks-webhookcreatepayload",
+        "webhooks-webhookupdatepayload"
     ]
 }
