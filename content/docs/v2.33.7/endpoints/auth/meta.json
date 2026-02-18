@@ -1,0 +1,8 @@
+{
+    "title": "Auth",
+    "pages": [
+        "post-auth",
+        "post-auth-logout",
+        "post-auth-oauth-validate"
+    ]
+}

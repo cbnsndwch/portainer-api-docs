@@ -1,0 +1,16 @@
+{
+    "title": "Edge Jobs",
+    "pages": [
+        "delete-edge-jobs-id",
+        "delete-edge-jobs-id-tasks-taskid-logs",
+        "get-edge-jobs",
+        "get-edge-jobs-id",
+        "get-edge-jobs-id-file",
+        "get-edge-jobs-id-tasks",
+        "get-edge-jobs-id-tasks-taskid-logs",
+        "post-edge-jobs-create-file",
+        "post-edge-jobs-create-string",
+        "post-edge-jobs-id-tasks-taskid-logs",
+        "put-edge-jobs-id"
+    ]
+}

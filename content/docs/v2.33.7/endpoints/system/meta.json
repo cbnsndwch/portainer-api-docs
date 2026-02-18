@@ -1,0 +1,10 @@
+{
+    "title": "System",
+    "pages": [
+        "get-system-info",
+        "get-system-nodes",
+        "get-system-status",
+        "get-system-version",
+        "post-system-upgrade"
+    ]
+}

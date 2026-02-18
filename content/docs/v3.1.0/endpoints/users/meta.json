@@ -1,0 +1,18 @@
+{
+    "title": "Users",
+    "pages": [
+        "delete-users-id",
+        "delete-users-id-tokens-keyid",
+        "get-users",
+        "get-users-admin-check",
+        "get-users-id",
+        "get-users-id-memberships",
+        "get-users-id-tokens",
+        "get-users-me",
+        "post-users",
+        "post-users-admin-init",
+        "post-users-id-tokens",
+        "put-users-id",
+        "put-users-id-passwd"
+    ]
+}
