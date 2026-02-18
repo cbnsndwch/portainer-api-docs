@@ -17,12 +17,21 @@
       "exitCode": 1,
       "completionDetected": false,
       "errors": []
+    },
+    {
+      "iteration": 3,
+      "startedAt": "2026-02-18T21:18:36.612Z",
+      "endedAt": "2026-02-18T21:18:36.618Z",
+      "durationMs": 6,
+      "exitCode": 1,
+      "completionDetected": false,
+      "errors": []
     }
   ],
-  "totalDurationMs": 102426,
+  "totalDurationMs": 102432,
   "struggleIndicators": {
     "repeatedErrors": {},
     "noProgressIterations": 0,
-    "shortIterations": 1
+    "shortIterations": 2
   }
 }
