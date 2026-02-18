@@ -1,3 +1,81 @@
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+.yarn/versions
+.pnp.*
+
+# Dependencies & compiled output
+**/node_modules
+**/.pnp.*
+**/.terraform
+lib
+build
+dist
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# macOS
+.DS_Store
+
+# Tests
+coverage
+.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Others
+lerna-debug.log
+npm-debug.log
+tsconfig.tsbuildinfo
+.n
+
+# Environments and credentials
+.docker/*.env
+**/*.env
+**/.env*
+*credentials
+**/infisical-keyring
+
+# Local docs and tests
+.local
+coverage
+**/*.tsbuildinfo
+
+# workspace root Turbo files
+/.turbo/cookies
+/.turbo/daemon
+/.turbo/cache
+/.turbo/preferences/tui.json
+
+# local DBs
+*.db
+*.db-shm
+*.db-wal
+*.db-wal2
+
 # deps
 /node_modules
 

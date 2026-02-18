@@ -1,0 +1,1 @@
+rewrite the current file as clean markdown

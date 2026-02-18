@@ -1,0 +1,12 @@
+.vscode
+assets
+dist
+node_modules
+.editorconfig
+.gitignore
+.prettierignore
+.prettierrc
+.env
+
+# pnpm
+pnpm-lock.yaml

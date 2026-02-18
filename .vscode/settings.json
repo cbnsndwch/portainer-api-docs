@@ -1,0 +1,64 @@
+{
+    "cSpell.words": [
+        "fumadocs",
+        "gitops",
+        "llms",
+        "Scira",
+        "shiki",
+        "unrs"
+    ],
+    "debug.inlineValues": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        80
+    ],
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        ".env": ".env.*",
+        ".eslintrc.cjs": ".eslintrc.*.cjs,.eslintignore",
+        ".eslintrc.js": ".eslintrc.*.js,.eslintignore",
+        ".eslintrc.json": ".eslintrc.*.json,.eslintignore",
+        ".gitignore": ".gitkeep,.gitattributes",
+        ".prettierrc": ".prettierignore",
+        ".prettierrc.json": ".prettierrc.*.json,.prettierignore",
+        "*.cjs": "${capture}.cjs.map, ${capture}.min.cjs",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts, ${capture}.http",
+        "*.json": "${capture}.js,${capture}.ts",
+        "*.ts": "${capture}.js,${capture}.spec.ts,${capture}.spec-d.ts,${capture}.spec.tsx,${capture}.spec-d.tsx,${capture}.options.ts,${capture}.test.ts,${capture}.test-d.ts,${capture}.test.tsx,${capture}.test-d.tsx,${capture}.stories.ts,${capture}.stories.tsx,${capture}.mdx,${capture}.css,${capture}.module.css",
+        "*.tsx": "${capture}.jsx,${capture}.spec.tsx,${capture}.spec-d.tsx,${capture}.test.tsx,${capture}.test-d.tsx,${capture}.stories.tsx,${capture}.stories.ts,${capture}.mdx,${capture}.css,${capture}.module.css",
+        "Dockerfile": "Dockerfile.*,docker-compose.yml,docker-compose.*.yml",
+        "package.json": "package-lock.json,yarn.lock,pnpm-lock.yaml",
+        "tsconfig.json": "tsconfig.*.json,tsconfig.tsbuildinfo",
+        "vite.config.mts": "vitest.config.mts, vite.config.mts.timestamp-*.mjs"
+    },
+    "files.associations": {
+        ".env": "dotenv",
+        "*.css": "tailwindcss"
+    },
+    "files.eol": "\n",
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/.turbo/**": true,
+        "**/node_modules/*/**": true
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "markdown": true,
+        "plaintext": false,
+        "scminput": false,
+        "typescript": true
+    },
+    "prettier.prettierPath": "node_modules/prettier/index.cjs",
+    "vite.autoStart": false,
+    "vite.buildCommand": "pnpm build",
+    "vite.port": 5173,
+    "vite.showTerminal": true,
+    "vsicons.presets.foldersAllDefaultIcon": false,
+    "vsicons.presets.hideExplorerArrows": false,
+    "vsicons.presets.hideFolders": false,
+    "vsicons.presets.jsOfficial": false,
+    "vsicons.presets.nestjs": true,
+    "vsicons.presets.tsOfficial": false
+}
