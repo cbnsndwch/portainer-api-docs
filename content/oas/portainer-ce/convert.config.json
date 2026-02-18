@@ -1,0 +1,85 @@
+{
+    "serverDescription": "Portainer CE API — relative to your Portainer instance base URL.",
+    "tagDescriptions": {
+        "auth": "Authenticate against the Portainer API and manage API sessions.",
+        "backup": "Back up and restore the Portainer configuration.",
+        "custom_templates": "Manage custom stack templates.",
+        "docker": "Proxy requests to the Docker API for a specific environment.",
+        "edge": "Manage Edge Agent settings for an environment.",
+        "edge_groups": "Manage Edge Groups.",
+        "edge_jobs": "Manage Edge Jobs (scripts scheduled on Edge environments).",
+        "edge_stacks": "Manage Edge Stacks.",
+        "edge_templates": "Manage Edge Templates.",
+        "endpoint_groups": "Manage environment groups.",
+        "endpoints": "Manage Portainer environments (Docker, Kubernetes, Edge, etc.).",
+        "gitops": "Preview and interact with Git repositories.",
+        "helm": "Deploy and manage Helm charts on Kubernetes environments.",
+        "intel": "Manage Intel AMT (Active Management Technology) settings.",
+        "kubernetes": "Manage resources within a Kubernetes environment.",
+        "ldap": "Configure and test LDAP authentication.",
+        "motd": "Retrieve the Portainer message of the day.",
+        "registries": "Manage container image registries.",
+        "resource_controls": "Manage access control on Docker and Kubernetes resources.",
+        "roles": "Manage RBAC roles.",
+        "settings": "Manage global Portainer settings.",
+        "ssl": "Manage TLS/SSL settings.",
+        "stacks": "Manage Docker Compose and Swarm stacks.",
+        "status": "Basic status information about the Portainer instance.",
+        "system": "System-level information and operations.",
+        "tags": "Manage environment tags.",
+        "team_memberships": "Manage team membership assignments.",
+        "teams": "Manage teams.",
+        "templates": "Manage App Templates.",
+        "upload": "Upload TLS certificate files.",
+        "users": "Manage Portainer users.",
+        "webhooks": "Manage webhooks for automated stack redeployment.",
+        "websocket": "Create interactive exec sessions via WebSocket."
+    },
+    "tagGroups": [
+        { "name": "Authentication", "tags": ["auth"] },
+        {
+            "name": "Users & Teams",
+            "tags": ["users", "teams", "team_memberships", "roles"]
+        },
+        { "name": "Environments", "tags": ["endpoints", "endpoint_groups"] },
+        {
+            "name": "Edge Computing",
+            "tags": [
+                "edge",
+                "edge_groups",
+                "edge_jobs",
+                "edge_stacks",
+                "edge_templates"
+            ]
+        },
+        { "name": "Kubernetes", "tags": ["kubernetes", "helm"] },
+        {
+            "name": "Docker & Stacks",
+            "tags": [
+                "docker",
+                "stacks",
+                "registries",
+                "webhooks",
+                "resource_controls"
+            ]
+        },
+        { "name": "Templates", "tags": ["templates", "custom_templates"] },
+        { "name": "Intel AMT", "tags": ["intel"] },
+        {
+            "name": "System & Settings",
+            "tags": [
+                "settings",
+                "ssl",
+                "system",
+                "status",
+                "backup",
+                "motd",
+                "upload",
+                "ldap",
+                "tags"
+            ]
+        },
+        { "name": "GitOps", "tags": ["gitops"] },
+        { "name": "WebSocket", "tags": ["websocket"] }
+    ]
+}
