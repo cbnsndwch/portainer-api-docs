@@ -1,35 +1,47 @@
 {
-  "name": "portainer-ce-api-docs",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "start": "next start",
-    "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
-    "postinstall": "fumadocs-mdx",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "fumadocs-core": "16.6.3",
-    "fumadocs-mdx": "14.2.7",
-    "fumadocs-ui": "16.6.3",
-    "lucide-react": "^0.570.0",
-    "next": "16.1.6",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "tailwind-merge": "^3.4.1"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.18",
-    "@types/mdx": "^2.0.13",
-    "@types/node": "^25.2.3",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3",
-    "eslint-config-next": "16.1.6",
-    "eslint": "^10.0.0"
-  }
+    "name": "@cbnsndwch/portainer-ce-api-docs",
+    "description": "API Docs for the Portainer CE API",
+    "version": "0.0.0",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "start": "next start",
+        "format": "prettier --write .",
+        "postinstall": "fumadocs-mdx",
+        "types": "fumadocs-mdx && next typegen && tsc --noEmit",
+        "lint": "eslint",
+        "convert-oas": "tsx scripts/convert-to-oas31.ts"
+    },
+    "dependencies": {
+        "fumadocs-core": "16.6.3",
+        "fumadocs-mdx": "14.2.7",
+        "fumadocs-openapi": "^10.3.6",
+        "fumadocs-ui": "16.6.3",
+        "lucide-react": "^0.570.0",
+        "next": "16.1.6",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4",
+        "shiki": "^3.22.0",
+        "tailwind-merge": "^3.4.1"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.18",
+        "@types/js-yaml": "^4.0.9",
+        "@types/mdx": "^2.0.13",
+        "@types/node": "^25.2.3",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "eslint": "^10.0.0",
+        "eslint-config-next": "16.1.6",
+        "js-yaml": "^4.1.1",
+        "npm-check-updates": "^19.3.2",
+        "postcss": "^8.5.6",
+        "prettier": "^3.8.1",
+        "swagger2openapi": "^7.0.8",
+        "tailwindcss": "^4.1.18",
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3"
+    }
 }
