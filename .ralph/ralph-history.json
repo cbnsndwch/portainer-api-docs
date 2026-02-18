@@ -116,12 +116,30 @@
       "exitCode": 1,
       "completionDetected": false,
       "errors": []
+    },
+    {
+      "iteration": 14,
+      "startedAt": "2026-02-18T21:18:48.290Z",
+      "endedAt": "2026-02-18T21:18:48.295Z",
+      "durationMs": 4,
+      "exitCode": 1,
+      "completionDetected": false,
+      "errors": []
+    },
+    {
+      "iteration": 14,
+      "startedAt": "2026-02-18T21:20:01.906Z",
+      "endedAt": "2026-02-18T21:37:43.314Z",
+      "durationMs": 1061404,
+      "exitCode": 0,
+      "completionDetected": false,
+      "errors": []
     }
   ],
-  "totalDurationMs": 102480,
+  "totalDurationMs": 1163888,
   "struggleIndicators": {
     "repeatedErrors": {},
     "noProgressIterations": 0,
-    "shortIterations": 12
+    "shortIterations": 0
   }
 }
