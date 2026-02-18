@@ -22,6 +22,8 @@ type SpecMeta = {
      * Tags not in any group are appended alphabetically at the end.
      */
     tagOrder: string[];
+    /** raw schemas from components.schemas */
+    schemas: Record<string, any>;
 };
 
 const OAS_DIR = path.resolve(process.cwd(), 'content/oas/portainer-ce');
@@ -85,7 +87,17 @@ async function loadSpecMeta(filePath: string): Promise<SpecMeta> {
         }
     }
 
-    return { title, description, tagLabels, tagDescriptions, tagOrder };
+    const components = (doc['components'] ?? {}) as Record<string, any>;
+    const schemas = (components['schemas'] ?? {}) as Record<string, any>;
+
+    return {
+        title,
+        description,
+        tagLabels,
+        tagDescriptions,
+        tagOrder,
+        schemas
+    };
 }
 
 function toVersionFolder(version: string): string {
@@ -206,6 +218,20 @@ async function main() {
         per: 'custom',
         toPages(builder) {
             const items = builder.extract();
+            // Debugging what is available in items
+            // console.log('Builder extracted items keys:', Object.keys(items));
+
+            // Try to access the document to get schemas directly if items doesn't have them
+            // console.log('Builder keys:', Object.keys(builder));
+
+            const schemas = (items as any).schemas;
+
+            if (schemas) {
+                for (const [name, schema] of Object.entries(schemas)) {
+                    // Logic to process schemas will go here
+                    // console.log(`Schema found: ${name}`);
+                }
+            }
 
             for (const op of items.operations) {
                 const operationInfo = builder.fromExtractedOperation(op);
@@ -259,6 +285,61 @@ async function main() {
             for (const versionFolder of versionFolders) {
                 const specMeta = specMetaByVersion.get(versionFolder);
 
+                // --- SCHEMA GENERATION START ---
+                const schemas = specMeta?.schemas ?? {};
+                const schemaPagesByTag = new Map<string, string[]>();
+
+                for (const [schemaName, schema] of Object.entries(schemas)) {
+                    let tag = 'untagged';
+                    if (
+                        schema['x-tags'] &&
+                        Array.isArray(schema['x-tags']) &&
+                        schema['x-tags'].length > 0
+                    ) {
+                        tag = schema['x-tags'][0];
+                    } else {
+                        // Match by name prefix
+                        // e.g. auth.authenticatePayload -> auth
+                        const parts = schemaName.split('.');
+                        if (parts.length > 1) {
+                            tag = parts[0];
+                        }
+                    }
+
+                    const tagSlug = toSlug(tag);
+                    const schemaPageSlug = toSlug(schemaName);
+
+                    const schemaTitle = schema.title ?? schemaName;
+                    const schemaDescription = schema.description ?? '';
+
+                    // Create schema page content
+                    const content = `---
+title: ${JSON.stringify(schemaTitle)}
+---
+
+${schemaDescription}
+
+\`\`\`json
+${JSON.stringify(schema, null, 2)}
+\`\`\`
+`;
+
+                    generatedFiles.push({
+                        path: path.join(
+                            versionFolder,
+                            'entities',
+                            tagSlug,
+                            `${schemaPageSlug}.mdx`
+                        ),
+                        content
+                    });
+
+                    const pages = schemaPagesByTag.get(tagSlug) ?? [];
+                    pages.push(schemaPageSlug);
+                    schemaPagesByTag.set(tagSlug, pages);
+                }
+                // --- SCHEMA GENERATION END ---
+
                 const indexDescription = specMeta?.description
                     ? specMeta.description.trim()
                     : `Generated API reference for ${versionFolder}. Use the Entities and Endpoints sections in the sidebar to browse service groups and endpoints.`;
@@ -285,9 +366,14 @@ async function main() {
                     )
                 });
 
-                const allTagSlugs = Array.from(tagToPages.keys())
-                    .filter(key => key.startsWith(`${versionFolder}/`))
-                    .map(key => key.split('/')[1]);
+                const allTagSlugs = Array.from(
+                    new Set([
+                        ...Array.from(tagToPages.keys())
+                            .filter(key => key.startsWith(`${versionFolder}/`))
+                            .map(key => key.split('/')[1]),
+                        ...Array.from(schemaPagesByTag.keys())
+                    ])
+                );
 
                 // Order by x-tagGroups order from the spec, fall back to alpha
                 const orderedTagNames = specMeta?.tagOrder ?? [];
@@ -323,7 +409,9 @@ async function main() {
                     content: JSON.stringify(
                         {
                             title: 'Endpoints',
-                            pages: tags
+                            pages: tags.filter(tagSlug =>
+                                tagToPages.has(`${versionFolder}/${tagSlug}`)
+                            )
                         },
                         null,
                         4
@@ -360,6 +448,12 @@ async function main() {
                             `${entityDescription}\n`
                     });
 
+                    const schemaPages = schemaPagesByTag.get(tagSlug) ?? [];
+                    const entityPages = [
+                        'overview',
+                        ...schemaPages.sort((a, b) => a.localeCompare(b))
+                    ];
+
                     generatedFiles.push({
                         path: path.join(
                             versionFolder,
@@ -368,7 +462,7 @@ async function main() {
                             'meta.json'
                         ),
                         content: JSON.stringify(
-                            { title: entityTitle, pages: ['overview'] },
+                            { title: entityTitle, pages: entityPages },
                             null,
                             4
                         )
