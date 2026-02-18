@@ -10,7 +10,7 @@ A **Next.js + Fumadocs** documentation site for the [Portainer CE API](https://p
 | ---------------------------------------------- | ---------------------------------------------------------------------------- |
 | `scripts/convert-to-oas31.ts`                  | End-to-end Swagger 2.0 → OAS 3.1.0 converter (`pnpm convert-oas`)            |
 | `scripts/convert-to-oas31.md`                  | Documentation for the converter                                              |
-| `scripts/generate-docs.ts`                     | Generates `content/docs/<version>/` MDX tree from OAS specs                  |
+| `scripts/generate-docs.ts`                     | Generates `content/docs/v2.33.7/` MDX tree from OAS specs                    |
 | `content/oas/portainer-ce/3.1.0.yml`           | Canonical OAS 3.1.0 spec (converted & cleaned from Swagger 2.0)              |
 | `content/oas/portainer-ce/convert.config.json` | Sidecar converter config — tag descriptions, x-tagGroups, server description |
 | `src/components/api-page.tsx`                  | Server component rendering a single API endpoint page                        |
@@ -56,22 +56,24 @@ pnpm tsx scripts/generate-docs.ts
 
 ## `generate-docs.ts` — what it does with the spec
 
-- Discovers all `.yml` files in `content/oas/portainer-ce/` and maps them to version folders (`3.1.0.yml` → `v3.1.0/`).
+- Discovers all `.yml` files in `content/oas/portainer-ce/` and maps them to version folders using the **filename stem** (`3.1.0.yml` → `v3.1.0/`). This is a known mismatch — the current spec's product version is `2.33.7` but the file is named for its OAS format version. The `v2.33.7/` docs folder was manually renamed as a workaround; the pipeline still needs a proper fix (see Next steps).
 - Pre-loads `SpecMeta` (tag names, descriptions, `x-tagGroups` order, `info.description`) via `loadSpecMeta()`.
 - Uses `x-tagGroups` order for sidebar navigation (not alphabetical).
-- Entity overview pages use the tag's `description` from the spec.
+- For each tag, generates an `entities/<tag>/overview.mdx` page (from the tag's `description`) and a stub `meta.json` listing only `overview`. **No schema component pages are generated** — the entities subfolders are effectively empty beyond the overview.
 - Version `index.mdx` uses `info.description` from the spec.
 
 ## Known issue — version folder naming
 
-`generate-docs.ts` derives the version folder name from the **filename** (`3.1.0.yml` → `v3.1.0`), not `info.version` (`2.33.7`). The generated docs therefore live under `content/docs/v3.1.0/` instead of `content/docs/v2.33.7/`. Decide whether to:
+`generate-docs.ts` derives the version folder name from the **filename stem** (`3.1.0.yml` → `v3.1.0`), not `info.version` (`2.33.7`). The `content/docs/v2.33.7/` folder was created by manually renaming the originally generated `v3.1.0/` folder, but the pipeline is not yet fixed — re-running `generate-docs.ts` would regenerate `content/docs/v3.1.0/` again. The fix must be one of:
 
-- Rename `3.1.0.yml` → `2.33.7.yml` (now that it's OAS 3.1, the filename can reflect the API product version), or
-- Change `discoverSpecs()` to read `info.version` instead of the filename.
+- Rename `3.1.0.yml` → `2.33.7.yml` (filename reflects the API product version, not the OAS format version), or
+- Change `discoverSpecs()` to read `info.version` from the parsed spec instead of the filename.
 
 ## Next steps
 
-1. **Fix the 19 pre-existing lint errors** in `3.1.0.yml` — path param mismatches and missing `security` fields.
-2. **Resolve the version folder naming issue** (see above).
-3. **Check fumadocs-openapi `x-tagGroups` support** — the extension is in the spec; verify whether `fumadocs-openapi` renders it natively or if `generate-docs.ts` already handles everything needed.
-4. **Add future Portainer CE releases** — place a new Swagger 2.0 file in `content/oas/portainer-ce/` and run `pnpm convert-oas` — the `convert.config.json` is picked up automatically.
+1. **Resolve the version folder naming issue** — either rename `3.1.0.yml` → `2.33.7.yml` or change `discoverSpecs()` to read `info.version` from the parsed spec; without this every `generate-docs` run would regenerate `v3.1.0/` and overwrite the manually renamed `v2.33.7/` folder.
+2. **Generate schema component pages inside entity subfolders** — `entities/<tag>/` currently only contains `overview.mdx`. `generate-docs.ts` needs to parse `components/schemas` from the spec, associate each schema with its tag (via `x-tags` or naming convention), and emit an MDX page per schema so the subfolder is actually useful.
+3. **Make the server URL configurable by the user** — the API playground UI has the server URL hardcoded (visible in the screenshot); it must be settable per-user so developers can point it at their own Portainer instance.
+4. **Fix the 19 pre-existing lint errors** in `3.1.0.yml` — path param mismatches (3×) and operations missing a `security` field (15×), plus the 1× `no-identical-paths`.
+5. **Check fumadocs-openapi `x-tagGroups` support** — the extension is in the spec; verify whether `fumadocs-openapi` renders it natively or if `generate-docs.ts` already handles everything needed.
+6. **Add future Portainer CE releases** — place a new Swagger 2.0 file in `content/oas/portainer-ce/` and run `pnpm convert-oas` — the `convert.config.json` is picked up automatically.
