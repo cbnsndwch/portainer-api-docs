@@ -1,0 +1,16 @@
+{
+    "name": "cbn-ralph",
+    "version": "0.1.0",
+    "description": "Iterative AI agent loop for cbn development",
+    "type": "module",
+    "main": "ralph.ts",
+    "scripts": {
+        "start": "tsx ralph.ts",
+        "ralph": "tsx ralph.ts"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "tsx": "^4.19.0",
+        "@types/node": "^22"
+    }
+}
