@@ -98,12 +98,21 @@
       "exitCode": 1,
       "completionDetected": false,
       "errors": []
+    },
+    {
+      "iteration": 12,
+      "startedAt": "2026-02-18T21:18:46.167Z",
+      "endedAt": "2026-02-18T21:18:46.172Z",
+      "durationMs": 5,
+      "exitCode": 1,
+      "completionDetected": false,
+      "errors": []
     }
   ],
-  "totalDurationMs": 102471,
+  "totalDurationMs": 102476,
   "struggleIndicators": {
     "repeatedErrors": {},
     "noProgressIterations": 0,
-    "shortIterations": 10
+    "shortIterations": 11
   }
 }
