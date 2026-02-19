@@ -19,19 +19,23 @@ export function CustomPlayground({
     initialBaseUrl = '/api', // Default fallback
     ...props
 }: CustomPlaygroundProps) {
-    const [baseUrl, setBaseUrl] = useState(initialBaseUrl);
+    // Initialize mounted state - will be set to true after first render
     const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-        const stored = localStorage.getItem('portainer_api_url');
-        if (stored) {
-            setBaseUrl(stored);
-        } else {
-            // If nothing stored, use the initialBaseUrl (which comes from the spec)
-            setBaseUrl(initialBaseUrl);
+    
+    // Initialize baseUrl from localStorage if available, otherwise use initialBaseUrl
+    const [baseUrl, setBaseUrl] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const stored = localStorage.getItem('portainer_api_url');
+            return stored || initialBaseUrl;
         }
-    }, [initialBaseUrl]);
+        return initialBaseUrl;
+    });
+
+    // Set mounted to true after first render
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- Necessary to avoid hydration mismatch
+        setMounted(true);
+    }, []);
 
     const handleUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newUrl = e.target.value;
