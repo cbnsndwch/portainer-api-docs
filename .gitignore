@@ -11,7 +11,9 @@
 **/node_modules
 **/.pnp.*
 **/.terraform
-lib
+/lib
+!src/lib/
+!src/lib/**
 build
 dist
 
