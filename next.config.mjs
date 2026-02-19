@@ -6,6 +6,15 @@ const withMDX = createMDX();
 const config = {
     reactStrictMode: true,
     allowedDevOrigins: ['10.0.0.207'],
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/docs',
+                permanent: false
+            }
+        ];
+    },
     async rewrites() {
         return [
             {

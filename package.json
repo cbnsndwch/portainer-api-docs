@@ -1,9 +1,9 @@
 {
-    "name": "@cbnsndwch/portainer-ce-api-docs",
-    "description": "API Docs for the Portainer CE API",
-    "version": "0.0.0",
-    "type": "module",
+    "name": "@cbnsndwch/portainer-api-docs",
+    "description": "Unofficial API Docs for the Portainer API",
+    "version": "0.1.0",
     "private": true,
+    "type": "module",
     "scripts": {
         "build": "next build",
         "dev": "next dev",
