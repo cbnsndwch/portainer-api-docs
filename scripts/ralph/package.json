@@ -10,7 +10,7 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "tsx": "^4.19.0",
+        "tsx": "^4.21.0",
         "@types/node": "^22"
     }
 }
