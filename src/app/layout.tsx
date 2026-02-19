@@ -15,7 +15,7 @@ const siteUrl =
         ? `https://${process.env.VERCEL_URL}`
         : 'http://localhost:3000');
 
-const siteName = 'Portainer API Docs';
+const siteName = '[CBN] Portainer API Docs';
 const siteDescription =
     'Unofficial, community-maintained API documentation for Portainer CE and BE.';
 
