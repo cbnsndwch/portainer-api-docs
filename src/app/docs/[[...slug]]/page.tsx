@@ -65,11 +65,17 @@ export async function generateMetadata(
         notFound();
     }
 
+    const imageUrl = getPageImage(page).url;
+
     return {
         title: page.data.title,
         description: page.data.description,
         openGraph: {
-            images: getPageImage(page).url
+            images: imageUrl
+        },
+        twitter: {
+            card: 'summary_large_image',
+            images: [imageUrl]
         }
     };
 }

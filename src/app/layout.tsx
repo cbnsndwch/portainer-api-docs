@@ -15,8 +15,46 @@ const siteUrl =
         ? `https://${process.env.VERCEL_URL}`
         : 'http://localhost:3000');
 
+const siteName = 'Portainer API Docs';
+const siteDescription =
+    'Unofficial, community-maintained API documentation for Portainer CE and BE.';
+
 export const metadata: Metadata = {
-    metadataBase: new URL(siteUrl)
+    metadataBase: new URL(siteUrl),
+    title: {
+        default: siteName,
+        template: `%s | ${siteName}`
+    },
+    description: siteDescription,
+    icons: {
+        icon: [
+            { url: '/favicon.ico', sizes: 'any' },
+            { url: '/favicon.ico', type: 'image/x-icon' }
+        ],
+        shortcut: ['/favicon.ico'],
+        apple: [{ url: '/favicon.ico' }]
+    },
+    openGraph: {
+        type: 'website',
+        url: siteUrl,
+        siteName,
+        title: siteName,
+        description: siteDescription,
+        images: [
+            {
+                url: '/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: siteName
+            }
+        ]
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: siteName,
+        description: siteDescription,
+        images: ['/twitter-image.png']
+    }
 };
 
 export default function Layout({ children }: LayoutProps<'/'>) {
