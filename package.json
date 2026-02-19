@@ -16,6 +16,7 @@
         "ralph": "tsx scripts/ralph/ralph.ts"
     },
     "dependencies": {
+        "@vercel/analytics": "^1.6.1",
         "fumadocs-core": "16.6.3",
         "fumadocs-mdx": "14.2.7",
         "fumadocs-openapi": "^10.3.6",
