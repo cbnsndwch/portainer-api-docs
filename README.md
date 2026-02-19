@@ -1,4 +1,4 @@
-# Portainer API Docs Platform (Community Project)
+# [CBN] Portainer API Docs Platform (Community Project)
 
 Readable, searchable, and agent-friendly API docs for Portainer.
 
