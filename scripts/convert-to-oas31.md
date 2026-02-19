@@ -119,9 +119,9 @@ Use `--config <path>` to point to a file elsewhere.
 }
 ```
 
-### Portainer CE config
+### Portainer config
 
-The Portainer CE config lives at [content/oas/portainer-ce/convert.config.json](../content/oas/portainer-ce/convert.config.json). It defines tag descriptions and `x-tagGroups` for all 33 Portainer API tags. Any future Portainer Swagger release can be converted by placing its file in `content/oas/portainer-ce/` and running:
+The Portainer config lives at [content/oas/portainer-ce/convert.config.json](../content/oas/portainer-ce/convert.config.json). It defines tag descriptions and `x-tagGroups` for all 33 Portainer API tags. Any future Portainer Swagger release can be converted by placing its file in `content/oas/portainer-ce/` and running:
 
 ```sh
 pnpm convert-oas content/oas/portainer-ce/<version>.yml

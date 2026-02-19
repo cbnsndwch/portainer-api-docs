@@ -8,7 +8,7 @@ opencode, Claude Code, Codex, etc.).
 
 ## What this repo is
 
-A **Next.js / Fumadocs** documentation site that publishes the Portainer CE REST
+A **Next.js / Fumadocs** documentation site that publishes the Portainer REST
 API reference. The authoritative source is an OpenAPI 3.1.0 YAML file
 (`content/oas/portainer-ce/<version>.yml`); MDX documentation pages are
 **generated from it** and committed alongside the site source.
