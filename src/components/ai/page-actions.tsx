@@ -1,14 +1,22 @@
 'use client';
-import { useMemo, useState } from 'react';
-import { Check, ChevronDown, Copy, ExternalLinkIcon } from 'lucide-react';
-import { cn } from '@/lib/cn';
-import { useCopyButton } from 'fumadocs-ui/utils/use-copy-button';
+
 import { buttonVariants } from 'fumadocs-ui/components/ui/button';
 import {
     Popover,
     PopoverContent,
     PopoverTrigger
 } from 'fumadocs-ui/components/ui/popover';
+import { useCopyButton } from 'fumadocs-ui/utils/use-copy-button';
+import {
+    BotIcon,
+    Check,
+    ChevronDown,
+    Copy,
+    ExternalLinkIcon
+} from 'lucide-react';
+import { useMemo, useState } from 'react';
+
+import { cn } from '@/lib/cn';
 
 const cache = new Map<string, string>();
 
@@ -47,6 +55,7 @@ export function LLMCopyButton({
         <button
             disabled={isLoading}
             className={cn(
+                'cursor-pointer',
                 buttonVariants({
                     color: 'secondary',
                     size: 'sm',
@@ -62,10 +71,7 @@ export function LLMCopyButton({
     );
 }
 
-export function ViewOptions({
-    markdownUrl,
-    githubUrl
-}: {
+type ViewOptionsProps = {
     /**
      * A URL to the raw Markdown/MDX content of page
      */
@@ -75,7 +81,9 @@ export function ViewOptions({
      * Source file URL on GitHub
      */
     githubUrl: string;
-}) {
+};
+
+export function ViewOptions({ markdownUrl, githubUrl }: ViewOptionsProps) {
     const items = useMemo(() => {
         const q = `Read ${markdownUrl}, I want to ask questions about it.`;
 
@@ -213,6 +221,7 @@ export function ViewOptions({
         <Popover>
             <PopoverTrigger
                 className={cn(
+                    'cursor-pointer',
                     buttonVariants({
                         color: 'secondary',
                         size: 'sm',
@@ -220,7 +229,8 @@ export function ViewOptions({
                     })
                 )}
             >
-                Open
+                <BotIcon className="size-3.5 text-fd-muted-foreground" />
+                Send to Agent
                 <ChevronDown className="size-3.5 text-fd-muted-foreground" />
             </PopoverTrigger>
             <PopoverContent className="flex flex-col">
