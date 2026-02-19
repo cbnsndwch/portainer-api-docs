@@ -136,8 +136,8 @@ src/                         # Next.js / Fumadocs application source
 }
 ```
 
-The Portainer CE config lives at
-`content/oas/portainer-ce/convert.config.json`.
+The Portainer CE config lives at `content/oas/portainer-ce/convert.config.json`.
+Other configs (e.g.: Portainer BE) may be added later as needed.
 
 ---
 
