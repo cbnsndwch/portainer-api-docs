@@ -1,8 +1,8 @@
 {
     "title": "Resource Controls",
     "pages": [
-        "delete-resource-controls-id",
         "post-resource-controls",
-        "put-resource-controls-id"
+        "put-resource-controls-id",
+        "delete-resource-controls-id"
     ]
 }

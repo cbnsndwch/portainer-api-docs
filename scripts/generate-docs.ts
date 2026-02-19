@@ -118,6 +118,48 @@ function endpointFileName(routePath: string, method: string): string {
     return `${method.toLowerCase()}-${routeSlug}.mdx`;
 }
 
+const HTTP_METHOD_ORDER = ['GET', 'POST', 'PUT', 'DELETE'] as const;
+
+function parseEndpointPageSlug(pageSlug: string): {
+    method: string;
+    endpoint: string;
+} | null {
+    const match = pageSlug.match(/^([a-z]+)-(.*)$/i);
+    if (!match) return null;
+
+    return {
+        method: match[1].toUpperCase(),
+        endpoint: match[2]
+    };
+}
+
+function compareEndpointPageSlugs(a: string, b: string): number {
+    const parsedA = parseEndpointPageSlug(a);
+    const parsedB = parseEndpointPageSlug(b);
+
+    if (!parsedA || !parsedB) {
+        return a.localeCompare(b);
+    }
+
+    const endpointCompare = parsedA.endpoint.localeCompare(parsedB.endpoint);
+    if (endpointCompare !== 0) return endpointCompare;
+
+    const methodIndexA = HTTP_METHOD_ORDER.indexOf(
+        parsedA.method as (typeof HTTP_METHOD_ORDER)[number]
+    );
+    const methodIndexB = HTTP_METHOD_ORDER.indexOf(
+        parsedB.method as (typeof HTTP_METHOD_ORDER)[number]
+    );
+    const methodRankA =
+        methodIndexA === -1 ? Number.MAX_SAFE_INTEGER : methodIndexA;
+    const methodRankB =
+        methodIndexB === -1 ? Number.MAX_SAFE_INTEGER : methodIndexB;
+
+    if (methodRankA !== methodRankB) return methodRankA - methodRankB;
+
+    return parsedA.method.localeCompare(parsedB.method);
+}
+
 async function discoverSpecs() {
     const entries = await fs.readdir(OAS_DIR, { withFileTypes: true });
     const specs = await Promise.all(
@@ -359,7 +401,7 @@ ${JSON.stringify(schema, null, 2)}
                         {
                             root: true,
                             title: toVersionDisplay(versionFolder),
-                            pages: ['entities', 'endpoints']
+                            pages: ['endpoints', 'entities']
                         },
                         null,
                         4
@@ -421,7 +463,7 @@ ${JSON.stringify(schema, null, 2)}
                 for (const tagSlug of tags) {
                     const pages = Array.from(
                         tagToPages.get(`${versionFolder}/${tagSlug}`) ?? []
-                    ).sort((a, b) => a.localeCompare(b));
+                    ).sort(compareEndpointPageSlugs);
 
                     // Resolve display title: prefer spec tag name prettified, fall back to slug
                     const originalTagName =

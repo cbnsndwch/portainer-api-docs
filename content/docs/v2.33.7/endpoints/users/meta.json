@@ -1,18 +1,18 @@
 {
     "title": "Users",
     "pages": [
-        "delete-users-id",
-        "delete-users-id-tokens-keyid",
         "get-users",
-        "get-users-admin-check",
-        "get-users-id",
-        "get-users-id-memberships",
-        "get-users-id-tokens",
-        "get-users-me",
         "post-users",
+        "get-users-admin-check",
         "post-users-admin-init",
-        "post-users-id-tokens",
+        "get-users-id",
         "put-users-id",
-        "put-users-id-passwd"
+        "delete-users-id",
+        "get-users-id-memberships",
+        "put-users-id-passwd",
+        "get-users-id-tokens",
+        "post-users-id-tokens",
+        "delete-users-id-tokens-keyid",
+        "get-users-me"
     ]
 }

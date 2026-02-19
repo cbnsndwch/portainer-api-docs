@@ -1,8 +1,8 @@
 {
     "title": "Tags",
     "pages": [
-        "delete-tags-id",
         "get-tags",
-        "post-tags"
+        "post-tags",
+        "delete-tags-id"
     ]
 }

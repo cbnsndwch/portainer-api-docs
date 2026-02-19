@@ -2,7 +2,7 @@
     "title": "Settings",
     "pages": [
         "get-settings",
-        "get-settings-public",
-        "put-settings"
+        "put-settings",
+        "get-settings-public"
     ]
 }

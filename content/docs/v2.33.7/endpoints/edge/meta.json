@@ -1,7 +1,7 @@
 {
     "title": "Edge",
     "pages": [
-        "get-endpoints-id-edge-stacks-stackid",
-        "post-endpoints-id-edge-jobs-jobid-logs"
+        "post-endpoints-id-edge-jobs-jobid-logs",
+        "get-endpoints-id-edge-stacks-stackid"
     ]
 }

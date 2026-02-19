@@ -1,11 +1,11 @@
 {
     "title": "Registries",
     "pages": [
-        "delete-registries-id",
         "get-registries",
-        "get-registries-id",
         "post-registries",
-        "post-registries-id-configure",
-        "put-registries-id"
+        "get-registries-id",
+        "put-registries-id",
+        "delete-registries-id",
+        "post-registries-id-configure"
     ]
 }

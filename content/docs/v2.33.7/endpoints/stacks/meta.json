@@ -1,11 +1,7 @@
 {
     "title": "Stacks",
     "pages": [
-        "delete-stacks-id",
-        "delete-stacks-name-name",
         "get-stacks",
-        "get-stacks-id",
-        "get-stacks-id-file",
         "post-stacks-create-kubernetes-repository",
         "post-stacks-create-kubernetes-string",
         "post-stacks-create-kubernetes-url",
@@ -15,13 +11,17 @@
         "post-stacks-create-swarm-file",
         "post-stacks-create-swarm-repository",
         "post-stacks-create-swarm-string",
+        "get-stacks-id",
+        "put-stacks-id",
+        "delete-stacks-id",
+        "put-stacks-id-associate",
+        "get-stacks-id-file",
         "post-stacks-id-git",
+        "put-stacks-id-git-redeploy",
         "post-stacks-id-migrate",
         "post-stacks-id-start",
         "post-stacks-id-stop",
-        "post-stacks-webhooks-webhookid",
-        "put-stacks-id",
-        "put-stacks-id-associate",
-        "put-stacks-id-git-redeploy"
+        "delete-stacks-name-name",
+        "post-stacks-webhooks-webhookid"
     ]
 }

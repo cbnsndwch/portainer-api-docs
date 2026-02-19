@@ -1,16 +1,16 @@
 {
     "title": "Helm",
     "pages": [
-        "delete-endpoints-id-kubernetes-helm-release",
-        "delete-users-id-helm-repositories-repositoryid",
         "get-endpoints-id-kubernetes-helm",
-        "get-endpoints-id-kubernetes-helm-name",
+        "post-endpoints-id-kubernetes-helm",
+        "get-endpoints-id-kubernetes-helm-release",
+        "delete-endpoints-id-kubernetes-helm-release",
         "get-endpoints-id-kubernetes-helm-release-history",
+        "post-endpoints-id-kubernetes-helm-release-rollback",
         "get-templates-helm",
         "get-templates-helm-command",
         "get-users-id-helm-repositories",
-        "post-endpoints-id-kubernetes-helm",
-        "post-endpoints-id-kubernetes-helm-release-rollback",
-        "post-users-id-helm-repositories"
+        "post-users-id-helm-repositories",
+        "delete-users-id-helm-repositories-repositoryid"
     ]
 }

@@ -1,10 +1,10 @@
 {
     "title": "Webhooks",
     "pages": [
-        "delete-webhooks-id",
         "get-webhooks",
         "post-webhooks",
         "post-webhooks-id",
-        "put-webhooks-id"
+        "put-webhooks-id",
+        "delete-webhooks-id"
     ]
 }

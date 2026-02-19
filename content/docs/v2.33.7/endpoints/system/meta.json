@@ -4,7 +4,7 @@
         "get-system-info",
         "get-system-nodes",
         "get-system-status",
-        "get-system-version",
-        "post-system-upgrade"
+        "post-system-upgrade",
+        "get-system-version"
     ]
 }

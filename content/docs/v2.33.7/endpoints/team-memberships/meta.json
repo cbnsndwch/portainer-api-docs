@@ -1,10 +1,10 @@
 {
     "title": "Team Memberships",
     "pages": [
-        "delete-team-memberships-id",
         "get-team-memberships",
-        "get-teams-id-memberships",
         "post-team-memberships",
-        "put-team-memberships-id"
+        "put-team-memberships-id",
+        "delete-team-memberships-id",
+        "get-teams-id-memberships"
     ]
 }

@@ -1,10 +1,10 @@
 {
     "title": "Edge Groups",
     "pages": [
-        "delete-edge-groups-id",
         "get-edge-groups",
-        "get-edge-groups-id",
         "post-edge-groups",
-        "put-edge-groups-id"
+        "get-edge-groups-id",
+        "put-edge-groups-id",
+        "delete-edge-groups-id"
     ]
 }

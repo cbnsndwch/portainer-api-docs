@@ -8702,8 +8702,8 @@ tags:
   - description: Create interactive exec sessions via WebSocket.
     name: websocket
 servers:
-  - url: /api
-    description: Portainer CE API — relative to your Portainer instance base URL.
+  - url: https://localhost:9443/api
+    description: Portainer CE API base URL (edit in the docs UI if your instance differs).
 components:
   requestBodies:
     kubernetes.K8sIngressControllerArray:
