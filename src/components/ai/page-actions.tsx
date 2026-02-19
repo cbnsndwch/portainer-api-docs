@@ -14,7 +14,7 @@ import {
     Copy,
     ExternalLinkIcon
 } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { cn } from '@/lib/cn';
 
@@ -84,6 +84,12 @@ type ViewOptionsProps = {
 };
 
 export function ViewOptions({ markdownUrl, githubUrl }: ViewOptionsProps) {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const items = useMemo(() => {
         const q = `Read ${markdownUrl}, I want to ask questions about it.`;
 
@@ -216,6 +222,25 @@ export function ViewOptions({ markdownUrl, githubUrl }: ViewOptionsProps) {
             }
         ];
     }, [githubUrl, markdownUrl]);
+
+    if (!mounted) {
+        return (
+            <button
+                className={cn(
+                    'cursor-pointer',
+                    buttonVariants({
+                        color: 'secondary',
+                        size: 'sm',
+                        className: 'gap-2'
+                    })
+                )}
+            >
+                <BotIcon className="size-3.5 text-fd-muted-foreground" />
+                Send to Agent
+                <ChevronDown className="size-3.5 text-fd-muted-foreground" />
+            </button>
+        );
+    }
 
     return (
         <Popover>
