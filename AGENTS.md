@@ -17,7 +17,7 @@ API reference. The authoritative source is an OpenAPI 3.1.0 YAML file
 
 ## Repository layout
 
-```
+```plain
 content/
   oas/
     portainer-ce/
@@ -53,16 +53,16 @@ src/                         # Next.js / Fumadocs application source
 
 ## Key scripts (`pnpm <script>`)
 
-| Script          | Command                              | What it does |
-| --------------- | ------------------------------------ | ------------ |
-| `dev`           | `next dev`                           | Start the local dev server at http://localhost:3000 |
-| `build`         | `next build`                         | Production build |
-| `convert-oas`   | `tsx scripts/convert-to-oas31.ts`    | Convert a Swagger 2.0 file to OAS 3.1.0 |
-| `generate-docs` | `tsx scripts/generate-docs.ts`       | Regenerate all MDX docs from OAS files |
-| `ralph`         | `tsx scripts/ralph/ralph.ts`         | Run the Ralph iterative AI loop |
-| `lint`          | `eslint`                             | Lint the project |
-| `types`         | `fumadocs-mdx && next typegen && tsc --noEmit` | Full type check |
-| `format`        | `prettier --write .`                 | Format all files |
+| Script          | Command                                        | What it does                                          |
+| --------------- | ---------------------------------------------- | ----------------------------------------------------- |
+| `dev`           | `next dev`                                     | Start the local dev server at <http://localhost:3000> |
+| `build`         | `next build`                                   | Production build                                      |
+| `convert-oas`   | `tsx scripts/convert-to-oas31.ts`              | Convert a Swagger 2.0 file to OAS 3.1.0               |
+| `generate-docs` | `tsx scripts/generate-docs.ts`                 | Regenerate all MDX docs from OAS files                |
+| `ralph`         | `tsx scripts/ralph/ralph.ts`                   | Run the Ralph iterative AI loop                       |
+| `lint`          | `eslint`                                       | Lint the project                                      |
+| `types`         | `fumadocs-mdx && next typegen && tsc --noEmit` | Full type check                                       |
+| `format`        | `prettier --write .`                           | Format all files                                      |
 
 > `generate-docs` is not in `package.json` `scripts` yet — invoke it directly:
 > `pnpm tsx scripts/generate-docs.ts`
@@ -74,34 +74,42 @@ src/                         # Next.js / Fumadocs application source
 1. **Place the Swagger 2.0 source** in `content/oas/portainer-ce/`.
 
 2. **Convert to OAS 3.1.0:**
-   ```sh
-   pnpm convert-oas content/oas/portainer-ce/<swagger-file>.yml
-   ```
-   This writes `content/oas/portainer-ce/3.1.0.yml` (or the detected OAS
-   version) next to the input. The converter auto-loads
-   `content/oas/portainer-ce/convert.config.json` for tag descriptions, tag
-   groups, and server descriptions.
+
+    ```sh
+    pnpm convert-oas content/oas/portainer-ce/<swagger-file>.yml
+    ```
+
+    This writes `content/oas/portainer-ce/3.1.0.yml` (or the detected OAS
+    version) next to the input. The converter auto-loads
+    `content/oas/portainer-ce/convert.config.json` for tag descriptions, tag
+    groups, and server descriptions.
 
 3. **Rename the output** to the Portainer version string, e.g.:
-   ```sh
-   mv content/oas/portainer-ce/3.1.0.yml content/oas/portainer-ce/2.34.0.yml
-   ```
-   Then update the `info.version` field inside the file to match.
+
+    ```sh
+    mv content/oas/portainer-ce/3.1.0.yml content/oas/portainer-ce/2.34.0.yml
+    ```
+
+    Then update the `info.version` field inside the file to match.
 
 4. **Generate the MDX docs:**
-   ```sh
-   pnpm tsx scripts/generate-docs.ts
-   ```
-   This scans every `*.yml` in `content/oas/portainer-ce/`, deletes the
-   previously generated `content/docs/v*/` trees, and regenerates them.
-   The top-level `content/docs/meta.json` is also rewritten with the new
-   version listed first.
+
+    ```sh
+    pnpm tsx scripts/generate-docs.ts
+    ```
+
+    This scans every `*.yml` in `content/oas/portainer-ce/`, deletes the
+    previously generated `content/docs/v*/` trees, and regenerates them.
+    The top-level `content/docs/meta.json` is also rewritten with the new
+    version listed first.
 
 5. **Verify locally:**
-   ```sh
-   pnpm dev
-   ```
-   Open http://localhost:3000 and check the new version appears in the sidebar.
+
+    ```sh
+    pnpm dev
+    ```
+
+    Open <http://localhost:3000> and check the new version appears in the sidebar.
 
 ---
 
@@ -137,11 +145,11 @@ The Portainer CE config lives at
 
 - Reads all `*.yml` files from `content/oas/portainer-ce/`.
 - For each version, generates:
-  - `content/docs/v<version>/index.mdx` — version landing page
-  - `content/docs/v<version>/meta.json` — Fumadocs nav metadata
-  - `content/docs/v<version>/endpoints/<tag>/<method>-<path>.mdx` — one file
-    per operation
-  - `content/docs/v<version>/entities/<tag>/overview.mdx` — tag overview page
+    - `content/docs/v<version>/index.mdx` — version landing page
+    - `content/docs/v<version>/meta.json` — Fumadocs nav metadata
+    - `content/docs/v<version>/endpoints/<tag>/<method>-<path>.mdx` — one file
+      per operation
+    - `content/docs/v<version>/entities/<tag>/overview.mdx` — tag overview page
 - Tag order in the sidebar follows `x-tagGroups` in the OAS file, then
   alphabetically for ungrouped tags.
 - **Always re-run this after editing the OAS file or the converter config.**
@@ -183,9 +191,9 @@ pnpm ralph --add-task "description"      # append a task to the list
    context, task list contents, etc.).
 2. Spawns the selected agent with that prompt.
 3. Checks the agent's output for a completion signal:
-   - Default mode: `<promise>COMPLETE</promise>`
-   - Tasks mode: `<promise>READY_FOR_NEXT_TASK</promise>` per task, then
-     `<promise>COMPLETE</promise>` when all tasks are done.
+    - Default mode: `<promise>COMPLETE</promise>`
+    - Tasks mode: `<promise>READY_FOR_NEXT_TASK</promise>` per task, then
+      `<promise>COMPLETE</promise>` when all tasks are done.
 4. If `--no-commit` is not set, auto-commits changes after each iteration
    (using a `.github/prompts/do-commits.prompt.md` semantic commit prompt if
    present, otherwise a fallback `git commit`).
@@ -193,26 +201,26 @@ pnpm ralph --add-task "description"      # append a task to the list
 
 ### Prompt templates
 
-| File | Used when |
-| ---- | --------- |
-| `scripts/ralph/prompts/default.md` | Standard single-task loop |
-| `scripts/ralph/prompts/tasks.md` | `--tasks` / `-t` flag is set |
+| File                               | Used when                    |
+| ---------------------------------- | ---------------------------- |
+| `scripts/ralph/prompts/default.md` | Standard single-task loop    |
+| `scripts/ralph/prompts/tasks.md`   | `--tasks` / `-t` flag is set |
 
 Variables available in templates (Handlebars-style):
 
-| Variable | Description |
-| -------- | ----------- |
-| `{{iteration}}` | Current iteration number |
-| `{{minIterations}}` / `{{maxIterations}}` | Iteration bounds |
-| `{{task}}` | The task description passed on the CLI |
-| `{{completionPromise}}` | The string the agent must emit to signal done |
-| `{{taskPromise}}` | Per-task completion signal (tasks mode) |
-| `{{context}}` | Mid-loop context injected via `--add-context` |
-| `{{tasksFile}}` | Path to the tasks markdown file |
-| `{{tasksContent}}` | Full contents of the tasks file |
-| `{{currentTask}}` | Currently in-progress task text |
-| `{{nextTask}}` | Next pending task text |
-| `{{allComplete}}` | Boolean — all tasks marked `[x]` |
+| Variable                                  | Description                                   |
+| ----------------------------------------- | --------------------------------------------- |
+| `{{iteration}}`                           | Current iteration number                      |
+| `{{minIterations}}` / `{{maxIterations}}` | Iteration bounds                              |
+| `{{task}}`                                | The task description passed on the CLI        |
+| `{{completionPromise}}`                   | The string the agent must emit to signal done |
+| `{{taskPromise}}`                         | Per-task completion signal (tasks mode)       |
+| `{{context}}`                             | Mid-loop context injected via `--add-context` |
+| `{{tasksFile}}`                           | Path to the tasks markdown file               |
+| `{{tasksContent}}`                        | Full contents of the tasks file               |
+| `{{currentTask}}`                         | Currently in-progress task text               |
+| `{{nextTask}}`                            | Next pending task text                        |
+| `{{allComplete}}`                         | Boolean — all tasks marked `[x]`              |
 
 ---
 
