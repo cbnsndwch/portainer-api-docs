@@ -113,3 +113,7 @@ pnpm tsx scripts/generate-docs.ts
 ---
 
 If you're from the Portainer team: thank you for building a great platform. This repo is intended as a constructive community contribution and a credible candidate for an official API docs home.
+
+## License
+
+MIT © [Cbnsndwch](https://github.com/cbnsndwch)
