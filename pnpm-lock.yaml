@@ -36,11 +36,11 @@ importers:
         specifier: ^3.22.0
         version: 3.22.0
       tailwind-merge:
-        specifier: ^3.4.1
-        version: 3.4.1
+        specifier: ^3.5.0
+        version: 3.5.0
     devDependencies:
       '@tailwindcss/postcss':
-        specifier: ^4.1.18
+        specifier: ^4.2.0
         version: 4.2.0
       '@types/js-yaml':
         specifier: ^4.0.9
@@ -79,7 +79,7 @@ importers:
         specifier: ^7.0.8
         version: 7.0.8
       tailwindcss:
-        specifier: ^4.1.18
+        specifier: ^4.2.0
         version: 4.2.0
       tsx:
         specifier: ^4.21.0
@@ -3335,8 +3335,8 @@ packages:
     resolution: {integrity: sha512-upi/0ZGkYgEcLeGieoz8gT74oWHA0E7JivX7aN9mAf+Tc7BQoRBvnIGHoPDw+f9TXTW4s6kGYCZJtauP6OYp7g==}
     hasBin: true
 
-  tailwind-merge@3.4.1:
-    resolution: {integrity: sha512-2OA0rFqWOkITEAOFWSBSApYkDeH9t2B3XSJuI4YztKBzK3mX0737A2qtxDZ7xkw9Zfh0bWl+r34sF3HXV+Ig7Q==}
+  tailwind-merge@3.5.0:
+    resolution: {integrity: sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==}
 
   tailwindcss@4.2.0:
     resolution: {integrity: sha512-yYzTZ4++b7fNYxFfpnberEEKu43w44aqDMNM9MHMmcKuCH7lL8jJ4yJ7LGHv7rSwiqM0nkiobF9I6cLlpS2P7Q==}
@@ -5662,7 +5662,7 @@ snapshots:
       react-hook-form: 7.71.1(react@19.2.4)
       remark: 15.0.1
       remark-rehype: 11.1.2
-      tailwind-merge: 3.4.1
+      tailwind-merge: 3.5.0
       xml-js: 1.6.11
     optionalDependencies:
       '@types/react': 19.2.14
@@ -5696,7 +5696,7 @@ snapshots:
       react-remove-scroll: 2.7.2(@types/react@19.2.14)(react@19.2.4)
       rehype-raw: 7.0.0
       scroll-into-view-if-needed: 3.1.0
-      tailwind-merge: 3.4.1
+      tailwind-merge: 3.5.0
       unist-util-visit: 5.1.0
     optionalDependencies:
       '@types/react': 19.2.14
@@ -7374,7 +7374,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  tailwind-merge@3.4.1: {}
+  tailwind-merge@3.5.0: {}
 
   tailwindcss@4.2.0: {}
 
