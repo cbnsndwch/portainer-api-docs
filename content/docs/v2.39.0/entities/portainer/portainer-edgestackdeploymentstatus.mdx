@@ -1,0 +1,29 @@
+---
+title: "portainer.EdgeStackDeploymentStatus"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Error": {
+      "type": "string"
+    },
+    "RollbackTo": {
+      "description": "EE only feature",
+      "type": "integer"
+    },
+    "Time": {
+      "type": "integer"
+    },
+    "Type": {
+      "$ref": "#/components/schemas/portainer.EdgeStackStatusType"
+    },
+    "Version": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

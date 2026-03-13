@@ -1,0 +1,82 @@
+---
+title: "customtemplates.customTemplateFromFileContentPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Description": {
+      "description": "Description of the template",
+      "example": "High performance web server",
+      "type": "string"
+    },
+    "EdgeTemplate": {
+      "description": "EdgeTemplate indicates if this template purpose for Edge Stack",
+      "example": false,
+      "type": "boolean"
+    },
+    "FileContent": {
+      "description": "Content of stack file",
+      "type": "string"
+    },
+    "Logo": {
+      "description": "URL of the template's logo",
+      "example": "https://portainer.io/img/logo.svg",
+      "type": "string"
+    },
+    "Note": {
+      "description": "A note that will be displayed in the UI. Supports HTML content",
+      "example": "This is my <b>custom</b> template",
+      "type": "string"
+    },
+    "Platform": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.CustomTemplatePlatform"
+        }
+      ],
+      "description": "Platform associated to the template.\nValid values are: 1 - 'linux', 2 - 'windows'\nRequired for Docker stacks",
+      "enum": [
+        1,
+        2
+      ],
+      "example": 1
+    },
+    "Title": {
+      "description": "Title of the template",
+      "example": "Nginx",
+      "type": "string"
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.StackType"
+        }
+      ],
+      "description": "Type of created stack:\n* 1 - swarm\n* 2 - compose\n* 3 - kubernetes",
+      "enum": [
+        1,
+        2,
+        3
+      ],
+      "example": 1
+    },
+    "Variables": {
+      "description": "Definitions of variables in the stack file",
+      "items": {
+        "$ref": "#/components/schemas/portainer.CustomTemplateVariableDefinition"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "Description",
+    "FileContent",
+    "Title",
+    "Type"
+  ],
+  "type": "object"
+}
+```

@@ -1,0 +1,25 @@
+---
+title: "v1beta1.ContainerMetrics"
+---
+
+
+
+```json
+{
+  "properties": {
+    "name": {
+      "description": "Container name corresponding to the one from pod.spec.containers.",
+      "type": "string"
+    },
+    "usage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ResourceList"
+        }
+      ],
+      "description": "The memory usage is the memory working set."
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,25 @@
+---
+title: "v1.TCPSocketAction"
+---
+
+
+
+```json
+{
+  "properties": {
+    "host": {
+      "description": "Optional: Host name to connect to, defaults to the pod IP.\n+optional",
+      "type": "string"
+    },
+    "port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/intstr.IntOrString"
+        }
+      ],
+      "description": "Number or name of the port to access on the container.\nNumber must be in the range 1 to 65535.\nName must be an IANA_SVC_NAME."
+    }
+  },
+  "type": "object"
+}
+```

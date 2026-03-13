@@ -1,0 +1,9 @@
+{
+    "title": "Websocket",
+    "pages": [
+        "get-websocket-attach",
+        "get-websocket-exec",
+        "get-websocket-kubernetes-shell",
+        "get-websocket-pod"
+    ]
+}

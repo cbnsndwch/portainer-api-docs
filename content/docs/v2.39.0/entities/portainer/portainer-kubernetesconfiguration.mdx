@@ -1,0 +1,46 @@
+---
+title: "portainer.KubernetesConfiguration"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AllowNoneIngressClass": {
+      "type": "boolean"
+    },
+    "EnableResourceOverCommit": {
+      "type": "boolean"
+    },
+    "IngressAvailabilityPerNamespace": {
+      "type": "boolean"
+    },
+    "IngressClasses": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.KubernetesIngressClassConfig"
+      },
+      "type": "array"
+    },
+    "ResourceOverCommitPercentage": {
+      "type": "integer"
+    },
+    "RestrictDefaultNamespace": {
+      "type": "boolean"
+    },
+    "StorageClasses": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.KubernetesStorageClassConfig"
+      },
+      "type": "array"
+    },
+    "UseLoadBalancer": {
+      "type": "boolean"
+    },
+    "UseServerMetrics": {
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,44 @@
+---
+title: "v1beta1.NodeMetrics"
+---
+
+
+
+```json
+{
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources\n+optional",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds\n+optional",
+      "type": "string"
+    },
+    "metadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ObjectMeta"
+        }
+      ],
+      "description": "Standard object's metadata.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata\n+optional"
+    },
+    "timestamp": {
+      "description": "The following fields define time interval from which metrics were\ncollected from the interval [Timestamp-Window, Timestamp].",
+      "type": "string"
+    },
+    "usage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ResourceList"
+        }
+      ],
+      "description": "The memory usage is the memory working set."
+    },
+    "window": {
+      "$ref": "#/components/schemas/v1.Duration"
+    }
+  },
+  "type": "object"
+}
+```

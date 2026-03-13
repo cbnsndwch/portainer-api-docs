@@ -1,0 +1,38 @@
+---
+title: "portainer.Webhook"
+---
+
+
+
+```json
+{
+  "properties": {
+    "EndpointId": {
+      "type": "integer"
+    },
+    "Id": {
+      "description": "Webhook Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "RegistryId": {
+      "type": "integer"
+    },
+    "ResourceId": {
+      "type": "string"
+    },
+    "Token": {
+      "type": "string"
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.WebhookType"
+        }
+      ],
+      "description": "Type of webhook (1 - service)"
+    }
+  },
+  "type": "object"
+}
+```

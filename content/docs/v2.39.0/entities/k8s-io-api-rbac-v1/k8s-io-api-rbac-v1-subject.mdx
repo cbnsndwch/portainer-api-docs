@@ -1,0 +1,29 @@
+---
+title: "k8s_io_api_rbac_v1.Subject"
+---
+
+
+
+```json
+{
+  "properties": {
+    "apiGroup": {
+      "description": "APIGroup holds the API group of the referenced subject.\nDefaults to \"\" for ServiceAccount subjects.\nDefaults to \"rbac.authorization.k8s.io\" for User and Group subjects.\n+optional",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of object being referenced. Values defined by this API group are \"User\", \"Group\", and \"ServiceAccount\".\nIf the Authorizer does not recognized the kind value, the Authorizer should report an error.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the object being referenced.",
+      "type": "string"
+    },
+    "namespace": {
+      "description": "Namespace of the referenced object.  If the object kind is non-namespace, such as \"User\" or \"Group\", and this value is not empty\nthe Authorizer should report an error.\n+optional",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

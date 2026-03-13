@@ -1,0 +1,8 @@
+{
+    "title": "Teammemberships",
+    "pages": [
+        "overview",
+        "teammemberships-teammembershipcreatepayload",
+        "teammemberships-teammembershipupdatepayload"
+    ]
+}

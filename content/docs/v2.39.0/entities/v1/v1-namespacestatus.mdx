@@ -1,0 +1,28 @@
+---
+title: "v1.NamespaceStatus"
+---
+
+
+
+```json
+{
+  "properties": {
+    "conditions": {
+      "description": "Represents the latest available observations of a namespace's current state.\n+optional\n+patchMergeKey=type\n+patchStrategy=merge\n+listType=map\n+listMapKey=type",
+      "items": {
+        "$ref": "#/components/schemas/v1.NamespaceCondition"
+      },
+      "type": "array"
+    },
+    "phase": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.NamespacePhase"
+        }
+      ],
+      "description": "Phase is the current lifecycle phase of the namespace.\nMore info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/\n+optional"
+    }
+  },
+  "type": "object"
+}
+```

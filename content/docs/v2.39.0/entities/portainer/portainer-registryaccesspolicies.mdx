@@ -1,0 +1,31 @@
+---
+title: "portainer.RegistryAccessPolicies"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Namespaces": {
+      "description": "Kubernetes specific fields (with kubernetes, namespaces have access to a registry, if users/teams have access to the same namespace, they have access to the registry)",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "TeamAccessPolicies": {
+      "$ref": "#/components/schemas/portainer.TeamAccessPolicies"
+    },
+    "UserAccessPolicies": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.UserAccessPolicies"
+        }
+      ],
+      "description": "Docker specific fields (with docker, users/teams have access to a registry)"
+    }
+  },
+  "type": "object"
+}
+```

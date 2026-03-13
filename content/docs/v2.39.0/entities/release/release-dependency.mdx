@@ -1,0 +1,49 @@
+---
+title: "release.Dependency"
+---
+
+
+
+```json
+{
+  "properties": {
+    "alias": {
+      "description": "Alias usable alias to be used for the chart",
+      "type": "string"
+    },
+    "condition": {
+      "description": "A yaml path that resolves to a boolean, used for enabling/disabling charts (e.g. subchart1.enabled )",
+      "type": "string"
+    },
+    "enabled": {
+      "description": "Enabled bool determines if chart should be loaded",
+      "type": "boolean"
+    },
+    "import-values": {
+      "description": "ImportValues holds the mapping of source values to parent key to be imported. Each item can be a\nstring or pair of child/parent sublist items.",
+      "items": {},
+      "type": "array"
+    },
+    "name": {
+      "description": "Name is the name of the dependency.\n\nThis must mach the name in the dependency's Chart.yaml.",
+      "type": "string"
+    },
+    "repository": {
+      "description": "The URL to the repository.\n\nAppending `index.yaml` to this string should result in a URL that can be\nused to fetch the repository index.",
+      "type": "string"
+    },
+    "tags": {
+      "description": "Tags can be used to group charts for enabling/disabling together",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "version": {
+      "description": "Version is the version (range) of this chart.\n\nA lock file will always produce a single version, while a dependency\nmay contain a semantic version range.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

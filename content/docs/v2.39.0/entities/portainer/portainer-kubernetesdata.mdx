@@ -1,0 +1,25 @@
+---
+title: "portainer.KubernetesData"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Configuration": {
+      "$ref": "#/components/schemas/portainer.KubernetesConfiguration"
+    },
+    "Flags": {
+      "$ref": "#/components/schemas/portainer.KubernetesFlags"
+    },
+    "Snapshots": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.KubernetesSnapshot"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,22 @@
+---
+title: "users.helmUserRepositoryResponse"
+---
+
+
+
+```json
+{
+  "properties": {
+    "GlobalRepository": {
+      "type": "string"
+    },
+    "UserRepositories": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.HelmUserRepository"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
+```

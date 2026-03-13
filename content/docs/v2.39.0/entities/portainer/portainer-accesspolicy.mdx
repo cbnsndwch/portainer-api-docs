@@ -1,0 +1,25 @@
+---
+title: "portainer.AccessPolicy"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Namespaces": {
+      "description": "Namespaces is a list of namespaces that this access policy applies to. Only used for namespaced level roles",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "RoleId": {
+      "description": "Role identifier. Reference the role that will be associated to this access policy",
+      "example": 1,
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

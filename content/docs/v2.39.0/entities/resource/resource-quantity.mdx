@@ -1,0 +1,31 @@
+---
+title: "resource.Quantity"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Format": {
+      "enum": [
+        "DecimalExponent",
+        "BinarySI",
+        "DecimalSI"
+      ],
+      "type": "string",
+      "x-enum-comments": {
+        "BinarySI": "e.g., 12Mi (12 * 2^20)",
+        "DecimalExponent": "e.g., 12e6",
+        "DecimalSI": "e.g., 12M  (12 * 10^6)"
+      },
+      "x-enum-varnames": [
+        "DecimalExponent",
+        "BinarySI",
+        "DecimalSI"
+      ]
+    }
+  },
+  "type": "object"
+}
+```

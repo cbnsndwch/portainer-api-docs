@@ -1,0 +1,8 @@
+{
+    "title": "Tags",
+    "pages": [
+        "get-tags",
+        "post-tags",
+        "delete-tags-id"
+    ]
+}

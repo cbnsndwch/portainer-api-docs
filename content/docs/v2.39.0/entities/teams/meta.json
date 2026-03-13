@@ -1,0 +1,8 @@
+{
+    "title": "Teams",
+    "pages": [
+        "overview",
+        "teams-teamcreatepayload",
+        "teams-teamupdatepayload"
+    ]
+}

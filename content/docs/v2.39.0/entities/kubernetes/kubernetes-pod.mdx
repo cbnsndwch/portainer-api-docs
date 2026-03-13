@@ -1,0 +1,43 @@
+---
+title: "kubernetes.Pod"
+---
+
+
+
+```json
+{
+  "properties": {
+    "ContainerName": {
+      "type": "string"
+    },
+    "CreationDate": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "string"
+    },
+    "ImagePullPolicy": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "NodeName": {
+      "type": "string"
+    },
+    "PodIP": {
+      "type": "string"
+    },
+    "Resource": {
+      "$ref": "#/components/schemas/kubernetes.K8sApplicationResource"
+    },
+    "Status": {
+      "type": "string"
+    },
+    "Uid": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

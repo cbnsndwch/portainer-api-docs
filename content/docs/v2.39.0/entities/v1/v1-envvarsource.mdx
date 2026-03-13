@@ -1,0 +1,45 @@
+---
+title: "v1.EnvVarSource"
+---
+
+
+
+```json
+{
+  "properties": {
+    "configMapKeyRef": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ConfigMapKeySelector"
+        }
+      ],
+      "description": "Selects a key of a ConfigMap.\n+optional"
+    },
+    "fieldRef": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ObjectFieldSelector"
+        }
+      ],
+      "description": "Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`,\nspec.nodeName, spec.serviceAccountName, status.hostIP, status.podIP, status.podIPs.\n+optional"
+    },
+    "resourceFieldRef": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ResourceFieldSelector"
+        }
+      ],
+      "description": "Selects a resource of the container: only resources limits and requests\n(limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported.\n+optional"
+    },
+    "secretKeyRef": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.SecretKeySelector"
+        }
+      ],
+      "description": "Selects a key of a secret in the pod's namespace\n+optional"
+    }
+  },
+  "type": "object"
+}
+```

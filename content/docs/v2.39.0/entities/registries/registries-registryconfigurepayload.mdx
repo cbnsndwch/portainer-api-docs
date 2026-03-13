@@ -1,0 +1,66 @@
+---
+title: "registries.registryConfigurePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Authentication": {
+      "description": "Is authentication against this registry enabled",
+      "example": false,
+      "type": "boolean"
+    },
+    "Password": {
+      "description": "Password used to authenticate against this registry. required when Authentication is true",
+      "example": "registry_password",
+      "type": "string"
+    },
+    "Region": {
+      "description": "ECR region",
+      "type": "string"
+    },
+    "TLS": {
+      "description": "Use TLS",
+      "example": true,
+      "type": "boolean"
+    },
+    "TLSCACertFile": {
+      "description": "The TLS CA certificate file",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "TLSCertFile": {
+      "description": "The TLS client certificate file",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "TLSKeyFile": {
+      "description": "The TLS client key file",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "TLSSkipVerify": {
+      "description": "Skip the verification of the server TLS certificate",
+      "example": false,
+      "type": "boolean"
+    },
+    "Username": {
+      "description": "Username used to authenticate against this registry. Required when Authentication is true",
+      "example": "registry_user",
+      "type": "string"
+    }
+  },
+  "required": [
+    "Authentication"
+  ],
+  "type": "object"
+}
+```

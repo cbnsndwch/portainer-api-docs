@@ -1,0 +1,25 @@
+---
+title: "kubernetes.K8sStorageClass"
+---
+
+
+
+```json
+{
+  "properties": {
+    "allowVolumeExpansion": {
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    },
+    "provisioner": {
+      "type": "string"
+    },
+    "reclaimPolicy": {
+      "$ref": "#/components/schemas/v1.PersistentVolumeReclaimPolicy"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,29 @@
+---
+title: "v1.WindowsSecurityContextOptions"
+---
+
+
+
+```json
+{
+  "properties": {
+    "gmsaCredentialSpec": {
+      "description": "GMSACredentialSpec is where the GMSA admission webhook\n(https://github.com/kubernetes-sigs/windows-gmsa) inlines the contents of the\nGMSA credential spec named by the GMSACredentialSpecName field.\n+optional",
+      "type": "string"
+    },
+    "gmsaCredentialSpecName": {
+      "description": "GMSACredentialSpecName is the name of the GMSA credential spec to use.\n+optional",
+      "type": "string"
+    },
+    "hostProcess": {
+      "description": "HostProcess determines if a container should be run as a 'Host Process' container.\nAll of a Pod's containers must have the same effective HostProcess value\n(it is not allowed to have a mix of HostProcess containers and non-HostProcess containers).\nIn addition, if HostProcess is true then HostNetwork must also be set to true.\n+optional",
+      "type": "boolean"
+    },
+    "runAsUserName": {
+      "description": "The UserName in Windows to run the entrypoint of the container process.\nDefaults to the user specified in image metadata if unspecified.\nMay also be set in PodSecurityContext. If set in both SecurityContext and\nPodSecurityContext, the value specified in SecurityContext takes precedence.\n+optional",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

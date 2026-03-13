@@ -1,0 +1,33 @@
+---
+title: "v1.EnvFromSource"
+---
+
+
+
+```json
+{
+  "properties": {
+    "configMapRef": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ConfigMapEnvSource"
+        }
+      ],
+      "description": "The ConfigMap to select from\n+optional"
+    },
+    "prefix": {
+      "description": "Optional text to prepend to the name of each environment variable. Must be a C_IDENTIFIER.\n+optional",
+      "type": "string"
+    },
+    "secretRef": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.SecretEnvSource"
+        }
+      ],
+      "description": "The Secret to select from\n+optional"
+    }
+  },
+  "type": "object"
+}
+```

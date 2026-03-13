@@ -1,0 +1,29 @@
+---
+title: "v1.ContainerResizePolicy"
+---
+
+
+
+```json
+{
+  "properties": {
+    "resourceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ResourceName"
+        }
+      ],
+      "description": "Name of the resource to which this resource resize policy applies.\nSupported values: cpu, memory."
+    },
+    "restartPolicy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ResourceResizeRestartPolicy"
+        }
+      ],
+      "description": "Restart policy to apply when specified resource is resized.\nIf not specified, it defaults to NotRequired."
+    }
+  },
+  "type": "object"
+}
+```

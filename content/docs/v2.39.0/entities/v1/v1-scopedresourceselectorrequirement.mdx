@@ -1,0 +1,36 @@
+---
+title: "v1.ScopedResourceSelectorRequirement"
+---
+
+
+
+```json
+{
+  "properties": {
+    "operator": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ScopeSelectorOperator"
+        }
+      ],
+      "description": "Represents a scope's relationship to a set of values.\nValid operators are In, NotIn, Exists, DoesNotExist."
+    },
+    "scopeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ResourceQuotaScope"
+        }
+      ],
+      "description": "The name of the scope that the selector applies to."
+    },
+    "values": {
+      "description": "An array of string values. If the operator is In or NotIn,\nthe values array must be non-empty. If the operator is Exists or DoesNotExist,\nthe values array must be empty.\nThis array is replaced during a strategic merge patch.\n+optional\n+listType=atomic",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
+```

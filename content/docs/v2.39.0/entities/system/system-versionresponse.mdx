@@ -1,0 +1,46 @@
+---
+title: "system.versionResponse"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Build": {
+      "$ref": "#/components/schemas/build.BuildInfo"
+    },
+    "DatabaseVersion": {
+      "type": "string"
+    },
+    "Dependencies": {
+      "$ref": "#/components/schemas/build.DependenciesInfo"
+    },
+    "LatestVersion": {
+      "description": "The latest version available",
+      "example": "2.0.0",
+      "type": "string"
+    },
+    "Runtime": {
+      "$ref": "#/components/schemas/build.RuntimeInfo"
+    },
+    "ServerEdition": {
+      "example": "CE/EE",
+      "type": "string"
+    },
+    "ServerVersion": {
+      "type": "string"
+    },
+    "UpdateAvailable": {
+      "description": "Whether portainer has an update available",
+      "example": false,
+      "type": "boolean"
+    },
+    "VersionSupport": {
+      "example": "STS/LTS",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

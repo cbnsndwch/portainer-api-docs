@@ -1,0 +1,43 @@
+---
+title: "v1beta1.PodMetrics"
+---
+
+
+
+```json
+{
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources\n+optional",
+      "type": "string"
+    },
+    "containers": {
+      "description": "Metrics for all containers are collected within the same time window.\n+listType=atomic",
+      "items": {
+        "$ref": "#/components/schemas/v1beta1.ContainerMetrics"
+      },
+      "type": "array"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds\n+optional",
+      "type": "string"
+    },
+    "metadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.ObjectMeta"
+        }
+      ],
+      "description": "Standard object's metadata.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata\n+optional"
+    },
+    "timestamp": {
+      "description": "The following fields define time interval from which metrics were\ncollected from the interval [Timestamp-Window, Timestamp].",
+      "type": "string"
+    },
+    "window": {
+      "$ref": "#/components/schemas/v1.Duration"
+    }
+  },
+  "type": "object"
+}
+```

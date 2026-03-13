@@ -1,0 +1,11 @@
+{
+    "title": "Intel",
+    "pages": [
+        "post-open-amt",
+        "post-open-amt-id-activate",
+        "get-open-amt-id-devices",
+        "post-open-amt-id-devices-deviceid-action",
+        "post-open-amt-id-devices-features-deviceid",
+        "get-open-amt-id-info"
+    ]
+}

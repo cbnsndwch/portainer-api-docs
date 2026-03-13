@@ -1,0 +1,61 @@
+---
+title: "kubernetes.K8sIngressInfo"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Annotations": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "ClassName": {
+      "type": "string"
+    },
+    "CreationDate": {
+      "type": "string"
+    },
+    "Hosts": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "Labels": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Namespace": {
+      "type": "string"
+    },
+    "Paths": {
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.K8sIngressPath"
+      },
+      "type": "array"
+    },
+    "TLS": {
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.K8sIngressTLS"
+      },
+      "type": "array"
+    },
+    "Type": {
+      "type": "string"
+    },
+    "UID": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

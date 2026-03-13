@@ -1,0 +1,14 @@
+{
+    "title": "Custom Templates",
+    "pages": [
+        "get-custom-templates",
+        "post-custom-templates-create-file",
+        "post-custom-templates-create-repository",
+        "post-custom-templates-create-string",
+        "get-custom-templates-id",
+        "put-custom-templates-id",
+        "delete-custom-templates-id",
+        "get-custom-templates-id-file",
+        "put-custom-templates-id-git-fetch"
+    ]
+}

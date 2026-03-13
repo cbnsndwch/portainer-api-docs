@@ -1,0 +1,38 @@
+---
+title: "endpointedge.edgeJobResponse"
+---
+
+
+
+```json
+{
+  "properties": {
+    "CollectLogs": {
+      "description": "Whether to collect logs",
+      "example": true,
+      "type": "boolean"
+    },
+    "CronExpression": {
+      "description": "A cron expression to schedule this job",
+      "example": "* * * * *",
+      "type": "string"
+    },
+    "Id": {
+      "description": "EdgeJob Identifier",
+      "example": 2,
+      "type": "integer"
+    },
+    "Script": {
+      "description": "Script to run",
+      "example": "echo hello",
+      "type": "string"
+    },
+    "Version": {
+      "description": "Version of this EdgeJob",
+      "example": 2,
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,37 @@
+---
+title: "v1.ContainerPort"
+---
+
+
+
+```json
+{
+  "properties": {
+    "containerPort": {
+      "description": "Number of port to expose on the pod's IP address.\nThis must be a valid port number, 0 < x < 65536.",
+      "type": "integer"
+    },
+    "hostIP": {
+      "description": "What host IP to bind the external port to.\n+optional",
+      "type": "string"
+    },
+    "hostPort": {
+      "description": "Number of port to expose on the host.\nIf specified, this must be a valid port number, 0 < x < 65536.\nIf HostNetwork is specified, this must match ContainerPort.\nMost containers do not need this.\n+optional",
+      "type": "integer"
+    },
+    "name": {
+      "description": "If specified, this must be an IANA_SVC_NAME and unique within the pod. Each\nnamed port in a pod must have a unique name. Name for the port that can be\nreferred to by services.\n+optional",
+      "type": "string"
+    },
+    "protocol": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.Protocol"
+        }
+      ],
+      "description": "Protocol for port. Must be UDP, TCP, or SCTP.\nDefaults to \"TCP\".\n+optional\n+default=\"TCP\""
+    }
+  },
+  "type": "object"
+}
+```

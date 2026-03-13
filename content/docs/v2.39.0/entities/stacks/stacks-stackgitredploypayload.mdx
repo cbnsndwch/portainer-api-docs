@@ -1,0 +1,49 @@
+---
+title: "stacks.stackGitRedployPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Env": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "Prune": {
+      "type": "boolean"
+    },
+    "PullImage": {
+      "description": "Deprecated(2.36): use RepullImageAndRedeploy instead for cleaner responsibility\nForce a pulling to current image with the original tag though the image is already the latest",
+      "example": false,
+      "type": "boolean"
+    },
+    "RepositoryAuthentication": {
+      "type": "boolean"
+    },
+    "RepositoryAuthorizationType": {
+      "$ref": "#/components/schemas/gittypes.GitCredentialAuthType"
+    },
+    "RepositoryPassword": {
+      "type": "string"
+    },
+    "RepositoryReferenceName": {
+      "type": "string"
+    },
+    "RepositoryUsername": {
+      "type": "string"
+    },
+    "RepullImageAndRedeploy": {
+      "description": "RepullImageAndRedeploy indicates whether to force repulling images and redeploying the stack",
+      "type": "boolean"
+    },
+    "StackName": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

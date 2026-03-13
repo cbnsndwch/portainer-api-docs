@@ -1,0 +1,8 @@
+{
+    "title": "Endpointgroups",
+    "pages": [
+        "overview",
+        "endpointgroups-endpointgroupcreatepayload",
+        "endpointgroups-endpointgroupupdatepayload"
+    ]
+}

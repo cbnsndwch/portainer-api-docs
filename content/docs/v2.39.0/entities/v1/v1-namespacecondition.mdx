@@ -1,0 +1,41 @@
+---
+title: "v1.NamespaceCondition"
+---
+
+
+
+```json
+{
+  "properties": {
+    "lastTransitionTime": {
+      "description": "Last time the condition transitioned from one status to another.\n+optional",
+      "type": "string"
+    },
+    "message": {
+      "description": "Human-readable message indicating details about last transition.\n+optional",
+      "type": "string"
+    },
+    "reason": {
+      "description": "Unique, one-word, CamelCase reason for the condition's last transition.\n+optional",
+      "type": "string"
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/k8s_io_api_core_v1.ConditionStatus"
+        }
+      ],
+      "description": "Status of the condition, one of True, False, Unknown."
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/v1.NamespaceConditionType"
+        }
+      ],
+      "description": "Type of namespace controller condition."
+    }
+  },
+  "type": "object"
+}
+```

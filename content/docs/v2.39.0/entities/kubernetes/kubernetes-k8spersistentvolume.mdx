@@ -1,0 +1,46 @@
+---
+title: "kubernetes.K8sPersistentVolume"
+---
+
+
+
+```json
+{
+  "properties": {
+    "accessModes": {
+      "items": {
+        "$ref": "#/components/schemas/v1.PersistentVolumeAccessMode"
+      },
+      "type": "array"
+    },
+    "annotations": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "capacity": {
+      "$ref": "#/components/schemas/v1.ResourceList"
+    },
+    "claimRef": {
+      "$ref": "#/components/schemas/v1.ObjectReference"
+    },
+    "csi": {
+      "$ref": "#/components/schemas/v1.CSIPersistentVolumeSource"
+    },
+    "name": {
+      "type": "string"
+    },
+    "persistentVolumeReclaimPolicy": {
+      "$ref": "#/components/schemas/v1.PersistentVolumeReclaimPolicy"
+    },
+    "storageClassName": {
+      "type": "string"
+    },
+    "volumeMode": {
+      "$ref": "#/components/schemas/v1.PersistentVolumeMode"
+    }
+  },
+  "type": "object"
+}
+```

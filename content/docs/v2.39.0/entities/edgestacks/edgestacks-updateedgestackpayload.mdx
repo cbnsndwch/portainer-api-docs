@@ -1,0 +1,32 @@
+---
+title: "edgestacks.updateEdgeStackPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "DeploymentType": {
+      "$ref": "#/components/schemas/portainer.EdgeStackDeploymentType"
+    },
+    "EdgeGroups": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "StackFileContent": {
+      "type": "string"
+    },
+    "UpdateVersion": {
+      "type": "boolean"
+    },
+    "UseManifestNamespaces": {
+      "description": "Uses the manifest's namespaces instead of the default one",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

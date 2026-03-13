@@ -1,0 +1,45 @@
+---
+title: "stacks.swarmStackFromFileContentPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Env": {
+      "description": "A list of environment variables used during stack deployment",
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "FromAppTemplate": {
+      "description": "Whether the stack is from a app template",
+      "example": false,
+      "type": "boolean"
+    },
+    "Name": {
+      "description": "Name of the stack",
+      "example": "myStack",
+      "type": "string"
+    },
+    "StackFileContent": {
+      "description": "Content of the Stack file",
+      "example": "version: 3\n services:\n web:\n image:nginx",
+      "type": "string"
+    },
+    "SwarmID": {
+      "description": "Swarm cluster identifier",
+      "example": "jpofkc0i9uo9wtx1zesuk649w",
+      "type": "string"
+    }
+  },
+  "required": [
+    "Name",
+    "StackFileContent",
+    "SwarmID"
+  ],
+  "type": "object"
+}
+```

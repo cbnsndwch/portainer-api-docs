@@ -1,0 +1,44 @@
+---
+title: "portainer.HelmConfig"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Atomic": {
+      "description": "Enable automatic rollback on deployment failure (equivalent to helm --atomic flag)",
+      "example": true,
+      "type": "boolean"
+    },
+    "ChartPath": {
+      "description": "Path to a Helm chart folder for Helm git deployments",
+      "example": "charts/my-app",
+      "type": "string"
+    },
+    "Timeout": {
+      "description": "Timeout for Helm operations (equivalent to helm --timeout flag)",
+      "example": "5m0s",
+      "type": "string"
+    },
+    "ValuesFiles": {
+      "description": "Array of paths to Helm values YAML files for Helm git deployments",
+      "example": [
+        "['values/prod.yaml'",
+        " 'values/secrets.yaml']"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "Version": {
+      "description": "Helm chart version from Chart.yaml (read-only, extracted during Git sync)",
+      "example": "1.2.3",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

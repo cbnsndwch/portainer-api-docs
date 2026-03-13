@@ -1,0 +1,8 @@
+{
+    "title": "Settings",
+    "pages": [
+        "get-settings",
+        "put-settings",
+        "get-settings-public"
+    ]
+}

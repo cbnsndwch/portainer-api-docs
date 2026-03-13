@@ -1,0 +1,11 @@
+{
+    "title": "Registries",
+    "pages": [
+        "overview",
+        "registries-registryconfigurepayload",
+        "registries-registrycreatepayload",
+        "registries-registrypingpayload",
+        "registries-registrypingresponse",
+        "registries-registryupdatepayload"
+    ]
+}

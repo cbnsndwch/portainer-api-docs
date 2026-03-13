@@ -1,0 +1,12 @@
+{
+    "title": "Registries",
+    "pages": [
+        "get-registries",
+        "post-registries",
+        "get-registries-id",
+        "put-registries-id",
+        "delete-registries-id",
+        "post-registries-id-configure",
+        "post-registries-ping"
+    ]
+}

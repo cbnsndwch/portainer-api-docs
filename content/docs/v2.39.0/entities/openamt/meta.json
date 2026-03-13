@@ -1,0 +1,9 @@
+{
+    "title": "Openamt",
+    "pages": [
+        "overview",
+        "openamt-deviceactionpayload",
+        "openamt-devicefeaturespayload",
+        "openamt-openamtconfigurepayload"
+    ]
+}

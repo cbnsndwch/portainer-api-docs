@@ -1,0 +1,28 @@
+---
+title: "edgestacks.updateStatusPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "EndpointID": {
+      "type": "integer"
+    },
+    "Error": {
+      "type": "string"
+    },
+    "Status": {
+      "$ref": "#/components/schemas/portainer.EdgeStackStatusType"
+    },
+    "Time": {
+      "type": "integer"
+    },
+    "Version": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

@@ -1,0 +1,10 @@
+{
+    "title": "Teams",
+    "pages": [
+        "get-teams",
+        "post-teams",
+        "get-teams-id",
+        "put-teams-id",
+        "delete-teams-id"
+    ]
+}

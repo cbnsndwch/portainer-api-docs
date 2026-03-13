@@ -1,0 +1,39 @@
+---
+title: "portainer.Role"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Authorizations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.Authorizations"
+        }
+      ],
+      "description": "Authorizations associated to a role"
+    },
+    "Description": {
+      "description": "Role description",
+      "example": "Read-only access of all resources in an endpoint",
+      "type": "string"
+    },
+    "Id": {
+      "description": "Role Identifier",
+      "example": 1,
+      "type": "integer"
+    },
+    "Name": {
+      "description": "Role name",
+      "example": "HelpDesk",
+      "type": "string"
+    },
+    "Priority": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

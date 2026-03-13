@@ -1,0 +1,28 @@
+---
+title: "kubernetes.K8sNamespaceDetails"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Annotations": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Owner": {
+      "type": "string"
+    },
+    "ResourceQuota": {
+      "$ref": "#/components/schemas/kubernetes.K8sResourceQuota"
+    }
+  },
+  "type": "object"
+}
+```

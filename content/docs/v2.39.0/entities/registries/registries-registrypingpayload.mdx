@@ -1,0 +1,56 @@
+---
+title: "registries.registryPingPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Password": {
+      "description": "Password used to authenticate against this registry",
+      "example": "registry_password",
+      "type": "string"
+    },
+    "TLS": {
+      "description": "Use TLS",
+      "example": true,
+      "type": "boolean"
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.RegistryType"
+        }
+      ],
+      "description": "Registry Type. Valid values are:\n\t1 (Quay.io),\n\t2 (Azure container registry),\n\t3 (custom registry),\n\t4 (Gitlab registry),\n\t5 (ProGet registry),\n\t6 (DockerHub)\n\t7 (ECR)\n\t8 (Github registry)",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "example": 6
+    },
+    "URL": {
+      "description": "URL or IP address of the Docker registry",
+      "example": "registry-1.docker.io",
+      "type": "string"
+    },
+    "Username": {
+      "description": "Username used to authenticate against this registry",
+      "example": "registry_user",
+      "type": "string"
+    }
+  },
+  "required": [
+    "Type",
+    "URL"
+  ],
+  "type": "object"
+}
+```

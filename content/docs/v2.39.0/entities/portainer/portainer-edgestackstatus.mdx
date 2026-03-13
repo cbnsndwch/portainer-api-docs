@@ -1,0 +1,54 @@
+---
+title: "portainer.EdgeStackStatus"
+---
+
+
+
+```json
+{
+  "properties": {
+    "DeploymentInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.StackDeploymentInfo"
+        }
+      ],
+      "description": "EE only feature"
+    },
+    "Details": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EdgeStackStatusDetails"
+        }
+      ],
+      "description": "Deprecated"
+    },
+    "EndpointID": {
+      "type": "integer"
+    },
+    "Error": {
+      "description": "Deprecated",
+      "type": "string"
+    },
+    "ReadyRePullImage": {
+      "description": "ReadyRePullImage is a flag to indicate whether the auto update is trigger to re-pull image",
+      "type": "boolean"
+    },
+    "Status": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.EdgeStackDeploymentStatus"
+      },
+      "type": "array"
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.EdgeStackStatusType"
+        }
+      ],
+      "description": "Deprecated"
+    }
+  },
+  "type": "object"
+}
+```

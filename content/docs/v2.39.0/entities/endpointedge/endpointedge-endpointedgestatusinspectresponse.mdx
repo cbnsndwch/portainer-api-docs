@@ -1,0 +1,45 @@
+---
+title: "endpointedge.endpointEdgeStatusInspectResponse"
+---
+
+
+
+```json
+{
+  "properties": {
+    "checkin": {
+      "description": "The current value of CheckinInterval",
+      "example": 5,
+      "type": "integer"
+    },
+    "credentials": {
+      "type": "string"
+    },
+    "port": {
+      "description": "The tunnel port",
+      "example": 8732,
+      "type": "integer"
+    },
+    "schedules": {
+      "description": "List of requests for jobs to run on the endpoint",
+      "items": {
+        "$ref": "#/components/schemas/endpointedge.edgeJobResponse"
+      },
+      "type": "array"
+    },
+    "stacks": {
+      "description": "List of stacks to be deployed on the endpoints",
+      "items": {
+        "$ref": "#/components/schemas/endpointedge.stackStatusResponse"
+      },
+      "type": "array"
+    },
+    "status": {
+      "description": "Status represents the endpoint status",
+      "example": "REQUIRED",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

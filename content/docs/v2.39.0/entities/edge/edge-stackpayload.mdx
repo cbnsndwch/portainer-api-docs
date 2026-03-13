@@ -1,0 +1,121 @@
+---
+title: "edge.StackPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AlwaysCloneGitRepoForRelativePath": {
+      "description": "AlwaysCloneGitRepoForRelativePath is a flag indicating if the agent must always clone the git repository for relative path.\nThis field is only valid when SupportRelativePath is true.\nUsed only for EE",
+      "type": "boolean"
+    },
+    "CreatedBy": {
+      "description": "CreatedBy is the username that created this stack\nUsed for adding labels to Kubernetes manifests",
+      "type": "string"
+    },
+    "CreatedByUserId": {
+      "description": "CreatedByUserId is the user ID that created this stack\nUsed for adding labels to Kubernetes manifests",
+      "type": "string"
+    },
+    "DeployerOptionsPayload": {
+      "$ref": "#/components/schemas/edge.DeployerOptionsPayload"
+    },
+    "DirEntries": {
+      "description": "Content of stack folder",
+      "items": {
+        "$ref": "#/components/schemas/filesystem.DirEntry"
+      },
+      "type": "array"
+    },
+    "EdgeUpdateID": {
+      "description": "EdgeUpdateID is the ID of the edge update related to this stack.\nUsed only for EE",
+      "type": "integer"
+    },
+    "EntryFileName": {
+      "description": "Name of the stack entry file",
+      "type": "string"
+    },
+    "EnvVars": {
+      "description": "Used only for EE\nEnvVars is a list of environment variables to inject into the stack",
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "FilesystemPath": {
+      "description": "Mount point for relative path",
+      "type": "string"
+    },
+    "ForceUpdate": {
+      "description": "ForceUpdate is a flag indicating if the agent must force the update of the stack.\nUsed only for EE",
+      "type": "boolean"
+    },
+    "HelmConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.HelmConfig"
+        }
+      ],
+      "description": "HelmConfig represents the Helm configuration for an edge stack"
+    },
+    "ID": {
+      "description": "ID of the stack",
+      "type": "integer"
+    },
+    "Name": {
+      "description": "Name of the stack",
+      "type": "string"
+    },
+    "Namespace": {
+      "description": "Namespace to use for kubernetes stack. Keep empty to use the manifest namespace.",
+      "type": "string"
+    },
+    "PrePullImage": {
+      "description": "PrePullImage is a flag indicating if the agent must pull the image before deploying the stack.\nUsed only for EE",
+      "type": "boolean"
+    },
+    "RePullImage": {
+      "description": "RePullImage is a flag indicating if the agent must pull the image if it is already present on the node.\nUsed only for EE",
+      "type": "boolean"
+    },
+    "ReadyRePullImage": {
+      "description": "Used only for EE async edge agent\nReadyRePullImage is a flag to indicate whether the auto update is trigger to re-pull image\nDeprecated(2.36): use DeployerOptionsPayload.ForceRecreate instead",
+      "type": "boolean"
+    },
+    "RegistryCredentials": {
+      "description": "RegistryCredentials holds the credentials for a Docker registry.\nUsed only for EE",
+      "items": {
+        "$ref": "#/components/schemas/edge.RegistryCredentials"
+      },
+      "type": "array"
+    },
+    "RetryDeploy": {
+      "description": "RetryDeploy is a flag indicating if the agent must retry to deploy the stack if it fails.\nUsed only for EE",
+      "type": "boolean"
+    },
+    "RetryPeriod": {
+      "description": "RetryPeriod specifies the duration, in seconds, for which the agent should continue attempting to deploy the stack after a failure\nUsed only for EE",
+      "type": "integer"
+    },
+    "RollbackTo": {
+      "description": "RollbackTo specifies the stack file version to rollback to (only support to rollback to the last version currently)",
+      "type": "integer"
+    },
+    "StackFileContent": {
+      "description": "Content of the stack file (for compatibility to agent version less than 2.19.0)",
+      "type": "string"
+    },
+    "SupportRelativePath": {
+      "description": "Is relative path supported",
+      "type": "boolean"
+    },
+    "Version": {
+      "description": "Version of the stack file",
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
+```

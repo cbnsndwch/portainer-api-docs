@@ -1,0 +1,28 @@
+---
+title: "portainer.TemplateVolume"
+---
+
+
+
+```json
+{
+  "properties": {
+    "bind": {
+      "description": "Path on the host",
+      "example": "/tmp",
+      "type": "string"
+    },
+    "container": {
+      "description": "Path inside the container",
+      "example": "/data",
+      "type": "string"
+    },
+    "readonly": {
+      "description": "Whether the volume used should be readonly",
+      "example": true,
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

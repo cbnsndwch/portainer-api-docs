@@ -1,0 +1,9 @@
+{
+    "title": "Gittypes",
+    "pages": [
+        "overview",
+        "gittypes-gitauthentication",
+        "gittypes-gitcredentialauthtype",
+        "gittypes-repoconfig"
+    ]
+}

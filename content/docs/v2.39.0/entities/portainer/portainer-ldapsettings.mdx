@@ -1,0 +1,58 @@
+---
+title: "portainer.LDAPSettings"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AnonymousMode": {
+      "description": "Enable this option if the server is configured for Anonymous access. When enabled, ReaderDN and Password will not be used",
+      "example": true,
+      "type": "boolean"
+    },
+    "AutoCreateUsers": {
+      "description": "Automatically provision users and assign them to matching LDAP group names",
+      "example": true,
+      "type": "boolean"
+    },
+    "GroupSearchSettings": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.LDAPGroupSearchSettings"
+      },
+      "type": "array"
+    },
+    "Password": {
+      "description": "Password of the account that will be used to search users",
+      "example": "readonly-password",
+      "type": "string"
+    },
+    "ReaderDN": {
+      "description": "Account that will be used to search for users",
+      "example": "cn=readonly-account,dc=ldap,dc=domain,dc=tld",
+      "type": "string"
+    },
+    "SearchSettings": {
+      "items": {
+        "$ref": "#/components/schemas/portainer.LDAPSearchSettings"
+      },
+      "type": "array"
+    },
+    "StartTLS": {
+      "description": "Whether LDAP connection should use StartTLS",
+      "example": true,
+      "type": "boolean"
+    },
+    "TLSConfig": {
+      "$ref": "#/components/schemas/portainer.TLSConfiguration"
+    },
+    "URL": {
+      "description": "URL or IP address of the LDAP server",
+      "example": "myldap.domain.tld:389",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

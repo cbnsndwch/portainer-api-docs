@@ -1,0 +1,24 @@
+{
+    "title": "Endpoints",
+    "pages": [
+        "get-endpoints",
+        "post-endpoints",
+        "delete-endpoints",
+        "post-endpoints-delete",
+        "post-endpoints-global-key",
+        "get-endpoints-id",
+        "put-endpoints-id",
+        "delete-endpoints-id",
+        "put-endpoints-id-association",
+        "post-endpoints-id-docker-v2-browse-put",
+        "get-endpoints-id-dockerhub-registryid",
+        "get-endpoints-id-edge-status",
+        "put-endpoints-id-forceupdateservice",
+        "get-endpoints-id-registries",
+        "put-endpoints-id-registries-registryid",
+        "put-endpoints-id-settings",
+        "post-endpoints-id-snapshot",
+        "put-endpoints-relations",
+        "post-endpoints-snapshot"
+    ]
+}

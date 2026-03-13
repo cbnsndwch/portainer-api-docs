@@ -1,0 +1,101 @@
+---
+title: "settings.settingsUpdatePayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "AuthenticationMethod": {
+      "description": "Active authentication method for the Portainer instance. Valid values are: 1 for internal, 2 for LDAP, or 3 for oauth",
+      "example": 1,
+      "type": "integer"
+    },
+    "BlackListedLabels": {
+      "description": "A list of label name & value that will be used to hide containers when querying containers",
+      "items": {
+        "$ref": "#/components/schemas/portainer.Pair"
+      },
+      "type": "array"
+    },
+    "EdgeAgentCheckinInterval": {
+      "example": 5,
+      "type": "integer"
+    },
+    "EdgePortainerURL": {
+      "description": "EdgePortainerURL is the URL that is exposed to edge agents",
+      "type": "string"
+    },
+    "EnableEdgeComputeFeatures": {
+      "description": "Whether edge compute features are enabled",
+      "example": true,
+      "type": "boolean"
+    },
+    "EnforceEdgeID": {
+      "description": "EnforceEdgeID makes Portainer store the Edge ID instead of accepting anyone",
+      "example": false,
+      "type": "boolean"
+    },
+    "GlobalDeploymentOptions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/portainer.GlobalDeploymentOptions"
+        }
+      ],
+      "description": "Deployment options for encouraging deployment as code"
+    },
+    "HelmRepositoryURL": {
+      "description": "Helm repository URL",
+      "example": "https://charts.bitnami.com/bitnami",
+      "type": "string"
+    },
+    "InternalAuthSettings": {
+      "$ref": "#/components/schemas/portainer.InternalAuthSettings"
+    },
+    "KubeconfigExpiry": {
+      "default": "0",
+      "description": "The expiry of a Kubeconfig",
+      "example": "24h",
+      "type": "string"
+    },
+    "KubectlShellImage": {
+      "description": "Kubectl Shell Image",
+      "example": "portainer/kubectl-shell:latest",
+      "type": "string"
+    },
+    "LDAPSettings": {
+      "$ref": "#/components/schemas/portainer.LDAPSettings"
+    },
+    "LogoURL": {
+      "description": "URL to a logo that will be displayed on the login page as well as on top of the sidebar. Will use default Portainer logo when value is empty string",
+      "example": "https://mycompany.mydomain.tld/logo.png",
+      "type": "string"
+    },
+    "OAuthSettings": {
+      "$ref": "#/components/schemas/portainer.OAuthSettings"
+    },
+    "SnapshotInterval": {
+      "description": "The interval in which endpoint snapshots are created",
+      "example": "5m",
+      "type": "string"
+    },
+    "TemplatesURL": {
+      "description": "URL to the templates that will be displayed in the UI when navigating to App Templates",
+      "example": "https://raw.githubusercontent.com/portainer/templates/master/templates.json",
+      "type": "string"
+    },
+    "TrustOnFirstConnect": {
+      "description": "TrustOnFirstConnect makes Portainer accepting edge agent connection by default",
+      "example": false,
+      "type": "boolean"
+    },
+    "UserSessionTimeout": {
+      "description": "The duration of a user session",
+      "example": "5m",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

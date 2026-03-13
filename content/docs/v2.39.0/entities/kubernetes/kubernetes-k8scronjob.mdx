@@ -1,0 +1,43 @@
+---
+title: "kubernetes.K8sCronJob"
+---
+
+
+
+```json
+{
+  "properties": {
+    "Command": {
+      "type": "string"
+    },
+    "Id": {
+      "type": "string"
+    },
+    "IsSystem": {
+      "type": "boolean"
+    },
+    "Jobs": {
+      "items": {
+        "$ref": "#/components/schemas/kubernetes.K8sJob"
+      },
+      "type": "array"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Namespace": {
+      "type": "string"
+    },
+    "Schedule": {
+      "type": "string"
+    },
+    "Suspend": {
+      "type": "boolean"
+    },
+    "Timezone": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+```

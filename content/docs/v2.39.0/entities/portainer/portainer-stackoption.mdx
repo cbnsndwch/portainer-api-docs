@@ -1,0 +1,23 @@
+---
+title: "portainer.StackOption"
+---
+
+
+
+```json
+{
+  "properties": {
+    "HelmAtomic": {
+      "description": "Enable atomic rollback on failure (Helm --atomic flag for Kubernetes Helm stacks)",
+      "example": false,
+      "type": "boolean"
+    },
+    "Prune": {
+      "description": "Prune services that are no longer referenced",
+      "example": false,
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```

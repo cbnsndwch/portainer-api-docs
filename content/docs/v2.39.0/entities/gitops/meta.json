@@ -1,0 +1,8 @@
+{
+    "title": "Gitops",
+    "pages": [
+        "overview",
+        "gitops-fileresponse",
+        "gitops-repositoryfilepreviewpayload"
+    ]
+}

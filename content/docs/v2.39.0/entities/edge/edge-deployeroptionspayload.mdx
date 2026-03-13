@@ -1,0 +1,25 @@
+---
+title: "edge.DeployerOptionsPayload"
+---
+
+
+
+```json
+{
+  "properties": {
+    "ForceRecreate": {
+      "description": "ForceRecreate is a flag indicating if the agent must force the redeployment of the stack.\nThis field is only used when the Force Redeployment is triggered.\nOnce the stack is redeployed, this field will be reset to false.\nFor standard edge agent, this field is used in agent side\nFor async edge agent, this field is used in both agent side and server side.\nThis flag drives `docker compose up --force-recreate` option",
+      "type": "boolean"
+    },
+    "Prune": {
+      "description": "Prune is a flag indicating if the agent must prune the containers or not when creating/updating an edge stack\nThis flag drives `docker compose up --remove-orphans` and `docker stack up --prune` options\nUsed only for EE",
+      "type": "boolean"
+    },
+    "RemoveVolumes": {
+      "description": "RemoveVolumes is a flag indicating if the agent must remove the named volumes declared\nin the compose file and anonymouse volumes attached to containers\nThis flag drives `docker compose down --volumes` option\nUsed only for EE",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
+```
